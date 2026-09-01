@@ -1,0 +1,16 @@
+{
+  "name": "Gambia FLP - Wolof ECD 2 Teacher Guide",
+  "short_name": "Gambia FLP Wolof",
+  "description": "Interactive Early Childhood Development Teacher Guide for Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#091a24",
+  "theme_color": "#0d3b4c",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
