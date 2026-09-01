@@ -363,17 +363,20 @@ function setupAudioForLesson(week, day, lesson) {
 
 // Render Track Selection Chips
 function renderAudioTrackChips() {
-  if (!elements.audioTracksRow) return;
-  elements.audioTracksRow.innerHTML = '';
+  const container = document.getElementById('audio-tracks-row');
+  if (!container) return;
+  container.innerHTML = '';
 
   state.activeTracks.forEach((track, idx) => {
     const chip = document.createElement('button');
+    chip.type = 'button';
     chip.className = `track-chip ${idx === state.selectedTrackIndex ? 'active' : ''}`;
     chip.innerHTML = track.title;
-    chip.addEventListener('click', () => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
       selectAudioTrack(idx);
     });
-    elements.audioTracksRow.appendChild(chip);
+    container.appendChild(chip);
   });
 }
 
@@ -392,14 +395,19 @@ function selectAudioTrack(idx) {
 function updateAudioPlayerDisplay() {
   const track = state.activeTracks[state.selectedTrackIndex];
   if (!track) return;
-  elements.audioTitle.textContent = track.title;
-  elements.audioSub.textContent = track.subtitle;
-  elements.playBtnText.textContent = 'Listen';
-  elements.playAudioBtn.classList.remove('is-playing');
-  elements.playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
-  if (elements.audioProgressWrap) {
-    elements.audioProgressWrap.classList.add('hidden');
-  }
+  const titleEl = document.getElementById('audio-title');
+  const subEl = document.getElementById('audio-sub');
+  const btnTextEl = document.getElementById('play-btn-text');
+  const playBtn = document.getElementById('play-audio-btn');
+  const playIcon = document.getElementById('play-icon');
+  const progressWrap = document.getElementById('audio-progress-wrap');
+
+  if (titleEl) titleEl.textContent = track.title;
+  if (subEl) subEl.textContent = track.subtitle;
+  if (btnTextEl) btnTextEl.textContent = 'Listen';
+  if (playBtn) playBtn.classList.remove('is-playing');
+  if (playIcon) playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+  if (progressWrap) progressWrap.classList.add('hidden');
 }
 
 // Helper: Escape HTML
