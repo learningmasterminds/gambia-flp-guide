@@ -1,4 +1,7 @@
-const CACHE_NAME = 'gambia-flp-wolof-v4';
+const CACHE_NAME = 'gambia-flp-wolof-v5';
+
+// Only the app shell and the primary audio source per track. The duplicate
+// fallback encodings are fetched on demand rather than bloating install.
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,14 +10,18 @@ const ASSETS_TO_CACHE = [
   './manifest.json',
   './data/wolof_ecd2_term1.json',
   './audio/wolof/wol_ecd2_w01_letter_a.ogg',
-  './audio/wolof/wol_ecd2_w01_letter_a.mp3.ogg',
   './audio/wolof/wol_ecd2_w01_song.m4a',
-  './audio/wolof/wol_ecd2_w01_song.mp4',
   './audio/wolof/wol_ecd2_w01_vocab.ogg',
-  './audio/wolof/wol_ecd2_w01_vocab.mp3.ogg',
-  './audio/wolof/wol_ecd2_w01_story.ogg',
-  './audio/wolof/wol_ecd2_w01_story.mp3.ogg'
+  './audio/wolof/wol_ecd2_w01_story.ogg'
 ];
+
+// Audio is large and immutable, so it is served cache-first. Everything else
+// is code or content that must be allowed to change: serving index.html
+// cache-first made the ?v= cache-buster inert for returning teachers, because
+// the very file carrying the new version tag came from the old cache.
+function isImmutableAsset(url) {
+  return /\.(ogg|m4a|mp4|mp3|wav|png|jpg|jpeg|svg|woff2?)$/i.test(url.pathname);
+}
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -38,29 +45,58 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    }).then(() => {
-      return self.clients.claim();
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          if (event.request.method === 'GET' && event.request.url.startsWith('http')) {
-            cache.put(event.request, networkResponse.clone());
+  const request = event.request;
+  if (request.method !== 'GET') return;
+
+  let url;
+  try {
+    url = new URL(request.url);
+  } catch (e) {
+    return;
+  }
+  if (!url.protocol.startsWith('http')) return;
+
+  // Cache-first for immutable media.
+  if (isImmutableAsset(url)) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        if (cached) return cached;
+        return fetch(request).then((response) => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           }
-          return networkResponse;
+          return response;
         });
-      }).catch(() => {
-        if (event.request.headers.get('accept').includes('text/html')) {
+      })
+    );
+    return;
+  }
+
+  // Network-first for the app shell and lesson data, falling back to cache
+  // when offline. This is what lets a new deploy actually reach a device that
+  // already has the service worker installed.
+  event.respondWith(
+    fetch(request).then((response) => {
+      if (response && response.ok) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+      }
+      return response;
+    }).catch(() => {
+      return caches.match(request).then((cached) => {
+        if (cached) return cached;
+        // Navigation requests fall back to the cached shell.
+        const accept = request.headers.get('accept') || '';
+        if (request.mode === 'navigate' || accept.includes('text/html')) {
           return caches.match('./index.html');
         }
+        return Response.error();
       });
     })
   );

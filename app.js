@@ -125,13 +125,16 @@ async function loadCurriculum() {
     if (!res.ok) {
       res = await fetch('../data/wolof_ecd2_term1.json');
     }
-    if (!res.ok) throw new Error('Failed to load JSON');
+    if (!res.ok) throw new Error('Failed to load JSON: HTTP ' + res.status);
     state.curriculumData = await res.json();
-    initApp();
   } catch (err) {
-    console.warn('Fetch failed, falling back to embedded dataset', err);
-    loadEmbeddedFallback();
+    console.error('Curriculum data failed to load:', err);
+    showToast('Could not load lesson data. Check your connection and reload.', 6000);
+    return;
   }
+  // Deliberately outside the try: a render bug must surface, not be
+  // misreported as a network failure and silently retried.
+  initApp();
 }
 
 // Initialize Application UI
@@ -233,15 +236,25 @@ function loadLesson(week, day) {
 
     // Check if step has an associated audio track to show inline play button
     let stepAudioBtn = '';
+    // Order matters: 'song' is checked before 'sound', otherwise a step called
+    // "Learning Sounds" matches the song branch and offers the wrong track.
     const lowerTitle = act.title.toLowerCase();
-    if (lowerTitle.includes('sound') || lowerTitle.includes('song') || lowerTitle.includes('wóy')) {
-      stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('song')">▶️ Song</button>`;
-    } else if (lowerTitle.includes('letter') || lowerTitle.includes('araf')) {
-      stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('letter')">▶️ Letter /${lesson.target_letter || 'a'}/</button>`;
+    const has = (type) => state.activeTracks.some(t => t.type === type);
+    let stepTrack = null;
+    let stepLabel = '';
+    if (lowerTitle.includes('song') || lowerTitle.includes('wóy') || lowerTitle.includes('chant') || lowerTitle.includes('rhyme')) {
+      stepTrack = 'song'; stepLabel = '▶️ Song';
+    } else if (lowerTitle.includes('sound') || lowerTitle.includes('letter') || lowerTitle.includes('araf') || lowerTitle.includes('alphabet')) {
+      stepTrack = 'letter'; stepLabel = `▶️ Letter /${lesson.target_letter || 'a'}/`;
     } else if (lowerTitle.includes('read aloud') || lowerTitle.includes('story') || lowerTitle.includes('léeb')) {
-      stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('story')">▶️ Story</button>`;
+      stepTrack = 'story'; stepLabel = '▶️ Story';
     } else if (lowerTitle.includes('vocabulary') || lowerTitle.includes('baat')) {
-      stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('vocab')">▶️ Vocab</button>`;
+      stepTrack = 'vocab'; stepLabel = '▶️ Vocab';
+    }
+    // Only offer a button when that track exists for this week, so teachers
+    // are not given a control that silently does nothing.
+    if (stepTrack && has(stepTrack)) {
+      stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('${stepTrack}')">${stepLabel}</button>`;
     }
 
     // Format content cleanly into structured HTML
@@ -274,57 +287,94 @@ function loadLesson(week, day) {
 }
 
 // Clean Structured Formatter for Activity Content
+
+// Re-join hard-wrapped continuation lines onto the bullet they belong to,
+// so a wrapped sentence is not broken out into its own paragraph.
+function coalesceLines(content) {
+  const raw = content.split('\n');
+  const out = [];
+  const isBullet = (t) => /^[•-]\s*/.test(t);
+
+  for (let i = 0; i < raw.length; i++) {
+    const line = raw[i].trim();
+    if (!line) continue;
+
+    if (isBullet(line)) {
+      out.push(line);
+      continue;
+    }
+
+    // The next non-empty source line decides heading vs. continuation.
+    let next = '';
+    for (let j = i + 1; j < raw.length; j++) {
+      if (raw[j].trim()) { next = raw[j].trim(); break; }
+    }
+
+    const looksLikeHeading =
+      line.length < 50 &&
+      !/[.,;:]$/.test(line) &&
+      !line.includes(':') &&
+      isBullet(next);
+
+    const prevIsBullet = out.length > 0 && isBullet(out[out.length - 1]);
+
+    if (prevIsBullet && !looksLikeHeading) {
+      out[out.length - 1] += ' ' + line;
+    } else {
+      out.push(line);
+    }
+  }
+  return out;
+}
+
 function formatActivityContent(content) {
   if (!content) return '';
 
-  const lines = content.split('\n');
+  const lines = coalesceLines(content);
+  const isBullet = (t) => /^[•-]\s*/.test(t);
   let html = '';
   let inBulletList = false;
 
-  for (let i = 0; i < lines.length; i++) {
-    let rawLine = lines[i].trim();
-    if (!rawLine) continue;
+  const closeList = () => {
+    if (inBulletList) { html += '</ul>'; inBulletList = false; }
+  };
 
-    // Check if line is a bullet point: starts with • or -
-    if (rawLine.startsWith('•') || rawLine.startsWith('-')) {
+  for (let i = 0; i < lines.length; i++) {
+    const rawLine = lines[i];
+
+    if (isBullet(rawLine)) {
       if (!inBulletList) {
         html += '<ul class="step-bullet-list">';
         inBulletList = true;
       }
-      let bulletText = rawLine.replace(/^[•\-]\s*/, '').trim();
+      const bulletText = rawLine.replace(/^[•-]\s*/, '').trim();
 
-      // Format teacher dialogue inside bullet: "Say: ..." or "Waxandoor: ..."
       if (/^(Say|Waxandoor)\s*:\s*/i.test(bulletText)) {
-        let sayText = bulletText.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
+        const sayText = bulletText.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
         html += `<li class="bullet-item"><div class="teacher-dialogue"><strong>🗣️ Say (Wolof):</strong> <em>${escapeHtml(sayText)}</em></div></li>`;
       } else {
         html += `<li class="bullet-item">${escapeHtml(bulletText)}</li>`;
       }
-    } else {
-      // Non-bullet line
-      if (inBulletList) {
-        html += '</ul>';
-        inBulletList = false;
-      }
+      continue;
+    }
 
-      // Check if it's a sub-heading (short line without punctuation, e.g. "Greeting", "Theme Discussion")
-      if (rawLine.length < 50 && !rawLine.endsWith('.') && !rawLine.includes(':') && i < lines.length - 1 && lines[i+1].trim().startsWith('•')) {
-        html += `<h4 class="step-subheading">📌 ${escapeHtml(rawLine)}</h4>`;
-      } else if (/^(Say|Waxandoor)\s*:\s*/i.test(rawLine)) {
-        let sayText = rawLine.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
-        html += `<div class="teacher-dialogue"><strong>🗣️ Say:</strong> <em>${escapeHtml(sayText)}</em></div>`;
-      } else if (/^(Words|Baat yi)\s*:\s*/i.test(rawLine)) {
-        html += `<div class="words-highlight-box"><strong>🔤 ${escapeHtml(rawLine)}</strong></div>`;
-      } else {
-        html += `<p class="step-paragraph">${escapeHtml(rawLine)}</p>`;
-      }
+    closeList();
+
+    const nextIsBullet = i < lines.length - 1 && isBullet(lines[i + 1]);
+
+    if (rawLine.length < 50 && !/[.,;]$/.test(rawLine) && !rawLine.includes(':') && nextIsBullet) {
+      html += `<h4 class="step-subheading">📌 ${escapeHtml(rawLine)}</h4>`;
+    } else if (/^(Say|Waxandoor)\s*:\s*/i.test(rawLine)) {
+      const sayText = rawLine.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
+      html += `<div class="teacher-dialogue"><strong>🗣️ Say:</strong> <em>${escapeHtml(sayText)}</em></div>`;
+    } else if (/^(Words|Baat yi)\s*:\s*/i.test(rawLine)) {
+      html += `<div class="words-highlight-box"><strong>🔤 ${escapeHtml(rawLine)}</strong></div>`;
+    } else {
+      html += `<p class="step-paragraph">${escapeHtml(rawLine)}</p>`;
     }
   }
 
-  if (inBulletList) {
-    html += '</ul>';
-  }
-
+  closeList();
   return html;
 }
 
@@ -509,9 +559,9 @@ function startAudioPlayback() {
   }
 
   state.isPlayingAudio = true;
-  elements.playBtnText.textContent = 'Playing...';
-  elements.playAudioBtn.classList.add('is-playing');
-  elements.playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+  if (elements.playBtnText) elements.playBtnText.textContent = 'Playing...';
+  if (elements.audioBtn) elements.audioBtn.classList.add('is-playing');
+  if (elements.playIcon) elements.playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
 
   if (elements.audioProgressWrap) {
     elements.audioProgressWrap.classList.remove('hidden');
@@ -522,6 +572,19 @@ function startAudioPlayback() {
   state.audioElement = audio;
 
   let sourceIndex = 0;
+  let handledIndex = -1;
+  // onerror and play().catch can both fire for one failure; only advance once.
+  function failCurrentSource(err) {
+    if (err && err.name === 'NotAllowedError') {
+      showToast('Tap the Listen button to start audio.');
+      stopAudioPlayback();
+      return;
+    }
+    const idx = sourceIndex - 1;
+    if (idx === handledIndex) return;
+    handledIndex = idx;
+    tryNextSource();
+  }
   function tryNextSource() {
     if (sourceIndex < track.sources.length) {
       audio.src = track.sources[sourceIndex];
@@ -529,7 +592,7 @@ function startAudioPlayback() {
       audio.load();
       audio.play().catch(e => {
         console.warn(`Source ${audio.src} failed, trying next`, e);
-        tryNextSource();
+        failCurrentSource(e);
       });
     } else {
       console.log('No local audio file found, using audio tone model');
@@ -559,7 +622,7 @@ function startAudioPlayback() {
   });
 
   audio.addEventListener('error', () => {
-    tryNextSource();
+    failCurrentSource();
   });
 
   tryNextSource();
@@ -571,20 +634,19 @@ function stopAudioPlayback() {
     state.audioElement = null;
   }
   state.isPlayingAudio = false;
-  elements.playBtnText.textContent = 'Listen';
-  elements.playAudioBtn.classList.remove('is-playing');
-  elements.playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+  // Guarded: this runs at the top of loadLesson(), so a missing control must
+  // never throw and take the whole lesson render down with it.
+  if (elements.playBtnText) elements.playBtnText.textContent = 'Listen';
+  if (elements.audioBtn) elements.audioBtn.classList.remove('is-playing');
+  if (elements.playIcon) elements.playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
 }
 
 // Global helper for in-step play buttons
 window.playStepTrack = function(trackType) {
   const idx = state.activeTracks.findIndex(t => t.type === trackType);
-  if (idx >= 0) {
-    selectAudioTrack(idx);
-    startAudioPlayback();
-  } else {
-    toggleAudioPlayback();
-  }
+  if (idx < 0) return;
+  selectAudioTrack(idx);
+  startAudioPlayback();
 };
 
 // Web Audio Chime / Pronunciation Tone
@@ -775,16 +837,9 @@ function setupEventListeners() {
 }
 
 // Fallback Embedded Dataset (Ensures 100% offline capability without web server)
+// Kept for compatibility; there is a single load path now.
 function loadEmbeddedFallback() {
-  fetch('./data/wolof_ecd2_term1.json')
-    .then(r => r.json())
-    .then(d => {
-      state.curriculumData = d;
-      initApp();
-    })
-    .catch(() => {
-      console.log('App ready');
-    });
+  return loadCurriculum();
 }
 
 // Start application
