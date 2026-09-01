@@ -244,16 +244,8 @@ function loadLesson(week, day) {
       stepAudioBtn = `<button class="step-audio-btn" onclick="playStepTrack('vocab')">▶️ Vocab</button>`;
     }
 
-    // Format teacher dialogue inside content
-    let formattedBody = escapeHtml(act.content);
-    
-    // Highlight "Say:" and Wolof dialogues
-    formattedBody = formattedBody.replace(/(Say:|Waxandoor:)(.*?)(?=(\n•|\n\n|\Z))/gs, (match, p1, p2) => {
-      return `<div class="teacher-dialogue"><strong>🗣️ ${p1}</strong> ${p2.trim()}</div>`;
-    });
-
-    // Format bullet points cleanly
-    formattedBody = formattedBody.replace(/•/g, '<br>•');
+    // Format content cleanly into structured HTML
+    const formattedHtml = formatActivityContent(act.content);
 
     card.innerHTML = `
       <div class="step-card-header">
@@ -264,7 +256,7 @@ function loadLesson(week, day) {
         ${stepAudioBtn}
         ${act.duration_mins ? `<span class="step-duration">⏱️ ${act.duration_mins} mins</span>` : ''}
       </div>
-      <div class="step-body">${formattedBody}</div>
+      <div class="step-body">${formattedHtml}</div>
     `;
 
     elements.stepsList.appendChild(card);
@@ -279,6 +271,61 @@ function loadLesson(week, day) {
 
   // Reset timer to 30:00 on new lesson load
   resetTimer();
+}
+
+// Clean Structured Formatter for Activity Content
+function formatActivityContent(content) {
+  if (!content) return '';
+
+  const lines = content.split('\n');
+  let html = '';
+  let inBulletList = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    let rawLine = lines[i].trim();
+    if (!rawLine) continue;
+
+    // Check if line is a bullet point: starts with • or -
+    if (rawLine.startsWith('•') || rawLine.startsWith('-')) {
+      if (!inBulletList) {
+        html += '<ul class="step-bullet-list">';
+        inBulletList = true;
+      }
+      let bulletText = rawLine.replace(/^[•\-]\s*/, '').trim();
+
+      // Format teacher dialogue inside bullet: "Say: ..." or "Waxandoor: ..."
+      if (/^(Say|Waxandoor)\s*:\s*/i.test(bulletText)) {
+        let sayText = bulletText.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
+        html += `<li class="bullet-item"><div class="teacher-dialogue"><strong>🗣️ Say (Wolof):</strong> <em>${escapeHtml(sayText)}</em></div></li>`;
+      } else {
+        html += `<li class="bullet-item">${escapeHtml(bulletText)}</li>`;
+      }
+    } else {
+      // Non-bullet line
+      if (inBulletList) {
+        html += '</ul>';
+        inBulletList = false;
+      }
+
+      // Check if it's a sub-heading (short line without punctuation, e.g. "Greeting", "Theme Discussion")
+      if (rawLine.length < 50 && !rawLine.endsWith('.') && !rawLine.includes(':') && i < lines.length - 1 && lines[i+1].trim().startsWith('•')) {
+        html += `<h4 class="step-subheading">📌 ${escapeHtml(rawLine)}</h4>`;
+      } else if (/^(Say|Waxandoor)\s*:\s*/i.test(rawLine)) {
+        let sayText = rawLine.replace(/^(Say|Waxandoor)\s*:\s*/i, '');
+        html += `<div class="teacher-dialogue"><strong>🗣️ Say:</strong> <em>${escapeHtml(sayText)}</em></div>`;
+      } else if (/^(Words|Baat yi)\s*:\s*/i.test(rawLine)) {
+        html += `<div class="words-highlight-box"><strong>🔤 ${escapeHtml(rawLine)}</strong></div>`;
+      } else {
+        html += `<p class="step-paragraph">${escapeHtml(rawLine)}</p>`;
+      }
+    }
+  }
+
+  if (inBulletList) {
+    html += '</ul>';
+  }
+
+  return html;
 }
 
 // Setup Audio Tracks and Selector Chips

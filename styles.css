@@ -833,18 +833,74 @@ body {
   font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.6;
-  white-space: pre-wrap;
+}
+
+.step-bullet-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bullet-item {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.bullet-item::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: var(--accent-cyan);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.step-subheading {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 12px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-paragraph {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* Teacher Script Formatting inside Step Body */
-.step-body .teacher-dialogue {
-  background: rgba(245, 158, 11, 0.08);
+.teacher-dialogue {
+  background: rgba(245, 158, 11, 0.1);
   border-left: 3px solid var(--accent-gold);
   padding: 8px 12px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin: 8px 0;
+  margin: 6px 0;
   color: #fef08a;
-  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.teacher-dialogue strong {
+  color: var(--accent-gold);
+}
+
+.words-highlight-box {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--accent-cyan);
+  margin: 6px 0;
+  font-size: 13px;
 }
 
 /* ==========================================================================
