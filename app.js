@@ -118,6 +118,40 @@ const AUDIO_TRACK_CATALOG = {
   ]
 };
 
+// Language dataset map
+const LANGUAGE_FILES = {
+  wolof: './data/wolof_ecd2_term1.json',
+  seereer: './data/seereer_ecd2_term1.json',
+  mandinka: './data/mandinka_ecd2_term1.json',
+  pulaar: './data/pulaar_ecd2_term1.json',
+  jola: './data/jola_ecd2_term1.json',
+  soninke: './data/soninke_ecd2_term1.json',
+  manjaku: './data/manjaku_ecd2_term1.json',
+  english: './data/english_ecd2_term1.json'
+};
+
+// Switch Language Dynamically
+async function switchLanguage(langKey) {
+  state.currentLanguage = langKey;
+  const filePath = LANGUAGE_FILES[langKey] || LANGUAGE_FILES.wolof;
+
+  try {
+    let res = await fetch(filePath);
+    if (!res.ok) {
+      res = await fetch('.' + filePath);
+    }
+    if (!res.ok) throw new Error('Failed to load ' + langKey);
+    state.curriculumData = await res.json();
+    state.currentWeek = 1;
+    state.currentDay = 1;
+    initApp();
+    showToast(`🗣️ Switched to ${state.curriculumData.metadata.language} ECD 2`);
+  } catch (err) {
+    console.error('Failed to switch language', err);
+    showToast('⚠️ Could not load selected language.');
+  }
+}
+
 // Load Curriculum Data
 async function loadCurriculum() {
   try {
@@ -132,8 +166,6 @@ async function loadCurriculum() {
     showToast('Could not load lesson data. Check your connection and reload.', 6000);
     return;
   }
-  // Deliberately outside the try: a render bug must surface, not be
-  // misreported as a network failure and silently retried.
   initApp();
 }
 
@@ -726,6 +758,14 @@ function generateCoachResponse(query, lesson) {
 
 // Setup Event Listeners
 function setupEventListeners() {
+  // Language Selector
+  const langSelect = document.getElementById('language-select');
+  if (langSelect) {
+    langSelect.addEventListener('change', (e) => {
+      switchLanguage(e.target.value);
+    });
+  }
+
   // Day Tab Buttons
   elements.dayButtons.forEach(btn => {
     btn.addEventListener('click', () => {
