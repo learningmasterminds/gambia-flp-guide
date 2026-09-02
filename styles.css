@@ -163,6 +163,10 @@ body {
   min-width: 140px;
 }
 
+.grade-dropdown-wrapper {
+  min-width: 130px;
+}
+
 .custom-select {
   width: 100%;
   background: var(--bg-surface);

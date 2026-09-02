@@ -15,6 +15,8 @@ if (window.Telegram && window.Telegram.WebApp) {
 
 // State Management
 const state = {
+  currentGrade: 'ecd3',
+  currentLanguage: 'wolof',
   currentWeek: 1,
   currentDay: 1,
   curriculumData: null,
@@ -25,8 +27,7 @@ const state = {
   isPlayingAudio: false,
   audioElement: null,
   activeTracks: [],
-  selectedTrackIndex: 0,
-  currentLanguage: 'wolof'
+  selectedTrackIndex: 0
 };
 
 // DOM Element References
@@ -85,57 +86,88 @@ function showToast(msg, duration = 3000) {
   }, duration);
 }
 
-// Language registry. `audioDir` stays null until real recordings exist for a
-// language -- we never fall back to another language's media.
-const LANGUAGES = {
-  wolof:    { label: 'Wolof',    file: './data/wolof_ecd2_term1.json',    audioDir: 'wolof' },
-  seereer:  { label: 'Seereer',  file: './data/seereer_ecd2_term1.json',  audioDir: null },
-  mandinka: { label: 'Mandinka', file: './data/mandinka_ecd2_term1.json', audioDir: null },
-  pulaar:   { label: 'Pulaar',   file: './data/pulaar_ecd2_term1.json',   audioDir: null },
-  jola:     { label: 'Jola',     file: './data/jola_ecd2_term1.json',     audioDir: null },
-  soninke:  { label: 'Soninke',  file: './data/soninke_ecd2_term1.json',  audioDir: null },
-  manjaku:  { label: 'Manjaku',  file: './data/manjaku_ecd2_term1.json',  audioDir: null },
-  english:  { label: 'English',  file: './data/english_ecd2_term1.json',  audioDir: null }
+// Grade registry
+const GRADES = {
+  ecd2: { label: 'ECD 2 · Term 1', code: 'ECD 2' },
+  ecd3: { label: 'ECD 3 · Term 1', code: 'ECD 3' }
 };
 
+const DEFAULT_GRADE = 'ecd3';
 const DEFAULT_LANGUAGE = 'wolof';
 
-// Audio tracks by language, then by week. Only entries backed by files that
-// actually exist belong here: a language with no studio recordings yet gets an
-// explicit empty state rather than another language's audio.
-const AUDIO_TRACK_CATALOG = {
-  wolof: {
-    1: [
-      {
-        id: 'w01_song',
-        type: 'song',
-        title: '🎵 Song: Yaay Bóoy fan ngaa dem yow',
-        subtitle: 'Traditional rhythm chant for oral routine',
-        sources: ['./audio/wolof/wol_ecd2_w01_song.m4a', './audio/wolof/wol_ecd2_w01_song.mp4']
-      },
-      {
-        id: 'w01_letter_a',
-        type: 'letter',
-        title: '🔤 Letter Sound: /a/ (almoor)',
-        subtitle: 'Phonemic pronunciation & teacher model',
-        sources: ['./audio/wolof/wol_ecd2_w01_letter_a.ogg', './audio/wolof/wol_ecd2_w01_letter_a.mp3.ogg']
-      },
-      {
-        id: 'w01_vocab',
-        type: 'vocab',
-        title: '🗣️ Vocabulary: golo · banaana',
-        subtitle: 'Target key vocabulary pronunciation',
-        sources: ['./audio/wolof/wol_ecd2_w01_vocab.ogg', './audio/wolof/wol_ecd2_w01_vocab.mp3.ogg']
-      },
-      {
-        id: 'w01_story',
-        type: 'story',
-        title: '📖 Story: Golo gi ak banaana bi',
-        subtitle: 'Full expressive story read-aloud',
-        sources: ['./audio/wolof/wol_ecd2_w01_story.ogg', './audio/wolof/wol_ecd2_w01_story.mp3.ogg']
-      }
-    ]
+// Language registry
+const LANGUAGES = {
+  wolof:    { label: 'Wolof' },
+  seereer:  { label: 'Seereer' },
+  mandinka: { label: 'Mandinka' },
+  pulaar:   { label: 'Pulaar' },
+  jola:     { label: 'Jola' },
+  soninke:  { label: 'Soninke' },
+  manjaku:  { label: 'Manjaku' },
+  english:  { label: 'English' }
+};
+
+// Curriculum data files by grade and language
+const CURRICULUM_FILES = {
+  ecd2: {
+    wolof:    { label: 'Wolof',    file: './data/wolof_ecd2_term1.json',    audioDir: 'wolof' },
+    seereer:  { label: 'Seereer',  file: './data/seereer_ecd2_term1.json',  audioDir: null },
+    mandinka: { label: 'Mandinka', file: './data/mandinka_ecd2_term1.json', audioDir: null },
+    pulaar:   { label: 'Pulaar',   file: './data/pulaar_ecd2_term1.json',   audioDir: null },
+    jola:     { label: 'Jola',     file: './data/jola_ecd2_term1.json',     audioDir: null },
+    soninke:  { label: 'Soninke',  file: './data/soninke_ecd2_term1.json',  audioDir: null },
+    manjaku:  { label: 'Manjaku',  file: './data/manjaku_ecd2_term1.json',  audioDir: null },
+    english:  { label: 'English',  file: './data/english_ecd2_term1.json',  audioDir: null }
+  },
+  ecd3: {
+    wolof:    { label: 'Wolof',    file: './data/wolof_ecd3_term1.json',    audioDir: null },
+    seereer:  { label: 'Seereer',  file: './data/seereer_ecd3_term1.json',  audioDir: null },
+    mandinka: { label: 'Mandinka', file: './data/mandinka_ecd3_term1.json', audioDir: null },
+    pulaar:   { label: 'Pulaar',   file: './data/pulaar_ecd3_term1.json',   audioDir: null },
+    jola:     { label: 'Jola',     file: './data/jola_ecd3_term1.json',     audioDir: null },
+    soninke:  { label: 'Soninke',  file: './data/soninke_ecd3_term1.json',  audioDir: null },
+    manjaku:  { label: 'Manjaku',  file: './data/manjaku_ecd3_term1.json',  audioDir: null },
+    english:  { label: 'English',  file: './data/english_ecd3_term1.json',  audioDir: null }
   }
+};
+
+// Audio tracks catalog scoped by grade -> language -> week
+const AUDIO_TRACK_CATALOG = {
+  ecd2: {
+    wolof: {
+      1: [
+        {
+          id: 'w01_song',
+          type: 'song',
+          title: '🎵 Song: Yaay Bóoy fan ngaa dem yow',
+          subtitle: 'Traditional rhythm chant for oral routine',
+          sources: ['./audio/wolof/wol_ecd2_w01_song.m4a', './audio/wolof/wol_ecd2_w01_song.mp4']
+        },
+        {
+          id: 'w01_letter_a',
+          type: 'letter',
+          title: '🔤 Letter Sound: /a/ (almoor)',
+          subtitle: 'Phonemic pronunciation & teacher model',
+          sources: ['./audio/wolof/wol_ecd2_w01_letter_a.ogg', './audio/wolof/wol_ecd2_w01_letter_a.mp3.ogg']
+        },
+        {
+          id: 'w01_vocab',
+          type: 'vocab',
+          title: '🗣️ Vocabulary: golo · banaana',
+          subtitle: 'Target key vocabulary pronunciation',
+          sources: ['./audio/wolof/wol_ecd2_w01_vocab.ogg', './audio/wolof/wol_ecd2_w01_vocab.mp3.ogg']
+        },
+        {
+          id: 'w01_story',
+          type: 'story',
+          title: '📖 Story: Golo gi ak banaana bi',
+          subtitle: 'Full expressive story read-aloud',
+          sources: ['./audio/wolof/wol_ecd2_w01_story.ogg', './audio/wolof/wol_ecd2_w01_story.mp3.ogg']
+        }
+      ]
+    }
+  },
+  ecd3: {}
 };
 
 // Current language label, for UI strings that must name the language.
@@ -146,23 +178,54 @@ function currentLanguageLabel() {
   return entry ? entry.label : '';
 }
 
-// Tracks for the active language and week, or [] when none are recorded.
+// Current grade label
+function currentGradeLabel() {
+  const meta = state.curriculumData && state.curriculumData.metadata;
+  if (meta && meta.grade) return meta.grade;
+  const entry = GRADES[state.currentGrade];
+  return entry ? entry.code : 'ECD 3';
+}
+
+// Tracks for the active grade, language and week, or [] when none are recorded.
 function tracksFor(langKey, week) {
-  const byLang = AUDIO_TRACK_CATALOG[langKey];
+  const gradeKey = state.currentGrade || 'ecd3';
+  const byGrade = AUDIO_TRACK_CATALOG[gradeKey];
+  if (!byGrade) return [];
+  const byLang = byGrade[langKey];
   if (!byLang) return [];
   return byLang[week] || [];
 }
 
+// Switch Grade Dynamically
+async function switchGrade(gradeKey) {
+  if (!GRADES[gradeKey]) {
+    console.error('Unknown grade:', gradeKey);
+    return;
+  }
+  await switchCurriculum(state.currentLanguage, gradeKey);
+}
+
 // Switch Language Dynamically
 async function switchLanguage(langKey) {
-  const entry = LANGUAGES[langKey];
-  if (!entry) {
+  if (!LANGUAGES[langKey]) {
     console.error('Unknown language:', langKey);
     showToast('⚠️ Unknown language selected.');
     return;
   }
+  await switchCurriculum(langKey, state.currentGrade);
+}
 
-  // Never leave the previous language's audio playing across a switch.
+// Switch Curriculum (Language & Grade)
+async function switchCurriculum(langKey, gradeKey) {
+  const gradeTable = CURRICULUM_FILES[gradeKey];
+  const entry = gradeTable ? gradeTable[langKey] : null;
+  if (!entry) {
+    console.error('Unknown dataset:', gradeKey, langKey);
+    showToast('⚠️ Dataset not found.');
+    return;
+  }
+
+  // Stop audio playback
   stopAudioPlayback();
   state.activeTracks = [];
   state.selectedTrackIndex = 0;
@@ -173,52 +236,60 @@ async function switchLanguage(langKey) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     data = await res.json();
   } catch (err) {
-    // Keep showing the language already loaded rather than silently
-    // substituting a different language's curriculum.
-    console.error('Failed to load language', langKey, err);
-    showToast(`⚠️ Could not load ${entry.label}. Still showing ${currentLanguageLabel()}.`);
-    syncLanguageSelect();
+    console.error('Failed to load dataset', gradeKey, langKey, err);
+    showToast(`⚠️ Could not load ${entry.label} ${GRADES[gradeKey].code}. Still showing ${currentLanguageLabel()} ${currentGradeLabel()}.`);
+    syncSelects();
     return;
   }
 
+  state.currentGrade = gradeKey;
   state.currentLanguage = langKey;
   state.curriculumData = data;
   state.currentWeek = 1;
   state.currentDay = 1;
   applyLanguageChrome();
-  initApp();
-  showToast(`🗣️ Switched to ${currentLanguageLabel()} ECD 2`);
+  renderWeekPills();
+  elements.dayButtons.forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.day, 10) === 1);
+  });
+  loadLesson(1, 1);
+  showToast(`🗣️ Switched to ${currentLanguageLabel()} ${currentGradeLabel()}`);
 }
 
-// Keep the <select> in step with state (e.g. after a failed switch).
-function syncLanguageSelect() {
-  const sel = document.getElementById('language-select');
-  if (sel && sel.value !== state.currentLanguage) sel.value = state.currentLanguage;
+// Keep select inputs in step with state
+function syncSelects() {
+  const lSel = document.getElementById('language-select');
+  if (lSel && lSel.value !== state.currentLanguage) lSel.value = state.currentLanguage;
+  const gSel = document.getElementById('grade-select');
+  if (gSel && gSel.value !== state.currentGrade) gSel.value = state.currentGrade;
 }
 
-// Language-specific chrome that used to be hardcoded to Wolof.
+// Language and grade specific chrome
 function applyLanguageChrome() {
   const label = currentLanguageLabel();
-  document.title = `Gambia FLP - Interactive Teacher Guide (${label} ECD 2)`;
+  const gLabel = currentGradeLabel();
+  document.title = `Gambia FLP - Interactive Teacher Guide (${label} ${gLabel})`;
   const sub = document.getElementById('audio-sub');
   if (sub) sub.textContent = `Select a track to listen in ${label}`;
-  syncLanguageSelect();
+  syncSelects();
 }
 
 // Load Curriculum Data
 async function loadCurriculum() {
-  // The Telegram bot deep-links as ?lang=<key>&week=<n>&day=<n>; honour it so a
-  // teacher who chose Mandinka in the bot does not land on Wolof here.
   const params = new URLSearchParams(location.search);
-  const wanted = (params.get('lang') || '').toLowerCase();
-  if (LANGUAGES[wanted]) state.currentLanguage = wanted;
+  const wantedLang = (params.get('lang') || '').toLowerCase();
+  if (LANGUAGES[wantedLang]) state.currentLanguage = wantedLang;
+
+  const wantedGrade = (params.get('grade') || '').toLowerCase();
+  if (GRADES[wantedGrade]) state.currentGrade = wantedGrade;
 
   const wk = parseInt(params.get('week'), 10);
   const dy = parseInt(params.get('day'), 10);
   if (wk >= 1 && wk <= 10) state.currentWeek = wk;
   if (dy >= 1 && dy <= 5) state.currentDay = dy;
 
-  const entry = LANGUAGES[state.currentLanguage] || LANGUAGES[DEFAULT_LANGUAGE];
+  const gradeTable = CURRICULUM_FILES[state.currentGrade] || CURRICULUM_FILES[DEFAULT_GRADE];
+  const entry = gradeTable[state.currentLanguage] || gradeTable[DEFAULT_LANGUAGE];
   try {
     const res = await fetch(entry.file);
     if (!res.ok) throw new Error('Failed to load JSON: HTTP ' + res.status);
@@ -232,10 +303,15 @@ async function loadCurriculum() {
   initApp();
 }
 
+let listenersInitialized = false;
+
 // Initialize Application UI
 function initApp() {
   renderWeekPills();
-  setupEventListeners();
+  if (!listenersInitialized) {
+    setupEventListeners();
+    listenersInitialized = true;
+  }
   loadLesson(state.currentWeek, state.currentDay);
 }
 
@@ -850,6 +926,14 @@ function generateCoachResponse(query, lesson) {
 
 // Setup Event Listeners
 function setupEventListeners() {
+  // Grade Selector
+  const gradeSelect = document.getElementById('grade-select');
+  if (gradeSelect) {
+    gradeSelect.addEventListener('change', (e) => {
+      switchGrade(e.target.value);
+    });
+  }
+
   // Language Selector
   const langSelect = document.getElementById('language-select');
   if (langSelect) {
@@ -935,6 +1019,7 @@ function setupEventListeners() {
     elements.coachModal.classList.add('hidden');
   });
 
+  // Coach Send Button
   elements.coachSendBtn.addEventListener('click', () => {
     handleCoachQuery(elements.coachInput.value);
   });
@@ -952,8 +1037,8 @@ function setupEventListeners() {
   // Share to Telegram / Clipboard
   elements.shareBtn.addEventListener('click', () => {
     const l = state.activeLesson;
-    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ECD 2 (Term 1)*\n\n📌 *Lesson ${l.lesson_number} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${l.vocabulary.join(', ')}\n⏱️ *Duration*: 30 Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/GambiaFLPBot`;
-    
+    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: 30 Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/GambiaFLPBot`;
+
     if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.sendData) {
       window.Telegram.WebApp.sendData(shareText);
     } else if (navigator.clipboard) {
