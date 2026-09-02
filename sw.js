@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gambia-flp-wolof-v5';
+const CACHE_NAME = 'gambia-flp-v6';
 
 // Only the app shell and the primary audio source per track. The duplicate
 // fallback encodings are fetched on demand rather than bloating install.

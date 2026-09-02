@@ -1197,3 +1197,33 @@ body {
     page-break-inside: avoid;
   }
 }
+
+/* Audio companion when the active language has no studio recordings yet.
+   Muted rather than hidden, so teachers can see the feature exists and is
+   simply not ready for their language. */
+.audio-companion-bar.audio-unavailable {
+  opacity: 0.72;
+}
+
+.audio-companion-bar.audio-unavailable .audio-icon {
+  filter: grayscale(1);
+}
+
+.play-audio-btn:disabled,
+.play-audio-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.play-audio-btn:disabled:hover,
+.play-audio-btn[aria-disabled="true"]:hover {
+  transform: none;
+}
+
+/* Fields the extraction did not capture from the source Teacher Guide.
+   Shown muted and italic so filler is never mistaken for curriculum. */
+.not-extracted {
+  opacity: 0.6;
+  font-style: italic;
+}

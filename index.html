@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Gambia FLP - Interactive Teacher Guide (Wolof ECD 2)</title>
-  <meta name="description" content="Digital interactive Teacher Guide for Early Childhood Development (ECD 2) in Wolof - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
+  <title>Gambia FLP - Interactive Teacher Guide (ECD 2)</title>
+  <meta name="description" content="Digital interactive Teacher Guide for Early Childhood Development (ECD 2) in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
   <meta name="theme-color" content="#0d3b4c">
   
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
@@ -16,8 +16,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=2.2">
-  <link rel="manifest" href="manifest.json?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=2.3">
+  <link rel="manifest" href="manifest.json?v=2.3">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -162,7 +162,7 @@
             <span class="audio-icon">🎙️</span>
             <div class="audio-meta">
               <strong id="audio-title">Authentic Audio Companion</strong>
-              <span id="audio-sub">Select track to listen in Gambian Wolof</span>
+              <span id="audio-sub">Select a track to listen</span>
             </div>
           </div>
           <div class="audio-controls">
@@ -267,7 +267,7 @@
 
       <div class="coach-messages" id="coach-messages">
         <div class="coach-msg msg-ai">
-          <p><strong>Nanga def, Teacher!</strong> I am your Gambia FLP pedagogical assistant. Ask me anything about today's lesson, Wolof pronunciation, classroom management, or remedial tips for struggling learners.</p>
+          <p><strong>Welcome, Teacher!</strong> I am your Gambia FLP pedagogical assistant. Ask me anything about today's lesson, pronunciation in your language of instruction, classroom management, or remedial tips for struggling learners.</p>
         </div>
       </div>
 
@@ -291,10 +291,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=2.2"></script>
+  <script src="app.js?v=2.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=2.2').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=2.3').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);
