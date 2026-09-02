@@ -17,11 +17,14 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 1,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name the four body parts (head, mouth, eyes, nose) by pointing to them on command.",
+        "Repeat the sentence pattern \"This is my ___\" after the teacher."
+      ],
       "materials": [
         "Flashcards (head",
         "hands",
@@ -46,7 +49,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Hold up the HEAD picture card. Touch your own head clearly.\n• Say: This is my HEAD. Say \"head\".\n• Children: \"Head.\"\n• Say: Touch your head! (Children touch their heads.)\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, \nx 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   1English_TG_ECD2.indd   1 07/07/2026   10:4907/07/2026   10:49\n\n• Hold up the MOUTH flashcard. Point to your mouth.\n• Say: This is my MOUTH. Say: \"Mouth\".\n• Children: \"Mouth.\"\n• Hold up EYES and NOSE cards in the same way.\n• Say: Now repeat after me: \"This is my nose.\" Touch your nose and say it!\n• Children: \"This is my nose!\"\n• Repeat with the other body parts."
+          "content": "• Hold up the HEAD picture card. Touch your own head clearly.\n• Say: This is my HEAD. Say \"head\".\n• Children: \"Head.\"\n• Say: Touch your head! (Children touch their heads.)\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, \nx 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\n\n• Hold up the MOUTH flashcard. Point to your mouth.\n• Say: This is my MOUTH. Say: \"Mouth\".\n• Children: \"Mouth.\"\n• Hold up EYES and NOSE cards in the same way.\n• Say: Now repeat after me: \"This is my nose.\" Touch your nose and say it!\n• Children: \"This is my nose!\"\n• Repeat with the other body parts."
         },
         {
           "step": 4,
@@ -61,7 +64,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tonight, touch your head, mouth, eyes, and nose for someone at home and \nsay: \"This is my ___!\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   2English_TG_ECD2.indd   2 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Tonight, touch your head, mouth, eyes, and nose for someone at home and \nsay: \"This is my ___!\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -77,11 +80,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 2,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Touch their own head, mouth, eyes, and nose when each word is called.",
+        "Listen to the story \"Look at Me!\" and identify the body parts mentioned.",
+        "Answer one factual questions from the story."
+      ],
       "materials": [
         "Flashcards (head",
         "mouth",
@@ -107,7 +114,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four cards: head, mouth, eyes, nose.\n• Say: I will hold up a card and you touch the part and say the word!\n• Hold up HEAD. Children touch head and say \"Head!\"\n• Repeat for mouth, eyes, nose. Then mix the order.\n• Say: Now with the pattern: touch your eyes and say the full sentence.\"\n• Children: \"These are my eyes.\" / \"This is my nose.\"\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, \nx 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   3English_TG_ECD2.indd   3 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Display all four cards: head, mouth, eyes, nose.\n• Say: I will hold up a card and you touch the part and say the word!\n• Hold up HEAD. Children touch head and say \"Head!\"\n• Repeat for mouth, eyes, nose. Then mix the order.\n• Say: Now with the pattern: touch your eyes and say the full sentence.\"\n• Children: \"These are my eyes.\" / \"This is my nose.\"\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, \nx 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -122,7 +129,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLook at Me!\"\nBinta stands in front of the class.\nShe touches her head. \"This is my head,\" she says.\nShe opens her eyes wide. \"These are my eyes.\"\nShe touches her nose. \"This is my nose!\"\nShe touches her mouth. \"This is my mouth.\"\n\"Well done, Binta!\" says her teacher. \"You know your body!\"\nEnglish_TG_ECD2.indd   4English_TG_ECD2.indd   4 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLook at Me!\"\nBinta stands in front of the class.\nShe touches her head. \"This is my head,\" she says.\nShe opens her eyes wide. \"These are my eyes.\"\nShe touches her nose. \"This is my nose!\"\nShe touches her mouth. \"This is my mouth.\"\n\"Well done, Binta!\" says her teacher. \"You know your body!\"\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -138,11 +145,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 3,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Point to their \"head, hands, eyes, nose\" while saying the words.",
+        "Respond to descriptions with the correct body part word.",
+        "Freeze and touch the correct body part during the Song-and-Freeze game."
+      ],
       "materials": [
         "Flashcards (head",
         "hands",
@@ -167,7 +178,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Hold up picture cards and have them flashed while talking about the body part.\n• Say: I will show you a picture of a body part, and you will point to it and say the word.\n• Say: You use these to see. What are they?\n• Children: Eyes!\n• Say: You use this to smell. What is it?\n• Children: Nose!\n• Continue for head and mouth.\n• Pair activity: one child points to a body part, partner says the word.\n• Swap roles after two rounds.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   5English_TG_ECD2.indd   5 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Hold up picture cards and have them flashed while talking about the body part.\n• Say: I will show you a picture of a body part, and you will point to it and say the word.\n• Say: You use these to see. What are they?\n• Children: Eyes!\n• Say: You use this to smell. What is it?\n• Children: Nose!\n• Continue for head and mouth.\n• Pair activity: one child points to a body part, partner says the word.\n• Swap roles after two rounds.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -182,7 +193,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach someone at home the Head, Shoulders, Knees and Toes song. Do the \nactions together!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   6English_TG_ECD2.indd   6 07/07/2026   10:4907/07/2026   10:49\n\n Story Read Aloud Connection",
+      "homework": "Teach someone at home the Head, Shoulders, Knees and Toes song. Do the \nactions together!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\n Story Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -198,11 +209,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 4,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Say the full sentence \"This is my ___\" or \"These are my ___\" for all four body parts; head, eyes, nose, and mouth.",
+        "Fill in the missing body part word during the second reading of \"Look at Me!\""
+      ],
       "materials": [
         "Flashcards (head",
         "mouth",
@@ -228,7 +242,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Flash each card quickly! Children say the word as fast as they can.\n• Say: I point to a body part on my face, and you give me the sentence.\n• Point to an eye. \n• Children: This is my eye.\n• Say: Touch your head and give me the sentence: This is my ___.\n• Call on 4-5 children individually.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   7English_TG_ECD2.indd   7 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Flash each card quickly! Children say the word as fast as they can.\n• Say: I point to a body part on my face, and you give me the sentence.\n• Point to an eye. \n• Children: This is my eye.\n• Say: Touch your head and give me the sentence: This is my ___.\n• Call on 4-5 children individually.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -243,7 +257,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Touch and say your body parts in English to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLook at Me!\"\nBinta stands in front of the class.\nShe touches her head. \"This is my head,\" she says.\nShe opens her eyes wide. \"These are my eyes.\"\nShe touches her nose. \"This is my nose!\"\nShe touches her mouth. \"This is my mouth.\"\n\"Well done, Binta!\" says her teacher. \"You know your body!\"\nEnglish_TG_ECD2.indd   8English_TG_ECD2.indd   8 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Touch and say your body parts in English to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLook at Me!\"\nBinta stands in front of the class.\nShe touches her head. \"This is my head,\" she says.\nShe opens her eyes wide. \"These are my eyes.\"\nShe touches her nose. \"This is my nose!\"\nShe touches her mouth. \"This is my mouth.\"\n\"Well done, Binta!\" says her teacher. \"You know your body!\"\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -259,11 +273,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 5,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify and name four key body parts",
+        "Use sentence patterns to talk about body parts.",
+        "Respond quickly and accurately to oral commands by pointing to or showing the named body parts."
+      ],
       "materials": [
         "Drawing paper",
         "crayons",
@@ -290,7 +308,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all four cards together. Children name them without prompting.\n• Say: Name four body parts, as fast as you can: head, mouth, eyes, and nose. Go!\n• Children: Head! Hands! Eyes! Nose!\"\n• Say: Now use each of the word in the pattern 'This is my ___.', These are my _________.\nReady? \n• Children: This is my head! These are my eyes! This is my nose! This is my mouth!\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   9English_TG_ECD2.indd   9 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Show all four cards together. Children name them without prompting.\n• Say: Name four body parts, as fast as you can: head, mouth, eyes, and nose. Go!\n• Children: Head! Hands! Eyes! Nose!\"\n• Say: Now use each of the word in the pattern 'This is my ___.', These are my _________.\nReady? \n• Children: This is my head! These are my eyes! This is my nose! This is my mouth!\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -305,7 +323,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Sing Head, Shoulders, Knees and Toes for your family as fast as you can!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   10English_TG_ECD2.indd   10 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - My Body (2)",
+      "homework": "Sing Head, Shoulders, Knees and Toes for your family as fast as you can!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - My Body (2)",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -321,11 +339,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 6,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name four new body parts: ears, hands, feet, toes by pointing to them.",
+        "Repeat the pattern \"These are my ___\" for plural parts (feet, toes, ears).",
+        "Stomp feet and wiggle toes in time with the song."
+      ],
       "materials": [
         "Flashcards (ears",
         "hands",
@@ -350,7 +372,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Hold up the hand flashcard. Open your hand clearly.\n• Say: This is my hand. Say: hand.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   11English_TG_ECD2.indd   11 07/07/2026   10:4907/07/2026   10:49\n\n• Children: Hand.\n• Hold up EARS. \n• Say: These are my ears. Say: ears.\" \n• Children: Ears. Stomp your feet.\n• Say: These are my feet. Say: feet.\n• Children: Feet.\n• Wiggle your toes.\n• Say: These are my toes. Say: toes.\n• Children: Toes.\n• Practice the pattern with children: These are my ears, This is my hand, These are my feet, \nThese are my toes."
+          "content": "• Hold up the hand flashcard. Open your hand clearly.\n• Say: This is my hand. Say: hand.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\n\n• Children: Hand.\n• Hold up EARS. \n• Say: These are my ears. Say: ears.\" \n• Children: Ears. Stomp your feet.\n• Say: These are my feet. Say: feet.\n• Children: Feet.\n• Wiggle your toes.\n• Say: These are my toes. Say: toes.\n• Children: Toes.\n• Practice the pattern with children: These are my ears, This is my hand, These are my feet, \nThese are my toes."
         },
         {
           "step": 4,
@@ -365,7 +387,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Point to your mouth, ears, feet, and toes for someone at home. Say: \"These \nare my ___!\" \"This is my_______\"!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   12English_TG_ECD2.indd   12 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Point to your mouth, ears, feet, and toes for someone at home. Say: \"These \nare my ___!\" \"This is my_______\"!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -381,11 +403,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 7,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Show the correct body part (ears, hand, feet, toes) when the teacher holds up a flashcard.",
+        "Listen to the story \"Getting Ready!\" and identify Musa's actions.",
+        "Answer comprehension questions."
+      ],
       "materials": [
         "Flashcards (ears",
         "hand",
@@ -411,7 +437,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four cards: ears, hand, feet, toes.\n• Say: I hold a card, you show the body part and say the word!\n• Hold hand. Children raised a hand and say \"hand!\"\n• Repeat for ears, feet, toes.\n• Say: Now use the pattern for each one: \"These are my ____. \" \"This is my  ____ \".\n• Call on 4-5 children to say full sentences.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   13English_TG_ECD2.indd   13 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Display all four cards: ears, hand, feet, toes.\n• Say: I hold a card, you show the body part and say the word!\n• Hold hand. Children raised a hand and say \"hand!\"\n• Repeat for ears, feet, toes.\n• Say: Now use the pattern for each one: \"These are my ____. \" \"This is my  ____ \".\n• Call on 4-5 children to say full sentences.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -426,7 +452,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nGetting ready!\"\nMusa is getting ready for school.\nHe opens his mouth to say, \"Good morning, Mama!\"\nHe uses his ears to listen to his mother.\nHe puts on his shoes over his feet.\nHe wiggles his toes. \"Ready!\" shouts Musa.\n\"Have a good day!\" says Mama. Musa smiles and runs to school.\nEnglish_TG_ECD2.indd   14English_TG_ECD2.indd   14 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nGetting ready!\"\nMusa is getting ready for school.\nHe opens his mouth to say, \"Good morning, Mama!\"\nHe uses his ears to listen to his mother.\nHe puts on his shoes over his feet.\nHe wiggles his toes. \"Ready!\" shouts Musa.\n\"Have a good day!\" says Mama. Musa smiles and runs to school.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -442,11 +468,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 8,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Point to their \"hand, ears, feet, toes\" while saying the words.",
+        "Respond to a partner's command in a relay race.",
+        "Say \"These are my ___\" while showing the body part."
+      ],
       "materials": [
         "Flashcards (hand",
         "ears",
@@ -471,7 +501,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four cards: hand, ears, feet, toes.\n• Say: I will hold up a card and you touch the part and say the word!\n• Hold up EAR. Children touch ear and say \"Ear!\"\n• Repeat for hand, feet, and toes. Then mix the order.\n• Say: Now with the pattern: touch your ear and say the full sentence.\n• Children: This is my ear.\n• Continue the pattern with the remaining body parts.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   15English_TG_ECD2.indd   15 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Display all four cards: hand, ears, feet, toes.\n• Say: I will hold up a card and you touch the part and say the word!\n• Hold up EAR. Children touch ear and say \"Ear!\"\n• Repeat for hand, feet, and toes. Then mix the order.\n• Say: Now with the pattern: touch your ear and say the full sentence.\n• Children: This is my ear.\n• Continue the pattern with the remaining body parts.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -486,7 +516,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Stomp your feet and wiggle your toes to a beat at home. Teach someone the \nsong.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   16English_TG_ECD2.indd   16 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Stomp your feet and wiggle your toes to a beat at home. Teach someone the \nsong.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -502,11 +532,15 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 9,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Use the sentence pattern (\"This is my mouth\") or (\"These are my ears\") correctly.",
+        "Fill in the missing words (mouth, ears, feet, toes) during the story read-aloud.",
+        "Retell the story \"Getting Ready!\" to a partner using two vocabulary words."
+      ],
       "materials": [
         "Flashcards (mouth",
         "ears",
@@ -532,7 +566,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Flash each card quickly! Children say the word as fast as they can.\n• Say: I point to a body part, and you give me the sentence.\n• Point to a hand. \n• Children: This is my hand.\n• Say: Touch your toes and give me the sentence\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   17English_TG_ECD2.indd   17 07/07/2026   10:4907/07/2026   10:49\n\n• Children: These are my toes.\n• Call on 4-5 children individually."
+          "content": "• Flash each card quickly! Children say the word as fast as they can.\n• Say: I point to a body part, and you give me the sentence.\n• Point to a hand. \n• Children: This is my hand.\n• Say: Touch your toes and give me the sentence\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\n\n• Children: These are my toes.\n• Call on 4-5 children individually."
         },
         {
           "step": 4,
@@ -547,7 +581,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Touch and say your body parts in English to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nGetting ready!\"\nMusa is getting ready for school.\nHe opens his mouth to say, \"Good morning, Mama!\"\nHe uses his ears to listen to his mother.\nHe puts on his shoes over his feet.\nHe wiggles his toes. \"Ready!\" shouts Musa.\n\"Have a good day!\" says Mama. Musa smiles and runs to school.\nEnglish_TG_ECD2.indd   18English_TG_ECD2.indd   18 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Touch and say your body parts in English to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nGetting ready!\"\nMusa is getting ready for school.\nHe opens his mouth to say, \"Good morning, Mama!\"\nHe uses his ears to listen to his mother.\nHe puts on his shoes over his feet.\nHe wiggles his toes. \"Ready!\" shouts Musa.\n\"Have a good day!\" says Mama. Musa smiles and runs to school.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -563,11 +597,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 10,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Recall and name all eight body parts from Weeks 1 and 2.",
+        "Combine patterns (\"This is my head\" / \"These are my feet\") correctly.",
+        "Perform the \"Body Champion Challenge\" by showing two body parts on command."
+      ],
       "materials": [
         "All flashcards from Week 1 & 2",
         "body outline chart",
@@ -590,7 +628,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Hold up all eight cards for Week 1 and Week 2.\n• Say: We have learned EIGHT body parts in two weeks! Let us name them all!\n• Flash cards in random order (children name them.)\n• Say: Choose your favourite body part and make a sentence!\n• Call on 6-8 children to share. \n• Children: Share work and practice naming body parts one after the other.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!\nEnglish_TG_ECD2.indd   19English_TG_ECD2.indd   19 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Hold up all eight cards for Week 1 and Week 2.\n• Say: We have learned EIGHT body parts in two weeks! Let us name them all!\n• Flash cards in random order (children name them.)\n• Say: Choose your favourite body part and make a sentence!\n• Call on 6-8 children to share. \n• Children: Share work and practice naming body parts one after the other.\nSong: Head, Shoulders, Knees and Toes\nHead, shoulders, knees and toes, knees and toes, x 2\nAnd eyes and ears and mouth and nose,\nHead, shoulders, knees and toes, knees and toes!"
         },
         {
           "step": 4,
@@ -605,7 +643,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Show your family all eight body parts from Week 1 and Week 2!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   20English_TG_ECD2.indd   20 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - My Feelings",
+      "homework": "Show your family all eight body parts from Week 1 and Week 2!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - My Feelings",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -621,11 +659,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 11,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Imitate four facial expressions: happy, sad, smile, cry.",
+        "Say the feeling word while making the corresponding face.",
+        "Use the pattern \"I am ___\" for happy and sad"
+      ],
       "materials": [
         "Emotion flashcards (happy",
         "sad",
@@ -650,7 +692,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Hold up HAPPY picture card. Show a big happy face.\n• Say: I am HAPPY! Say: happy. \nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\nEnglish_TG_ECD2.indd   21English_TG_ECD2.indd   21 07/07/2026   10:4907/07/2026   10:49\n\n• Children: Happy!\n• Hold up SAD. Show a sad face.\n• Say: I am SAD. Say: sad.\n• Children: Sad.\n• Hold up SMILE. Show a big smile.\n• Say: I SMILE when I am happy. Say: smile.\n• Children: Smile!\n• Hold up CRY . Mime crying.\n• Say: Sometimes we CRY when we are sad. Say: cry.\n• Children: Cry.\n• Say: Pattern: 'I am ___.' I am - HAPPY! Your turn!\n• Children: I am happy! / I am sad!"
+          "content": "• Hold up HAPPY picture card. Show a big happy face.\n• Say: I am HAPPY! Say: happy. \nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\n\n• Children: Happy!\n• Hold up SAD. Show a sad face.\n• Say: I am SAD. Say: sad.\n• Children: Sad.\n• Hold up SMILE. Show a big smile.\n• Say: I SMILE when I am happy. Say: smile.\n• Children: Smile!\n• Hold up CRY . Mime crying.\n• Say: Sometimes we CRY when we are sad. Say: cry.\n• Children: Cry.\n• Say: Pattern: 'I am ___.' I am - HAPPY! Your turn!\n• Children: I am happy! / I am sad!"
         },
         {
           "step": 4,
@@ -665,7 +707,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Show someone at home a happy face and a sad face. Say: \"I am happy!\" and \n\"I am sad!\"!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   22English_TG_ECD2.indd   22 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Show someone at home a happy face and a sad face. Say: \"I am happy!\" and \n\"I am sad!\"!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -681,11 +723,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 12,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Match the emotion picture card to the correct word (happy, sad, smile, cry).",
+        "Listen to the Story \"How Do You Feel?\" and identify Amie's emotions.",
+        "Answer \"How did Amie feel when she dropped her pencil?\" (Sad)."
+      ],
       "materials": [
         "Emotion flashcards",
         "story \"How Do You Feel?\"",
@@ -708,7 +754,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four picture cards.\n• Say: I point to a picture , you say the feeling word!\n• Point to a happy face. \n• Children: Happy!\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\nEnglish_TG_ECD2.indd   23English_TG_ECD2.indd   23 07/07/2026   10:4907/07/2026   10:49\n\n• Point to a sad face.\n• Children: Sad!\n• Mime smiling. Children: Smile!\n• Mime crying. Children: Cry!\n• Say: Now with the pattern - I am ___. Happy!\n• Children: I am happy!\n• Repeat the pattern with \"sad\""
+          "content": "• Display all four picture cards.\n• Say: I point to a picture , you say the feeling word!\n• Point to a happy face. \n• Children: Happy!\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\n\n• Point to a sad face.\n• Children: Sad!\n• Mime smiling. Children: Smile!\n• Mime crying. Children: Cry!\n• Say: Now with the pattern - I am ___. Happy!\n• Children: I am happy!\n• Repeat the pattern with \"sad\""
         },
         {
           "step": 4,
@@ -723,7 +769,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHow Do You Feel?\nAmie wakes up. It is a school day. She is happy!\nShe smiles at her mother and eats her breakfast.\nAt school, Amie drops her pencil. Now she is sad.\nHer friend Fatou picks it up and gives it back. \nShe tells her, \"Do not cry.\"\n\"Thank you, Fatou!\" says Amie. Now Amie smiles again.\n\"I am happy!\" says Amie.\n Being kind makes everyone happy.\nEnglish_TG_ECD2.indd   24English_TG_ECD2.indd   24 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHow Do You Feel?\nAmie wakes up. It is a school day. She is happy!\nShe smiles at her mother and eats her breakfast.\nAt school, Amie drops her pencil. Now she is sad.\nHer friend Fatou picks it up and gives it back. \nShe tells her, \"Do not cry.\"\n\"Thank you, Fatou!\" says Amie. Now Amie smiles again.\n\"I am happy!\" says Amie.\n Being kind makes everyone happy.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -739,11 +785,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 13,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify feelings in context.",
+        "Act out a feeling without words for a partner to guess.",
+        "Demonstrate the feeling \"smile\" and \"cry\" on command."
+      ],
       "materials": [
         "Emotion flashcards",
         "small mirrors"
@@ -765,7 +815,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Say: I will talk about something, and  you say the feeling word.\n• Say: You got a new toy! How do you feel? \n• Children: \"Happy!\"\n• Say: You lost your pencil. How do you feel? \n• Children: \"Sad!\"\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\nEnglish_TG_ECD2.indd   25English_TG_ECD2.indd   25 07/07/2026   10:4907/07/2026   10:49\n\n• Continue with similar scenarios.\n• Pair activity: one child acts out a feeling; partner guesses the word.\n• Swap after two rounds."
+          "content": "• Say: I will talk about something, and  you say the feeling word.\n• Say: You got a new toy! How do you feel? \n• Children: \"Happy!\"\n• Say: You lost your pencil. How do you feel? \n• Children: \"Sad!\"\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\n\n• Continue with similar scenarios.\n• Pair activity: one child acts out a feeling; partner guesses the word.\n• Swap after two rounds."
         },
         {
           "step": 4,
@@ -780,7 +830,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family the \"If You're Happy and You Know It\" song. When can you \nsmile? When do you cry? Share an example.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   26English_TG_ECD2.indd   26 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach your family the \"If You're Happy and You Know It\" song. When can you \nsmile? When do you cry? Share an example.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -796,11 +846,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 14,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Make the sentence \"I am happy\" or \"I am sad\" based on a given scenario.",
+        "Fill in the missing feeling words (happy, sad, smile, cry) during the story revisit."
+      ],
       "materials": [
         "Picture book",
         "emotion flashcards",
@@ -823,7 +876,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Quickly flash the cards, and children say the feeling word instantly.\n• Say: I talk about something, and you give me the full sentence.\n• Say: It is your birthday. Say: I am ___.\n• Children: I am happy!\n• Say: You cannot find your shoe. Say: I am ___. \n• Children: I am sad.\n• Call on 4-5 children with new scenarios.\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\nEnglish_TG_ECD2.indd   27English_TG_ECD2.indd   27 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Quickly flash the cards, and children say the feeling word instantly.\n• Say: I talk about something, and you give me the full sentence.\n• Say: It is your birthday. Say: I am ___.\n• Children: I am happy!\n• Say: You cannot find your shoe. Say: I am ___. \n• Children: I am sad.\n• Call on 4-5 children with new scenarios.\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)"
         },
         {
           "step": 4,
@@ -838,7 +891,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Find something that makes you happy at home. Tell someone: \"I am happy \nbecause ___!\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHow Do You Feel?\nAmie wakes up. It is a school day. She is happy!\nShe smiles at her mother and eats her breakfast.\nAt school, Amie drops her pencil. Now she is sad.\nHer friend Fatou picks it up and gives it back. \nShe tells her, \"Do not cry.\"\n\"Thank you, Fatou!\" says Amie. Now Amie smiles again.\n\"I am happy!\" says Amie.\n Being kind makes everyone happy.\nEnglish_TG_ECD2.indd   28English_TG_ECD2.indd   28 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Find something that makes you happy at home. Tell someone: \"I am happy \nbecause ___!\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHow Do You Feel?\nAmie wakes up. It is a school day. She is happy!\nShe smiles at her mother and eats her breakfast.\nAt school, Amie drops her pencil. Now she is sad.\nHer friend Fatou picks it up and gives it back. \nShe tells her, \"Do not cry.\"\n\"Thank you, Fatou!\" says Amie. Now Amie smiles again.\n\"I am happy!\" says Amie.\n Being kind makes everyone happy.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -854,11 +907,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 15,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify four \"feelings\".",
+        "Use sentence patterns to talk about \"feelings\".",
+        "Respond quickly and accurately to oral commands by showing a named \"feeling\"."
+      ],
       "materials": [
         "Drawing paper",
         "crayons",
@@ -882,7 +939,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all four cards together. Children name them without prompting.\n• Say: Name four feelings as fast as you can: happy, sad, smile, cry. Go!\n• Children: Happy! Sad! Smile! Cry!\n• Say: Now use each of the word in the pattern 'I am ___.\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\nEnglish_TG_ECD2.indd   29English_TG_ECD2.indd   29 07/07/2026   10:4907/07/2026   10:49\n\n• Say: Now use \"happy\" and \"sad\" in the pattern 'I am ______.\n• Call on 4 children, one for each word."
+          "content": "• Show all four cards together. Children name them without prompting.\n• Say: Name four feelings as fast as you can: happy, sad, smile, cry. Go!\n• Children: Happy! Sad! Smile! Cry!\n• Say: Now use each of the word in the pattern 'I am ___.\nSong: If You're Happy and You Know It \nIf you're happy and you know it, clap your hands! (clap clap) x 2\nIf you're happy and you know it, and you really want to show it,\nIf you're happy and you know it, clap your hands! (clap clap)\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo) x 2\nIf you're sad and you know it, and you really want to show it,\nIf you're sad and you know it, say \"boo hoo\"! (boo hoo)\n\n• Say: Now use \"happy\" and \"sad\" in the pattern 'I am ______.\n• Call on 4 children, one for each word."
         },
         {
           "step": 4,
@@ -897,7 +954,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach someone at home all the four feeling words (Sad, happy, cry, and \nsmile). Show the expression for each one.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   30English_TG_ECD2.indd   30 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - My Name",
+      "homework": "Teach someone at home all the four feeling words (Sad, happy, cry, and \nsmile). Show the expression for each one.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - My Name",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -913,11 +970,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 16,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Say \"My name is ___\" to introduce themselves.",
+        "Identify a \"boy\" and a \"girl\" by pointing to pictures.",
+        "Say \"hello\" and \"goodbye\" with appropriate gestures."
+      ],
       "materials": [
         "Name cards",
         "flashcards (boy",
@@ -942,7 +1003,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Hold up your NAME CARD.\n• Say: This is my NAME. My name is [Teacher's name]. Say: name. \n• Children: Name!\n• Hold up the BOY flashcard.\n• Say: This is a BOY . Say: boy. \n• Children: Boy!\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\nEnglish_TG_ECD2.indd   31English_TG_ECD2.indd   31 07/07/2026   10:4907/07/2026   10:49\n\n• Say: Who is a boy in our class? Raise your hand!\n• Hold up the GIRL flashcard. Say: This is a GIRL. Say: girl.\n• Children: \"Girl!\"\n• Say: Now \"Hello\" - we say hello when we meet someone. Say: hello! \n• Children: \"Hello!\"\n• Say: \"Goodbye\" - we say goodbye when we leave. Say: goodbye! \n• Children: Goodbye!\n• Say: \"Pattern: 'My name is ___.' My name is [name] - your turn!\"\n• Call on 4-5 children."
+          "content": "• Hold up your NAME CARD.\n• Say: This is my NAME. My name is [Teacher's name]. Say: name. \n• Children: Name!\n• Hold up the BOY flashcard.\n• Say: This is a BOY . Say: boy. \n• Children: Boy!\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\n\n• Say: Who is a boy in our class? Raise your hand!\n• Hold up the GIRL flashcard. Say: This is a GIRL. Say: girl.\n• Children: \"Girl!\"\n• Say: Now \"Hello\" - we say hello when we meet someone. Say: hello! \n• Children: \"Hello!\"\n• Say: \"Goodbye\" - we say goodbye when we leave. Say: goodbye! \n• Children: Goodbye!\n• Say: \"Pattern: 'My name is ___.' My name is [name] - your turn!\"\n• Call on 4-5 children."
         },
         {
           "step": 4,
@@ -957,7 +1018,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell someone at home: \"My name is ___.\" Ask their name. Say hello and \ngoodbye in English.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   32English_TG_ECD2.indd   32 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Tell someone at home: \"My name is ___.\" Ask their name. Say hello and \ngoodbye in English.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -973,11 +1034,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 17,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Respond to \"What is your name?\" with \"My name is ___.\"",
+        "Listen to the story \"Hello, My Name Is...\" and identify the characters (Lamin, Binta).",
+        "Say \"Hello\" to a friend and \"Goodbye\" to the same friend."
+      ],
       "materials": [
         "Name cards",
         "flashcards (boy",
@@ -1004,7 +1069,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display picture cards: boy, girl.\n• Say: I will hold up a card and you say the word!\n• Say: I will point to a boy, and I want you to say 'He is a boy.'\n• Children: \"He is a boy.\"\n• Say: I will point to a girl, and I want you to say 'She is a girl.'\n• Children: \"She is a girl.\"\n• Call on several children to greet the class: \"Hello! My name is ___.\"\n• All respond: \"Hello, [name]!\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\nEnglish_TG_ECD2.indd   33English_TG_ECD2.indd   33 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Display picture cards: boy, girl.\n• Say: I will hold up a card and you say the word!\n• Say: I will point to a boy, and I want you to say 'He is a boy.'\n• Children: \"He is a boy.\"\n• Say: I will point to a girl, and I want you to say 'She is a girl.'\n• Children: \"She is a girl.\"\n• Call on several children to greet the class: \"Hello! My name is ___.\"\n• All respond: \"Hello, [name]!\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?"
         },
         {
           "step": 4,
@@ -1019,7 +1084,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHello, My Name Is...\nThe children sit in a circle on the first day of school.\n\"Tell me your name,\" says the teacher with a smile.\nA boy stands up. \"My name is Lamin,\" he says.\nA girl stands. \"My name is Binta. Hello, everyone!\"\n\"Hello, Lamin! Hello, Binta!\" says the teacher.\nThe children all wave. \n\"Goodbye!\" they say at the end of the day.\nEnglish_TG_ECD2.indd   34English_TG_ECD2.indd   34 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHello, My Name Is...\nThe children sit in a circle on the first day of school.\n\"Tell me your name,\" says the teacher with a smile.\nA boy stands up. \"My name is Lamin,\" he says.\nA girl stands. \"My name is Binta. Hello, everyone!\"\n\"Hello, Lamin! Hello, Binta!\" says the teacher.\nThe children all wave. \n\"Goodbye!\" they say at the end of the day.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1035,11 +1100,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 18,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Greet three different classmates using \"Hello! My name is ___.\"",
+        "Introduce a partner by saying \"This is [name]. He is a boy / She is a girl.\"",
+        "Recite the call-and-response song \"What Is Your Name?\""
+      ],
       "materials": [
         "Name cards",
         "flashcards (boy",
@@ -1064,7 +1133,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Say: We are going to greet each other! Stand up.\n• Say: Turn to someone else in the class. Say hello and tell them your name.\n• Children: \"Hello! My name is ___.\" Partners respond: \"Hello, [name]!\"\n• After 1 minutes: \"Now say goodbye to your partner.\"\n• Children: \"Goodbye, [name]!\"\n• Call on 4-6 children to introduce themselves to the whole class.\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\nEnglish_TG_ECD2.indd   35English_TG_ECD2.indd   35 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: We are going to greet each other! Stand up.\n• Say: Turn to someone else in the class. Say hello and tell them your name.\n• Children: \"Hello! My name is ___.\" Partners respond: \"Hello, [name]!\"\n• After 1 minutes: \"Now say goodbye to your partner.\"\n• Children: \"Goodbye, [name]!\"\n• Call on 4-6 children to introduce themselves to the whole class.\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?"
         },
         {
           "step": 4,
@@ -1079,7 +1148,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Say hello to three different people at home in English and report back in the \nnext lesson.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   36English_TG_ECD2.indd   36 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Say hello to three different people at home in English and report back in the \nnext lesson.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1095,11 +1164,15 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 19,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing words (name, boy, girl, hello, goodbye) in the story.",
+        "Introduce themselves",
+        "Differentiate when to say \"hello\" vs. \"goodbye\" in role-play."
+      ],
       "materials": [
         "Name cards",
         "flashcards",
@@ -1123,7 +1196,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Say: I will describe certain things and you will give me the word. 'We say this when we \nmeet someone.'\n• Children: \"Hello!\"\n• Say: We say this when we leave. \n• Children: \"Goodbye!\"\n• Say: It tells people who you are.\n• Children: \"Name!\"\n• Individual practice: call on children to say the sentence pattern.\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\nEnglish_TG_ECD2.indd   37English_TG_ECD2.indd   37 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: I will describe certain things and you will give me the word. 'We say this when we \nmeet someone.'\n• Children: \"Hello!\"\n• Say: We say this when we leave. \n• Children: \"Goodbye!\"\n• Say: It tells people who you are.\n• Children: \"Name!\"\n• Individual practice: call on children to say the sentence pattern.\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?"
         },
         {
           "step": 4,
@@ -1138,7 +1211,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Practise: \"Hello, my name is ___. I am a boy / girl.\" Say it to someone at \nhome.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHello, My Name Is...\nThe children sit in a circle on the first day of school.\n\"Tell me your name,\" says the teacher with a smile.\nA boy stands up. \"My name is Lamin,\" he says.\nA girl stands. \"My name is Binta. Hello, everyone!\"\n\"Hello, Lamin! Hello, Binta!\" says the teacher.\nThe children all wave. \n\"Goodbye!\" they say at the end of the day.\nEnglish_TG_ECD2.indd   38English_TG_ECD2.indd   38 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Practise: \"Hello, my name is ___. I am a boy / girl.\" Say it to someone at \nhome.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nHello, My Name Is...\nThe children sit in a circle on the first day of school.\n\"Tell me your name,\" says the teacher with a smile.\nA boy stands up. \"My name is Lamin,\" he says.\nA girl stands. \"My name is Binta. Hello, everyone!\"\n\"Hello, Lamin! Hello, Binta!\" says the teacher.\nThe children all wave. \n\"Goodbye!\" they say at the end of the day.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1154,11 +1227,14 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 20,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "State their name and gender using \"My name is ___. I am a boy/girl.\"",
+        "Participate in the \"Class Name Book\" by introducing themselves to the class."
+      ],
       "materials": [
         "Name cards",
         "flashcards (boy",
@@ -1189,7 +1265,7 @@
           "step": 4,
           "title": "Class Name Book 7 min",
           "duration_mins": null,
-          "content": "• Say: We are going to play a \"Class Name Book\" game! Each of you will introduce yourself \nto the whole class.\n• Say: My name is [Teacher name]. I am a [woman / man]. Hello, everyone!\n• Each child stands: \"My name is ___. I am a boy / girl. Hello!\n• Children: \"Hello, [name]!\"\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?\nEnglish_TG_ECD2.indd   39English_TG_ECD2.indd   39 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: We are going to play a \"Class Name Book\" game! Each of you will introduce yourself \nto the whole class.\n• Say: My name is [Teacher name]. I am a [woman / man]. Hello, everyone!\n• Each child stands: \"My name is ___. I am a boy / girl. Hello!\n• Children: \"Hello, [name]!\"\nWhat Is Your Name?\nHello, What's your name?\nHello, What's your name?\nHello, What's your name?"
         },
         {
           "step": 5,
@@ -1198,7 +1274,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family at home the name song. Ask each person: \"What is your \nname?\".\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   40English_TG_ECD2.indd   40 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - Senses",
+      "homework": "Teach your family at home the name song. Ask each person: \"What is your \nname?\".\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - Senses",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1214,11 +1290,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 21,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name five senses: see, hear, smell, touch, taste.",
+        "Point to the body part associated with each sense (eye=see, ear=hear, etc.).",
+        "Use the pattern \"I can ___\" for at least three senses."
+      ],
       "materials": [
         "Sensory objects (flower",
         "bell",
@@ -1247,7 +1327,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Point to your EYES.\n• Say: I use my EYES to SEE. Say: see. \nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\nEnglish_TG_ECD2.indd   41English_TG_ECD2.indd   41 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"See!\"\n• Cup your EARS. Say: I use my EARS to HEAR. Say: hear. \n• Children: \"Hear!\"\n• Point to your NOSE.\n• Say: I use my NOSE to SMELL. Say: smell. \n• Children: \"Smell!\"\n• Rub your HANDS together.\n• Say: I use my HANDS to TOUCH. Say: touch.\n• Children: \"Touch!\"\n• Point to your MOUTH.\n• Say: I use my MOUTH to TASTE. Say: taste.\n• Children: \"Taste!\"\n• Say: \"Pattern: I can - SEE! Your turn!\" \n• Children: \"I can see!\""
+          "content": "• Point to your EYES.\n• Say: I use my EYES to SEE. Say: see. \nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\n\n• Children: \"See!\"\n• Cup your EARS. Say: I use my EARS to HEAR. Say: hear. \n• Children: \"Hear!\"\n• Point to your NOSE.\n• Say: I use my NOSE to SMELL. Say: smell. \n• Children: \"Smell!\"\n• Rub your HANDS together.\n• Say: I use my HANDS to TOUCH. Say: touch.\n• Children: \"Touch!\"\n• Point to your MOUTH.\n• Say: I use my MOUTH to TASTE. Say: taste.\n• Children: \"Taste!\"\n• Say: \"Pattern: I can - SEE! Your turn!\" \n• Children: \"I can see!\""
         },
         {
           "step": 4,
@@ -1262,7 +1342,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Use your senses at home. Tell someone: \"I can see ___. I can hear ___.\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   42English_TG_ECD2.indd   42 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Use your senses at home. Tell someone: \"I can see ___. I can hear ___.\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1278,11 +1358,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 22,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Match the sense verb (see, hear) to the correct body part.",
+        "Listen to the story \"Abu's Walk\" and identify two things Abu senses.",
+        "Answer one factual questions from the story."
+      ],
       "materials": [
         "Flashcards (eye",
         "ear",
@@ -1309,7 +1393,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all five cards: see, hear, smell, touch, taste.\n• Say: I will demonstrate a sense, and you will say the word!\n• Children: Respond\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\nEnglish_TG_ECD2.indd   43English_TG_ECD2.indd   43 07/07/2026   10:4907/07/2026   10:49\n\n• Cup ears and listen.\n• Children: \"Hear!\"\n• Pretend to smell a flower. Children: \"Smell!\"\n• Touch the desk.\n• Children: \"Touch!\"\n• Pretend to taste something.\n• Children: \"Taste!\"\n• Say: Now let's practice with a sentence pattern: 'I can ___.'  Touch the desk! Say it!\"\n• Children: \"I can touch!\""
+          "content": "• Display all five cards: see, hear, smell, touch, taste.\n• Say: I will demonstrate a sense, and you will say the word!\n• Children: Respond\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\n\n• Cup ears and listen.\n• Children: \"Hear!\"\n• Pretend to smell a flower. Children: \"Smell!\"\n• Touch the desk.\n• Children: \"Touch!\"\n• Pretend to taste something.\n• Children: \"Taste!\"\n• Say: Now let's practice with a sentence pattern: 'I can ___.'  Touch the desk! Say it!\"\n• Children: \"I can touch!\""
         },
         {
           "step": 4,
@@ -1324,7 +1408,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nAbu's Walk \nAbu walks outside after school.\nHe looks up. He can see the big blue sky.\nHe can hear a bird singing in the tree.\nHe smells a sweet flower by the path.\nHe touches a soft leaf. He tastes a ripe mango.\nI can see, hear, smell, touch, and taste!\" says Abu. \n\"My senses are wonderful!\"\nEnglish_TG_ECD2.indd   44English_TG_ECD2.indd   44 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nAbu's Walk \nAbu walks outside after school.\nHe looks up. He can see the big blue sky.\nHe can hear a bird singing in the tree.\nHe smells a sweet flower by the path.\nHe touches a soft leaf. He tastes a ripe mango.\nI can see, hear, smell, touch, and taste!\" says Abu. \n\"My senses are wonderful!\"\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1340,11 +1424,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 23,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Demonstrate \"touch\" by feeling a soft cloth and \"smell\" by sniffing a flower.",
+        "Classify objects by which sense is used.",
+        "Say \"I can smell the flower\" during sensory station rotation."
+      ],
       "materials": [
         "Sensory objects (flower",
         "bell",
@@ -1369,7 +1457,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Hold up a sensory object from the materials bag.\n• Say: Which sense do you use for this? Tell me: I can ___.\n• Hold up the flower. \nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\nEnglish_TG_ECD2.indd   45English_TG_ECD2.indd   45 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"I can smell!\" / \"I can see!\"\n• Ring the bell. \n• Children: \"I can hear!\"\n• Pass the soft cloth. \n• Children: \"I can touch!\"\n• Pass fruit pieces (if available). \n• Children: \"I can taste!\"\n• Pair activity: one holds an object, partner says the sense sentence."
+          "content": "• Hold up a sensory object from the materials bag.\n• Say: Which sense do you use for this? Tell me: I can ___.\n• Hold up the flower. \nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\n\n• Children: \"I can smell!\" / \"I can see!\"\n• Ring the bell. \n• Children: \"I can hear!\"\n• Pass the soft cloth. \n• Children: \"I can touch!\"\n• Pass fruit pieces (if available). \n• Children: \"I can taste!\"\n• Pair activity: one holds an object, partner says the sense sentence."
         },
         {
           "step": 4,
@@ -1384,7 +1472,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Find something to smell, something to touch, and something to taste at \nhome. Say the sense word!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   46English_TG_ECD2.indd   46 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Find something to smell, something to touch, and something to taste at \nhome. Say the sense word!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1400,11 +1488,15 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 24,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing sense words (see, hear, smell, touch, taste) in the story.",
+        "Answer a factual question.",
+        "Retell one thing Abu did on his walk using \"I can ___.\""
+      ],
       "materials": [
         "Flashcards",
         "story \"Abu's Walk\"",
@@ -1427,7 +1519,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Flash all picture cards rapidly and children name them.\n• Say: I talk about something, and  you give the sense word. 'You use this to know if food is \nsweet.'\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\nEnglish_TG_ECD2.indd   47English_TG_ECD2.indd   47 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"Taste!\"\n• Say: You use this to know if flowers are sweet-smelling.\n• Children: \"Smell!\"\n• Continue for see, hear, touch.\n• Call on 5 children: each names one sense and uses the pattern."
+          "content": "• Flash all picture cards rapidly and children name them.\n• Say: I talk about something, and  you give the sense word. 'You use this to know if food is \nsweet.'\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\n\n• Children: \"Taste!\"\n• Say: You use this to know if flowers are sweet-smelling.\n• Children: \"Smell!\"\n• Continue for see, hear, touch.\n• Call on 5 children: each names one sense and uses the pattern."
         },
         {
           "step": 4,
@@ -1442,7 +1534,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell someone at home about the story \"Abu's Walk\". What could Abu see? \nHear? Smell?.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nAbu's Walk \nAbu walks outside after school.\nHe looks up. He can see the big blue sky.\nHe can hear a bird singing in the tree.\nHe smells a sweet flower by the path.\nHe touches a soft leaf. He tastes a ripe mango.\nI can see, hear, smell, touch, and taste!\" says Abu. \n\"My senses are wonderful!\"\nEnglish_TG_ECD2.indd   48English_TG_ECD2.indd   48 07/07/2026   10:4907/07/2026   10:49\n\n Review",
+      "homework": "Tell someone at home about the story \"Abu's Walk\". What could Abu see? \nHear? Smell?.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nAbu's Walk \nAbu walks outside after school.\nHe looks up. He can see the big blue sky.\nHe can hear a bird singing in the tree.\nHe smells a sweet flower by the path.\nHe touches a soft leaf. He tastes a ripe mango.\nI can see, hear, smell, touch, and taste!\" says Abu. \n\"My senses are wonderful!\"\n\n Review",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1458,11 +1550,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 25,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "List all five senses from memory without prompts.",
+        "Perform the \"Senses Walk\" and report one thing they saw/heard/smelled.",
+        "Create a sentence for each sense."
+      ],
       "materials": [
         "Flashcards",
         "sensory objects",
@@ -1485,7 +1581,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all five cards together. Children name them without prompting.\n• Say: Name all the five senses ( see, hear, smell, touch, taste.) \n• Children: \"See! Hear! Smell! Touch! Taste!\"\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\nEnglish_TG_ECD2.indd   49English_TG_ECD2.indd   49 07/07/2026   10:4907/07/2026   10:49\n\n• Say: \"Point to the body part for each sense! SMELL - where?\" \n• Children: [point to nose]\n• Continue for all five.\n• Say: \"Make a sentence for each sense. SEE - go!\" \n• Children: \"I can see a book.\"\n• Call on five children to make similar sentences."
+          "content": "• Show all five cards together. Children name them without prompting.\n• Say: Name all the five senses ( see, hear, smell, touch, taste.) \n• Children: \"See! Hear! Smell! Touch! Taste!\"\nSong: My Five Senses \nI use my eyes to see, to see! (point to eyes)\nI use my ears to hear! (cup hands behind ears)\nI use my nose to smell, to smell! (point to nose)\nI use my hands to feel! (rub hands together)\nI use my mouth to taste, to taste! (point to mouth)\nMy five senses are here!\nEyes, ears, nose, hands, and mouth x 2\nI use them every day!\n\n• Say: \"Point to the body part for each sense! SMELL - where?\" \n• Children: [point to nose]\n• Continue for all five.\n• Say: \"Make a sentence for each sense. SEE - go!\" \n• Children: \"I can see a book.\"\n• Call on five children to make similar sentences."
         },
         {
           "step": 4,
@@ -1500,7 +1596,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family all five sense words. Point to the right body part for each \none!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   50English_TG_ECD2.indd   50 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - Brothers and Sisters",
+      "homework": "Teach your family all five sense words. Point to the right body part for each \none!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - Brothers and Sisters",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1516,11 +1612,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 26,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name four family words: brother, sister, baby, siblings.",
+        "Use the pattern \"I have a ___\" for brother/sister/baby.",
+        "Perform the Finger Family song with finger actions."
+      ],
       "materials": [
         "Flashcards (brother",
         "sister",
@@ -1540,7 +1640,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Today we are going to sing a new song titled, Finger Family! Hold up your hand. Each \nfinger is a family member. Watch me first.\n• Say the words one line at a time. \nChildren repeat after each line.\n• Sing each line slowly and clearly, \nusing gestures.\n• Sing all verses / rounds. Children \nperform the full song with actions.\n• Say: \"What did we just sing about?\"\n• Children: [Name the topic or          \nvocabulary words from the song]\n• Say: \"Excellent! Say the words with \nme: [repeat vocabulary words]\"\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!\nEnglish_TG_ECD2.indd   51English_TG_ECD2.indd   51 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Today we are going to sing a new song titled, Finger Family! Hold up your hand. Each \nfinger is a family member. Watch me first.\n• Say the words one line at a time. \nChildren repeat after each line.\n• Sing each line slowly and clearly, \nusing gestures.\n• Sing all verses / rounds. Children \nperform the full song with actions.\n• Say: \"What did we just sing about?\"\n• Children: [Name the topic or          \nvocabulary words from the song]\n• Say: \"Excellent! Say the words with \nme: [repeat vocabulary words]\"\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!"
         },
         {
           "step": 3,
@@ -1561,7 +1661,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tonight, tell someone at home: \"I have a brother.\" or \"I have a sister.\" Count \nyour siblings!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   52English_TG_ECD2.indd   52 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Tonight, tell someone at home: \"I have a brother.\" or \"I have a sister.\" Count \nyour siblings!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1577,11 +1677,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 27,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify a sibling as \"brother\" or \"sister\" from a picture.",
+        "Listen to the story \"My Family\" and count Amina's siblings.",
+        "Answer one factual questions from the story."
+      ],
       "materials": [
         "Flashcards",
         "story \"My Family\"",
@@ -1598,7 +1702,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Let us sing Finger Family, wiggle \nthe right finger for each verse. Ready? \n• Say the words one line at a time.      \nChildren repeat after each line.\n• Sing each line slowly and clearly, using \ngestures.\n• Sing all verses. Children perform the  \nfull song with actions.\n• Say: \"What did we just sing about?\"\n• Children: [Name the topic or                \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!\nEnglish_TG_ECD2.indd   53English_TG_ECD2.indd   53 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Let us sing Finger Family, wiggle \nthe right finger for each verse. Ready? \n• Say the words one line at a time.      \nChildren repeat after each line.\n• Sing each line slowly and clearly, using \ngestures.\n• Sing all verses. Children perform the  \nfull song with actions.\n• Say: \"What did we just sing about?\"\n• Children: [Name the topic or                \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!"
         },
         {
           "step": 3,
@@ -1619,7 +1723,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nMy Family \nAmina has a family.\nShe has a brother. His name is Kebba.\nShe has a sister. Her name is Binta.\nThe baby is very small and sweet.\nEnglish_TG_ECD2.indd   54English_TG_ECD2.indd   54 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nMy Family \nAmina has a family.\nShe has a brother. His name is Kebba.\nShe has a sister. Her name is Binta.\nThe baby is very small and sweet.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1635,11 +1739,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 28,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Introduce each finger as a family member (\"This is my brother\").",
+        "Respond to \"How many siblings do you have?\" by holding up fingers.",
+        "Sing the Brother and Sister verses of Finger Family with a partner."
+      ],
       "materials": [
         "Finger puppets",
         "flashcards",
@@ -1656,7 +1764,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Song time! We are going to sing \nFinger Family song.  This time sing \nwith a partner. One hand each, fingers \ntouching as you sing!\n• Say the words one line at a time. Children repeat after each line.\n• Sing each line slowly and clearly, using \ngestures.\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or         vocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!\nEnglish_TG_ECD2.indd   55English_TG_ECD2.indd   55 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Song time! We are going to sing \nFinger Family song.  This time sing \nwith a partner. One hand each, fingers \ntouching as you sing!\n• Say the words one line at a time. Children repeat after each line.\n• Sing each line slowly and clearly, using \ngestures.\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or         vocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!"
         },
         {
           "step": 3,
@@ -1677,7 +1785,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach someone at home the Finger Family song. Do all five finger actions \ntogether!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   56English_TG_ECD2.indd   56 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach someone at home the Finger Family song. Do all five finger actions \ntogether!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1693,11 +1801,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 29,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing family words (brother, sister, baby, siblings) in the story.",
+        "Answer a comprehension question."
+      ],
       "materials": [
         "Flashcards",
         "story \"My Family\"",
@@ -1714,7 +1825,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: We are going to sing our Finger \nFamily Song. Sing the Brother and \nSister verses make them extra loud!\n• Say the words one line at a time.        \nChildren repeat after each line.\n• Sing each line slowly and    clearly, \nusing gestures.\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or           \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!\nEnglish_TG_ECD2.indd   57English_TG_ECD2.indd   57 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: We are going to sing our Finger \nFamily Song. Sing the Brother and \nSister verses make them extra loud!\n• Say the words one line at a time.        \nChildren repeat after each line.\n• Sing each line slowly and    clearly, \nusing gestures.\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or           \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!"
         },
         {
           "step": 3,
@@ -1735,7 +1846,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family the words \"brother\", \"Sister\", and \"Siblings\".\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nMy Family \nAmina has a family.\nShe has a brother. His name is Kebba.\nShe has a sister. Her name is Binta.\nThe baby is very small and sweet.\nEnglish_TG_ECD2.indd   58English_TG_ECD2.indd   58 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Teach your family the words \"brother\", \"Sister\", and \"Siblings\".\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nMy Family \nAmina has a family.\nShe has a brother. His name is Kebba.\nShe has a sister. Her name is Binta.\nThe baby is very small and sweet.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1751,11 +1862,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 30,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify and name family vocabulary: brother, sister, baby, siblings.",
+        "Say \"I have a ___\" using family member words.",
+        "Say \"This is my ___\" to introduce a family member using the finger family activity."
+      ],
       "materials": [
         "Drawing paper",
         "crayons",
@@ -1773,7 +1888,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Let us now sing three rounds \nof our Finger Family Song, each one \nfaster than the last!\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic and        \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!\nEnglish_TG_ECD2.indd   59English_TG_ECD2.indd   59 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Let us now sing three rounds \nof our Finger Family Song, each one \nfaster than the last!\n• Sing all verses. Children perform the \nfull song with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic and        \nvocabulary words from the song]\nSong: Finger Family\nDaddy finger, Daddy finger, where are you?\nHere I am, here I am, how do you do!\nMummy finger, Mummy finger, where are you?\nHere I am, here I am, how do you do!\nBrother finger, Brother finger, where are you?\nHere I am, here I am, how do you do!\nSister finger, Sister finger, where are you?\nHere I am, here I am, how do you do!\nBaby finger, Baby finger, where are you?\nHere I am, here I am, how do you do!"
         },
         {
           "step": 3,
@@ -1794,7 +1909,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Introduce one sibling using: \"This is my brother / sister. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   60English_TG_ECD2.indd   60 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - My Home",
+      "homework": "Introduce one sibling using: \"This is my brother / sister. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - My Home",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1810,11 +1925,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 31,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name four home vocabulary words: home, bed, chair, table.",
+        "Point to a bed, chair, and table in a picture.",
+        "Use the pattern \"I see a ___ in my home\" for one object."
+      ],
       "materials": [
         "Flashcards (home",
         "bed",
@@ -1839,7 +1958,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Display all picture cards\n• Point to the house. \n• Say: This is a HOME. Say: home. \n• Children: \"Home!\"\n• Point to the bed. \n• Say: This is a BED. Say: bed.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\nEnglish_TG_ECD2.indd   61English_TG_ECD2.indd   61 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"Bed!\"\n• Say: You sleep on a bed. Show me sleeping!\n• Children: (mime sleeping)\n• oint to the chair. \n• Say: This is a CHAIR. Say: chair.\n• Children: \"Chair!\"\n• Say: You sit on a chair. Let us sit!\n• Children: (sits on a chair)\n• Point to the table. \n• Say: This is a TABLE. Say: table.\" \n• Children: Table!\"\n• Say: Now with the pattern: I see a ___ in my home. \n• Children: \"I see a bed in my home!\"\n• Repeat with the other words."
+          "content": "• Display all picture cards\n• Point to the house. \n• Say: This is a HOME. Say: home. \n• Children: \"Home!\"\n• Point to the bed. \n• Say: This is a BED. Say: bed.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\n\n• Children: \"Bed!\"\n• Say: You sleep on a bed. Show me sleeping!\n• Children: (mime sleeping)\n• oint to the chair. \n• Say: This is a CHAIR. Say: chair.\n• Children: \"Chair!\"\n• Say: You sit on a chair. Let us sit!\n• Children: (sits on a chair)\n• Point to the table. \n• Say: This is a TABLE. Say: table.\" \n• Children: Table!\"\n• Say: Now with the pattern: I see a ___ in my home. \n• Children: \"I see a bed in my home!\"\n• Repeat with the other words."
         },
         {
           "step": 4,
@@ -1854,7 +1973,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Walk around your home. Touch your bed, chair, and table. Say: \"I see a ___ in \nmy home.\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   62English_TG_ECD2.indd   62 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Walk around your home. Touch your bed, chair, and table. Say: \"I see a ___ in \nmy home.\"\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1870,11 +1989,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 32,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Match the word to the action (sleep = bed, sit = chair, eat = table).",
+        "Listen to the story \"In Our House\" and identify where Kebba sleeps.",
+        "Answer comprehension questions."
+      ],
       "materials": [
         "Flashcards",
         "picture book",
@@ -1897,7 +2020,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four cards: home, bed, chair, table.\n• Flash each card, and children say the word.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\nEnglish_TG_ECD2.indd   63English_TG_ECD2.indd   63 07/07/2026   10:4907/07/2026   10:49\n\n• Say: I will describe, and you will say the word. You sleep on this. \n• Children: \"Bed!\"\n• Say: You sit on this. \n• Children: \"Chair!\" \n• Say: You eat at this. \n• Children: \"Table!\"\n• Say: Where you live. \n• Children: \"Home!\"Say: Now, let us look at our sentence pattern. I see a ___ in my home.\" \nThe complete pattern is: I see a  TABLE in my home. Now, let us say it together. \n• Children: \"I see a table in my home!\""
+          "content": "• Display all four cards: home, bed, chair, table.\n• Flash each card, and children say the word.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\n\n• Say: I will describe, and you will say the word. You sleep on this. \n• Children: \"Bed!\"\n• Say: You sit on this. \n• Children: \"Chair!\" \n• Say: You eat at this. \n• Children: \"Table!\"\n• Say: Where you live. \n• Children: \"Home!\"Say: Now, let us look at our sentence pattern. I see a ___ in my home.\" \nThe complete pattern is: I see a  TABLE in my home. Now, let us say it together. \n• Children: \"I see a table in my home!\""
         },
         {
           "step": 4,
@@ -1912,7 +2035,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nIn Our House \nKebba lives in a home.\nHe sleeps on a bed every night.\nIn the morning, he sits on a chair.\nHe eats breakfast at the table.\n\"I see a bed, a chair, and a table in my home,\" \nsays Kebba. \n\"I love my home!\"\nEnglish_TG_ECD2.indd   64English_TG_ECD2.indd   64 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nIn Our House \nKebba lives in a home.\nHe sleeps on a bed every night.\nIn the morning, he sits on a chair.\nHe eats breakfast at the table.\n\"I see a bed, a chair, and a table in my home,\" \nsays Kebba. \n\"I love my home!\"\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1928,11 +2051,14 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 33,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Mime sleeping for \"bed,\" sitting for \"chair,\" and tapping for \"table.\"",
+        "Say \"In your home, I see a ___\" to a partner."
+      ],
       "materials": [
         "Flashcards",
         "A large picture of a home interior showing a bed",
@@ -1956,7 +2082,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Say: We are going to play a \"Home object game!\".  I will call a word, and  you will do the \naction: bed = sleep, chair = sit, table = tap!\n• Say: Bed! \n• Children: (mime sleeping). \n• Say: Chair! \nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\nEnglish_TG_ECD2.indd   65English_TG_ECD2.indd   65 07/07/2026   10:4907/07/2026   10:49\n\n• Children: (sit). \n• Say: Table! \n• Children: (tap desk).\n• Increase speed. Mix the order.\n• Pair activity: one calls the word, partner does the action and says the sentence.\n• Call on 3-4 pairs to demonstrate for the class."
+          "content": "• Say: We are going to play a \"Home object game!\".  I will call a word, and  you will do the \naction: bed = sleep, chair = sit, table = tap!\n• Say: Bed! \n• Children: (mime sleeping). \n• Say: Chair! \nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\n\n• Children: (sit). \n• Say: Table! \n• Children: (tap desk).\n• Increase speed. Mix the order.\n• Pair activity: one calls the word, partner does the action and says the sentence.\n• Call on 3-4 pairs to demonstrate for the class."
         },
         {
           "step": 4,
@@ -1971,7 +2097,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach someone the Home song. Point to real objects at home as you sing!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   66English_TG_ECD2.indd   66 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach someone the Home song. Point to real objects at home as you sing!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -1987,11 +2113,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 34,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing home words (home, bed, chair, table) in the story.",
+        "Answer comprehension questions"
+      ],
       "materials": [
         "Flashcards",
         "story \"In Our House\"",
@@ -2008,7 +2137,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Quick warm-up round of our home \nsong. \n• Say the words one line at a time. Children \nrepeat after each line.\n• Sing each line slowly and clearly, with \nactions.\n• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\nEnglish_TG_ECD2.indd   67English_TG_ECD2.indd   67 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Quick warm-up round of our home \nsong. \n• Say the words one line at a time. Children \nrepeat after each line.\n• Sing each line slowly and clearly, with \nactions.\n• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!"
         },
         {
           "step": 3,
@@ -2029,7 +2158,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach family members the words home, bed, chair, table in English. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nIn Our House \nKebba lives in a home.\nHe sleeps on a bed every night.\nIn the morning, he sits on a chair.\nHe eats breakfast at the table.\n\"I see a bed, a chair, and a table in my home,\" \nsays Kebba. \n\"I love my home!\"\nEnglish_TG_ECD2.indd   68English_TG_ECD2.indd   68 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Teach family members the words home, bed, chair, table in English. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nIn Our House \nKebba lives in a home.\nHe sleeps on a bed every night.\nIn the morning, he sits on a chair.\nHe eats breakfast at the table.\n\"I see a bed, a chair, and a table in my home,\" \nsays Kebba. \n\"I love my home!\"\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2045,11 +2174,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 35,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name all four home vocabulary words from flashcards.",
+        "Say \"I see a ___ in my home\" for each object.",
+        "Match a spoken word to the correct flashcard by pointing."
+      ],
       "materials": [
         "Flashcards"
       ],
@@ -2070,7 +2203,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all four cards. Children name them without prompting.\n• Say: Let us say our sentence pattern, for all four home words. \n• Children: \"I see a bed in my home!\"\n• Call on 6-8 children to give a full pattern sentence.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!\nEnglish_TG_ECD2.indd   69English_TG_ECD2.indd   69 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Show all four cards. Children name them without prompting.\n• Say: Let us say our sentence pattern, for all four home words. \n• Children: \"I see a bed in my home!\"\n• Call on 6-8 children to give a full pattern sentence.\nSong: Home Is Where the Heart Is \nIn my home, in my home, I have a bed!\nIn my home, in my home, I have a chair!\nHome, home, home - I love my home!\nI see a bed, I see a chair, I see a table there!\nMy home is warm, my home is mine!\nI love my home so fair!\nHome, home, home - I love my home!"
         },
         {
           "step": 4,
@@ -2085,7 +2218,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Take someone on a tour of your home. Point and say: \"I see a ___ !\" for each \nobject.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   70English_TG_ECD2.indd   70 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction - Food I Like",
+      "homework": "Take someone on a tour of your home. Point and say: \"I see a ___ !\" for each \nobject.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction - Food I Like",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2101,11 +2234,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 36,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name six food/drink words: rice, bread, banana, water, eat, drink.",
+        "Mime eating (scooping) and drinking (cup hands).",
+        "Use the pattern \"I like ___\" for rice, bread, or banana."
+      ],
       "materials": [
         "Flashcards (rice",
         "bread",
@@ -2125,7 +2262,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Say: Today we are going to sing a new song \ntitled \"The Food Song!\". I will sing and \nmime eating each food. Watch my actions \ncarefully.\n• Say the words one line at a time. Children \nrepeat after each line.\n• Sing each line slowly and clearly, using \nactions.\n• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   71English_TG_ECD2.indd   71 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Say: Today we are going to sing a new song \ntitled \"The Food Song!\". I will sing and \nmime eating each food. Watch my actions \ncarefully.\n• Say the words one line at a time. Children \nrepeat after each line.\n• Sing each line slowly and clearly, using \nactions.\n• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!"
         },
         {
           "step": 3,
@@ -2146,7 +2283,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Look at the food at home. Tell someone: \"I like ___.\" Name three foods you \nlike.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   72English_TG_ECD2.indd   72 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Look at the food at home. Tell someone: \"I like ___.\" Name three foods you \nlike.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2162,11 +2299,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 37,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Distinguish between \"eat\" (food) and \"drink\" (water).",
+        "Listen to the story \"Lunch Time!\" and identify what Binta has in her bowl.",
+        "Answer comprehension question."
+      ],
       "materials": [
         "Flashcards",
         "story \"Lunch Time!\"",
@@ -2183,7 +2324,7 @@
           "step": 2,
           "title": "Song and Warm-Up 5 min",
           "duration_mins": null,
-          "content": "• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   73English_TG_ECD2.indd   73 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Sing all verses. Children perform the full \nsong with actions.\n• Say: What did we just sing about?\n• Children: [Name the topic or vocabulary \nwords from the song]\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!"
         },
         {
           "step": 3,
@@ -2204,7 +2345,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLunch Time!\nIt is lunch time at school.\nBinta has rice in her bowl. She eats it all up.\nShe has bread too. She likes bread!\nShe peels a banana. \"I like banana!\" she says.\nKebba drinks cold water from his cup.\n\"We eat. We drink. Food is good!\" they both say.\nEnglish_TG_ECD2.indd   74English_TG_ECD2.indd   74 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLunch Time!\nIt is lunch time at school.\nBinta has rice in her bowl. She eats it all up.\nShe has bread too. She likes bread!\nShe peels a banana. \"I like banana!\" she says.\nKebba drinks cold water from his cup.\n\"We eat. We drink. Food is good!\" they both say.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2220,11 +2361,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 38,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Express preference by giving thumbs up/down for rice, bread, banana.",
+        "Ask a partner \"Do you like ___?\" and respond \"Yes, I like ___.\"",
+        "Sort foods into \"eat\" vs. \"drink\" categories."
+      ],
       "materials": [
         "Flashcards",
         "toy food",
@@ -2247,7 +2392,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Say: I will hold a card,  make your thumbs up if you LIKE it, thumbs down if you do not.\n• Hold RICE. \nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   75English_TG_ECD2.indd   75 07/07/2026   10:4907/07/2026   10:49\n\n• Children: (thumbs up/down). \n• Say: How many like rice? (Count)\n• Repeat for bread, banana, water.\n• Say: Now tell your partner two foods you like and one you do not.\n• Call on 4-5 pairs to share."
+          "content": "• Say: I will hold a card,  make your thumbs up if you LIKE it, thumbs down if you do not.\n• Hold RICE. \nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\n\n• Children: (thumbs up/down). \n• Say: How many like rice? (Count)\n• Repeat for bread, banana, water.\n• Say: Now tell your partner two foods you like and one you do not.\n• Call on 4-5 pairs to share."
         },
         {
           "step": 4,
@@ -2262,7 +2407,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach the Food Song to someone at home. Mime eating and drinking as you \nsing!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   76English_TG_ECD2.indd   76 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach the Food Song to someone at home. Mime eating and drinking as you \nsing!\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2278,11 +2423,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 39,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing food words (rice, bread, banana, water, eat, drink) in the story.",
+        "Answer comprehension questions."
+      ],
       "materials": [
         "Flashcards",
         "story \"Lunch Time!\"",
@@ -2305,7 +2453,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Flash all six cards rapidly.\n• Say: EAT or DRINK, which one goes with each food?\n• Hold RICE. \nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   77English_TG_ECD2.indd   77 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"Eat!\" \n• Hold WATER. \n• Children: \"Drink!\" \n• Hold BANANA. \n• Children: \"Eat!\"\n• Say: Let us practice with our full sentences,  BANANA! \n• Children: \"I like banana. I eat banana.\"\n• Call on 5 children: each names one food and makes a sentence."
+          "content": "• Flash all six cards rapidly.\n• Say: EAT or DRINK, which one goes with each food?\n• Hold RICE. \nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\n\n• Children: \"Eat!\" \n• Hold WATER. \n• Children: \"Drink!\" \n• Hold BANANA. \n• Children: \"Eat!\"\n• Say: Let us practice with our full sentences,  BANANA! \n• Children: \"I like banana. I eat banana.\"\n• Call on 5 children: each names one food and makes a sentence."
         },
         {
           "step": 4,
@@ -2320,7 +2468,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell the story \"Lunch Time!\" to someone at home. Say the food words as you \ntell it. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLunch Time!\nIt is lunch time at school.\nBinta has rice in her bowl. She eats it all up.\nShe has bread too. She likes bread!\nShe peels a banana. \"I like banana!\" she says.\nKebba drinks cold water from his cup.\n\"We eat. We drink. Food is good!\" they both say.\nEnglish_TG_ECD2.indd   78English_TG_ECD2.indd   78 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Tell the story \"Lunch Time!\" to someone at home. Say the food words as you \ntell it. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nLunch Time!\nIt is lunch time at school.\nBinta has rice in her bowl. She eats it all up.\nShe has bread too. She likes bread!\nShe peels a banana. \"I like banana!\" she says.\nKebba drinks cold water from his cup.\n\"We eat. We drink. Food is good!\" they both say.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2336,11 +2484,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 40,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "List all four food/drink words without prompts.",
+        "Share their favourite food using \"My favourite food is ___.\"",
+        "Say \"I eat ___\" and \"I drink ___\" correctly."
+      ],
       "materials": [
         "Flashcards",
         "real/toy food",
@@ -2363,7 +2515,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all 4 cards. Children name them all.\n• Say: I will show our picture cards for food and drinks and I want you to say the names \nquickly: rice, bread, banana, water.\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   79English_TG_ECD2.indd   79 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"Rice! Bread! Banana! Water!\"\n• Say: \"Say the sentence pattern,  I like ___ BREAD!\" \n• Children: \"I like bread!\"\n• Call on 6-8 children to share their favourite food with the full pattern."
+          "content": "• Show all 4 cards. Children name them all.\n• Say: I will show our picture cards for food and drinks and I want you to say the names \nquickly: rice, bread, banana, water.\nThe Food Song \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\n\n• Children: \"Rice! Bread! Banana! Water!\"\n• Say: \"Say the sentence pattern,  I like ___ BREAD!\" \n• Children: \"I like bread!\"\n• Call on 6-8 children to share their favourite food with the full pattern."
         },
         {
           "step": 4,
@@ -2378,7 +2530,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell your family members your favorite food using the pattern \"My favourite \nfood is ___.\" \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   80English_TG_ECD2.indd   80 07/07/2026   10:4907/07/2026   10:49\n\nIntroduction-Daily Routines",
+      "homework": "Tell your family members your favorite food using the pattern \"My favourite \nfood is ___.\" \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nIntroduction-Daily Routines",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2394,11 +2546,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 41,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name four routine words: wake, wash, eat, sleep.",
+        "Act out stretching for \"wake,\" rubbing face for \"wash,\" scooping for \"eat,\" sleeping for \"sleep.\"",
+        "Use the pattern \"I ___ every day\" for \"wake.\""
+      ],
       "materials": [
         "Routine picture cards (wake",
         "wash",
@@ -2422,7 +2578,7 @@
           "step": 3,
           "title": "Vocabulary Introduction 10 min",
           "duration_mins": null,
-          "content": "• Hold up the WAKE card. Stretch your arms wide.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   81English_TG_ECD2.indd   81 07/07/2026   10:4907/07/2026   10:49\n\n• Say: Every morning, I WAKE UP . Say: wake.\n• Children: \"Wake!\" Stretch with them.\n• Hold up WASH card. Mime washing face. \n• Say: Then I WASH. Say: wash.\n• Children: \"Wash!\"\n• Hold up EAT card. Mime eating. \n• Say: Then I EAT. Say: eat.\n• Children: \"Eat!\"\n• Hold up SLEEP card. Mime sleeping. \n• Say: At night, I SLEEP . Say: sleep.\n• Children: \"Sleep!\"\n• Say: Pattern: I ___ every day. I WAKE every day! Your turn!\n• Children: \"I wake every day!\""
+          "content": "• Hold up the WAKE card. Stretch your arms wide.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Say: Every morning, I WAKE UP . Say: wake.\n• Children: \"Wake!\" Stretch with them.\n• Hold up WASH card. Mime washing face. \n• Say: Then I WASH. Say: wash.\n• Children: \"Wash!\"\n• Hold up EAT card. Mime eating. \n• Say: Then I EAT. Say: eat.\n• Children: \"Eat!\"\n• Hold up SLEEP card. Mime sleeping. \n• Say: At night, I SLEEP . Say: sleep.\n• Children: \"Sleep!\"\n• Say: Pattern: I ___ every day. I WAKE every day! Your turn!\n• Children: \"I wake every day!\""
         },
         {
           "step": 4,
@@ -2437,7 +2593,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   82English_TG_ECD2.indd   82 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud - Introduction",
+      "homework": "Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud - Introduction",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2453,11 +2609,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 42,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Sequence the four routines in correct order (wake → wash → eat → sleep).",
+        "Listen to the story \"Every Morning\" and identify Abu's first action.",
+        "Answer comprehension questions"
+      ],
       "materials": [
         "Routine picture cards",
         "story",
@@ -2480,7 +2640,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Display all four cards: wake, wash, eat, sleep.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   83English_TG_ECD2.indd   83 07/07/2026   10:4907/07/2026   10:49\n\n• Flash each card , children say the word and do the action. Say: I will demonstrate some \nactions and you will say the word. \n• Stretch\n• Children: \"Wake! \"\n• Rub face!\n• Children: \"Wash!\"\n• Scoop food\n• Children: \"Eat!\"\n• Hands under cheek. \n• Children: \"Sleep!\"\n• Say: Let us practice sentence pattern for WASH!\n• Children: \"I wash every day!\""
+          "content": "• Display all four cards: wake, wash, eat, sleep.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Flash each card , children say the word and do the action. Say: I will demonstrate some \nactions and you will say the word. \n• Stretch\n• Children: \"Wake! \"\n• Rub face!\n• Children: \"Wash!\"\n• Scoop food\n• Children: \"Eat!\"\n• Hands under cheek. \n• Children: \"Sleep!\"\n• Say: Let us practice sentence pattern for WASH!\n• Children: \"I wash every day!\""
         },
         {
           "step": 4,
@@ -2495,7 +2655,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEvery Morning \nEvery morning, Abu wakes up.\nHe washes his face and his hands.\nThen he eats his breakfast - bread with beans.\nHe walks to school happy and clean.\nAt night, Abu sleeps in his bed.\n\"I wake, I wash, I eat, I sleep - every day!\" says Abu.\nEnglish_TG_ECD2.indd   84English_TG_ECD2.indd   84 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Retell the story we heard today to your family members. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEvery Morning \nEvery morning, Abu wakes up.\nHe washes his face and his hands.\nThen he eats his breakfast - bread with beans.\nHe walks to school happy and clean.\nAt night, Abu sleeps in his bed.\n\"I wake, I wash, I eat, I sleep - every day!\" says Abu.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2511,11 +2671,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 43,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Correct a wrong sequence for morning routine.",
+        "Mime the full routine in order without speaking for a partner to guess.",
+        "Perform one routine action in a group drama (each child acts one step)."
+      ],
       "materials": [
         "Routine picture cards",
         "clock face"
@@ -2537,7 +2701,7 @@
           "step": 3,
           "title": "Vocabulary Practice 10 min",
           "duration_mins": null,
-          "content": "• Say: We going to play a routine sequence game! I call the routines in the WRONG order. \nYou correct me!\n• Say: First I wash, then I wake up!\n• Children: \"No! First wake, then wash!\"\n• Practice the correct order: Wake → Wash → Eat → Sleep.\n• Partner mime game: one mimes a routine in order, partner says each word.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   85English_TG_ECD2.indd   85 07/07/2026   10:4907/07/2026   10:49\n\n• Call on 3-4 pairs to show the full routine in mime and words."
+          "content": "• Say: We going to play a routine sequence game! I call the routines in the WRONG order. \nYou correct me!\n• Say: First I wash, then I wake up!\n• Children: \"No! First wake, then wash!\"\n• Practice the correct order: Wake → Wash → Eat → Sleep.\n• Partner mime game: one mimes a routine in order, partner says each word.\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Call on 3-4 pairs to show the full routine in mime and words."
         },
         {
           "step": 4,
@@ -2552,7 +2716,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach the Morning Routine song, with actions, to someone at home. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   86English_TG_ECD2.indd   86 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach the Morning Routine song, with actions, to someone at home. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2568,11 +2732,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 44,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Fill in the missing routine words (wake, wash, eat, sleep) in the story.",
+        "Answer comprehension questions."
+      ],
       "materials": [
         "Routine picture cards",
         "story \"Every Morning\""
@@ -2594,7 +2761,7 @@
           "step": 3,
           "title": "Vocabulary Consolidation 10 min",
           "duration_mins": null,
-          "content": "• Flash all four cards rapidly and children say word and do action.\n• Say: I will describe an action and you will say the routine. You do this when you open your \neyes.\n• Children: \"Wake!\"\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   87English_TG_ECD2.indd   87 07/07/2026   10:4907/07/2026   10:49\n\n• Say: You do this with water and soap.\n• Children: \"Wash!\"\n• Say: You do this with rice and bread.\n• Children: \"Eat!\" \n• Say: You do this at night. \n• Children: \"Sleep!\"\n• Individual pattern practice: call on 5 children, each gives a full sentence."
+          "content": "• Flash all four cards rapidly and children say word and do action.\n• Say: I will describe an action and you will say the routine. You do this when you open your \neyes.\n• Children: \"Wake!\"\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Say: You do this with water and soap.\n• Children: \"Wash!\"\n• Say: You do this with rice and bread.\n• Children: \"Eat!\" \n• Say: You do this at night. \n• Children: \"Sleep!\"\n• Individual pattern practice: call on 5 children, each gives a full sentence."
         },
         {
           "step": 4,
@@ -2609,7 +2776,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell the story \"Every Morning\" to someone at home. Use all four routine \nwords. \n• Say: Goodbye, everyone! See you next time!\nEvery Morning \nEvery morning, Abu wakes up.\nHe washes his face and his hands.\nThen he eats his breakfast - bread with beans.\nHe walks to school happy and clean.\nAt night, Abu sleeps in his bed.\n\"I wake, I wash, I eat, I sleep - every day!\" says Abu.\nEnglish_TG_ECD2.indd   88English_TG_ECD2.indd   88 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Tell the story \"Every Morning\" to someone at home. Use all four routine \nwords. \n• Say: Goodbye, everyone! See you next time!\nEvery Morning \nEvery morning, Abu wakes up.\nHe washes his face and his hands.\nThen he eats his breakfast - bread with beans.\nHe walks to school happy and clean.\nAt night, Abu sleeps in his bed.\n\"I wake, I wash, I eat, I sleep - every day!\" says Abu.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2625,11 +2792,15 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 45,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name the four daily routine words - wake, wash, eat, sleep - when shown picture cards without prompting.",
+        "Perform the correct action for each routine word when prompted.",
+        "Say a full sentence for each routine word using the pattern \"I ___ every day.\""
+      ],
       "materials": [
         "Routine picture cards"
       ],
@@ -2650,7 +2821,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Show all four cards. Children name them without prompting.\n• Say: I will show the cards for our Four routine words and I want you to them fast.\n• Children: \"Wake! Wash! Eat! Sleep!\"\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   89English_TG_ECD2.indd   89 07/07/2026   10:4907/07/2026   10:49\n\n• Do the actions in sequence together, saying each word.\n• Say: Let us our sentence pattern for our routine words. WAKE - go!\"\n• Children: \"I wake every day!\"\n• Call on 6-8 children to give a full routine pattern sentence."
+          "content": "• Show all four cards. Children name them without prompting.\n• Say: I will show the cards for our Four routine words and I want you to them fast.\n• Children: \"Wake! Wash! Eat! Sleep!\"\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Do the actions in sequence together, saying each word.\n• Say: Let us our sentence pattern for our routine words. WAKE - go!\"\n• Children: \"I wake every day!\"\n• Call on 6-8 children to give a full routine pattern sentence."
         },
         {
           "step": 4,
@@ -2665,7 +2836,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach someone at home all the four routine words (wake, wash, eat, sleep). \nMimic each, as you teach them. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   90English_TG_ECD2.indd   90 07/07/2026   10:4907/07/2026   10:49\n\nMy Family - Unit Review",
+      "homework": "Teach someone at home all the four routine words (wake, wash, eat, sleep). \nMimic each, as you teach them. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nMy Family - Unit Review",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2681,11 +2852,15 @@
       "day_number": 1,
       "day_name": "Monday",
       "lesson_number": 46,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Recall 4 family words (brother, sister, baby, siblings) and 4 home words (home, bed, chair, table).",
+        "Say \"I have a ___\" for a family word.",
+        "Say \"I see a ___ in my home\" for a home word."
+      ],
       "materials": [
         "Flashcards from Week 6 & 7"
       ],
@@ -2706,7 +2881,7 @@
           "step": 3,
           "title": "Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Say: Today we will review some of the words we have learnt in the past weeks. Let us start \nwith our Family words first!\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   91English_TG_ECD2.indd   91 07/07/2026   10:4907/07/2026   10:49\n\n• Flash brother, sister, baby, siblings cards - children name them.\n• Say: Now, let us practice our Pattern for BROTHER!\n• Children: \"I have a brother!\"\n• Now hold up home cards: home, bed, chair, table. Flash each card - children name it. \nSay: Now, let us practice our Pattern for BED!\n• Children: \"I see a bed in my home!\"\n• Say: You still remember gight words from weeks ago! Excellent!"
+          "content": "• Say: Today we will review some of the words we have learnt in the past weeks. Let us start \nwith our Family words first!\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Flash brother, sister, baby, siblings cards - children name them.\n• Say: Now, let us practice our Pattern for BROTHER!\n• Children: \"I have a brother!\"\n• Now hold up home cards: home, bed, chair, table. Flash each card - children name it. \nSay: Now, let us practice our Pattern for BED!\n• Children: \"I see a bed in my home!\"\n• Say: You still remember gight words from weeks ago! Excellent!"
         },
         {
           "step": 4,
@@ -2721,7 +2896,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family members the home words we revisited today.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   92English_TG_ECD2.indd   92 07/07/2026   10:4907/07/2026   10:49\n\nMy Family - Unit Review and Story",
+      "homework": "Teach your family members the home words we revisited today.\n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nMy Family - Unit Review and Story",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2737,11 +2912,15 @@
       "day_number": 2,
       "day_name": "Tuesday",
       "lesson_number": 47,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Recall 6 food words (rice, bread, banana, water, eat, drink) and 4 routine words (wake, wash, eat, sleep).",
+        "Listen to the review story \"Our Week Together\" and identify one word from each week.",
+        "Say \"I like ___\" for a food word and \"I ___ every day\" for a routine."
+      ],
       "materials": [
         "Flashcards from Week 8 & 9",
         "story \"Our Week Together\""
@@ -2763,7 +2942,7 @@
           "step": 3,
           "title": "Vocabulary Review — Weeks 8–9 (food + Routines) 10 min",
           "duration_mins": null,
-          "content": "• Say: Say: Today we will review some of the words we have learnt in the past weeks. Let us \nstart with our food words first!\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   93English_TG_ECD2.indd   93 07/07/2026   10:4907/07/2026   10:49\n\n• Flash rice, bread, banana, water, eat, drink cards. Children name each one and do the food \naction.\n• Say: Now, let us practice our Pattern for Banana!\n• Children: \"I like banana!\"\n• Now routine cards: wake, wash, eat, sleep. Flash each - children say word and do action.\n• Say: Now, let us practice our Pattern for sleep!\n• Children: \"I sleep every day!\""
+          "content": "• Say: Say: Today we will review some of the words we have learnt in the past weeks. Let us \nstart with our food words first!\nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Flash rice, bread, banana, water, eat, drink cards. Children name each one and do the food \naction.\n• Say: Now, let us practice our Pattern for Banana!\n• Children: \"I like banana!\"\n• Now routine cards: wake, wash, eat, sleep. Flash each - children say word and do action.\n• Say: Now, let us practice our Pattern for sleep!\n• Children: \"I sleep every day!\""
         },
         {
           "step": 4,
@@ -2778,7 +2957,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family members the food and routine words we revisited today. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nOur Week Together \nThis week, we learned so much together.\nWe have brothers and sisters - we are siblings.\nWe live in homes with beds, chairs, and tables.\nWe like rice, bread, and bananas. We drink water.\nEvery day we wake up, wash, eat, and sleep.\nEnglish_TG_ECD2.indd   94English_TG_ECD2.indd   94 07/07/2026   10:4907/07/2026   10:49\n\nVocabulary Practice",
+      "homework": "Teach your family members the food and routine words we revisited today. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nOur Week Together \nThis week, we learned so much together.\nWe have brothers and sisters - we are siblings.\nWe live in homes with beds, chairs, and tables.\nWe like rice, bread, and bananas. We drink water.\nEvery day we wake up, wash, eat, and sleep.\n\nVocabulary Practice",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2794,11 +2973,15 @@
       "day_number": 3,
       "day_name": "Wednesday",
       "lesson_number": 48,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Identify any vocabulary word from Weeks 6-9 when shown a flashcard.",
+        "Compete in teams to say the word and pattern sentence correctly.",
+        "Sort words into four categories: Family, Home, Food, Routines."
+      ],
       "materials": [
         "All flashcards from Weeks 6-9"
       ],
@@ -2819,7 +3002,7 @@
           "step": 3,
           "title": "Mixed Vocabulary Review 10 min",
           "duration_mins": null,
-          "content": "• Say: \"Mixed review! I hold up any card from any week. Say the word and the pattern sentence!\"\n• Hold SISTER. \n• Children: \"Sister! I have a sister!\"\nSong: The Food \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\nEnglish_TG_ECD2.indd   95English_TG_ECD2.indd   95 07/07/2026   10:4907/07/2026   10:49\n\n• Hold TABLE.\n• Children: \"Table! I see a table in my home!\"\n• Hold RICE. \n• Children: \"Rice! I like rice!\"`\n• Hold WASH. \n• Children: \"Wash! I wash every day!\"\n• Continue mixing all 16 vocabulary cards. Increase speed."
+          "content": "• Say: \"Mixed review! I hold up any card from any week. Say the word and the pattern sentence!\"\n• Hold SISTER. \n• Children: \"Sister! I have a sister!\"\nSong: The Food \nRice, rice, I like rice! \nBread, bread, I like bread!\nBanana, banana, I like banana!\nI eat, I eat, I eat my food - yum, yum, yum!\nWater, water, I drink water! \nCold and clean and good for me!\nI eat my rice, I eat my bread, I eat my banana \nAnd I drink water - it's so good!\n\n• Hold TABLE.\n• Children: \"Table! I see a table in my home!\"\n• Hold RICE. \n• Children: \"Rice! I like rice!\"`\n• Hold WASH. \n• Children: \"Wash! I wash every day!\"\n• Continue mixing all 16 vocabulary cards. Increase speed."
         },
         {
           "step": 4,
@@ -2834,7 +3017,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Teach your family the food song demonstrating all the actions as you sing. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   96English_TG_ECD2.indd   96 07/07/2026   10:4907/07/2026   10:49\n\nStory Read Aloud Connection",
+      "homework": "Teach your family the food song demonstrating all the actions as you sing. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\n\nStory Read Aloud Connection",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2850,11 +3033,14 @@
       "day_number": 4,
       "day_name": "Thursday",
       "lesson_number": 49,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Produce language patterns correctly.",
+        "Fill in missing vocabulary words during the story \"Our Week Together.\""
+      ],
       "materials": [
         "All flashcards",
         "story \"Our Week Together\""
@@ -2876,7 +3062,7 @@
           "step": 3,
           "title": "Four Patterns Practice — All Weeks 10 min",
           "duration_mins": null,
-          "content": "• Say: Let us now practice our language patterns. I will say the category and a word and you \nwill give me the language pattern.\n• Say: Pattern 1 - family! SIBLINGS!\n• Children: \"I have siblings!\"\n• Say: Pattern 2 - home! CHAIR! \n• Children: \"I see a chair in my home!\"\n• Say: Pattern 3 - food! BREAD! \nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\nEnglish_TG_ECD2.indd   97English_TG_ECD2.indd   97 07/07/2026   10:4907/07/2026   10:49\n\n• Children: \"I like bread!\"\n• Say: Pattern 4 - routines! WAKE!\n• Children: \"I wake every day!\""
+          "content": "• Say: Let us now practice our language patterns. I will say the category and a word and you \nwill give me the language pattern.\n• Say: Pattern 1 - family! SIBLINGS!\n• Children: \"I have siblings!\"\n• Say: Pattern 2 - home! CHAIR! \n• Children: \"I see a chair in my home!\"\n• Say: Pattern 3 - food! BREAD! \nSong: Morning Routine Action \nI wake up, I wake up, every single day! \nThe sun is shining - it's time to play!\nI wash my face, I wash my hands every day!\nClean and fresh - I'm ready for the day!\nI eat my breakfast, I eat my breakfast every day!\nRice and bread to give me strength - hooray!\nI sleep at night, I sleep at night - that's my day!\nWake, wash, eat, and sleep - that's the routine way!\n\n• Children: \"I like bread!\"\n• Say: Pattern 4 - routines! WAKE!\n• Children: \"I wake every day!\""
         },
         {
           "step": 4,
@@ -2891,7 +3077,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Tell someone the story \"Our Week Together at  home.\" Try to use as many \nvocabulary words as possible. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nOur Week Together \nThis week, we learned so much together.\nWe have brothers and sisters - we are siblings.\nWe live in homes with beds, chairs, and tables.\nWe like rice, bread, and bananas. We drink water.\nEvery day we wake up, wash, eat, and sleep.\nEnglish_TG_ECD2.indd   98English_TG_ECD2.indd   98 07/07/2026   10:4907/07/2026   10:49\n\nReview",
+      "homework": "Tell someone the story \"Our Week Together at  home.\" Try to use as many \nvocabulary words as possible. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nOur Week Together \nThis week, we learned so much together.\nWe have brothers and sisters - we are siblings.\nWe live in homes with beds, chairs, and tables.\nWe like rice, bread, and bananas. We drink water.\nEvery day we wake up, wash, eat, and sleep.\n\nReview",
       "audio_assets": {
         "song": null,
         "phonics": null,
@@ -2907,11 +3093,14 @@
       "day_number": 5,
       "day_name": "Friday",
       "lesson_number": 50,
-      "lesson_type": "Learning Outcomes",
+      "lesson_type": "Lesson",
       "theme": "Community & Environment",
       "target_letter": "",
       "vocabulary": [],
-      "learning_outcomes": [],
+      "learning_outcomes": [
+        "Name vocabulary words learnt from Weeks 6-9 when flashed rapidly.",
+        "Say one pattern sentence from each week during the Celebration Parade."
+      ],
       "materials": [
         "All flashcards from Weeks 6-9",
         "audio visuals for songs"
@@ -2933,7 +3122,7 @@
           "step": 3,
           "title": "Vocabulary Celebration 10 min",
           "duration_mins": null,
-          "content": "• Flash all 16 vocabulary cards in rapid succession - children name them all.\n• Go through each set: family words, home words, food words, routine words.\n• For each word, children say the pattern sentence.\n• Say: Stand up! You are going to celebrate your learning!\n• Each child stands and says one word and one sentence. Class applauds each one.\n• Say: You are amazing English learners. Well done, everyone!\nEnglish_TG_ECD2.indd   99English_TG_ECD2.indd   99 07/07/2026   10:4907/07/2026   10:49"
+          "content": "• Flash all 16 vocabulary cards in rapid succession - children name them all.\n• Go through each set: family words, home words, food words, routine words.\n• For each word, children say the pattern sentence.\n• Say: Stand up! You are going to celebrate your learning!\n• Each child stands and says one word and one sentence. Class applauds each one.\n• Say: You are amazing English learners. Well done, everyone!"
         },
         {
           "step": 4,
@@ -2948,7 +3137,7 @@
           "content": "•"
         }
       ],
-      "homework": ": Celebrate your learning! Tell someone at home five things you learned in \nEnglish this term. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!\nEnglish_TG_ECD2.indd   100English_TG_ECD2.indd   100 07/07/2026   10:4907/07/2026   10:49\n\nEnglish_TG_ECD2.indd   101English_TG_ECD2.indd   101 07/07/2026   10:4907/07/2026   10:49\n\nEnglish_TG_ECD2.indd   102English_TG_ECD2.indd   102 07/07/2026   10:4907/07/2026   10:49",
+      "homework": "Celebrate your learning! Tell someone at home five things you learned in \nEnglish this term. \n• Say: Goodbye, everyone! See you next time!\n• Children: Goodbye, teacher! See you next time!",
       "audio_assets": {
         "song": null,
         "phonics": null,
