@@ -23,15 +23,16 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.1">
-  <link rel="manifest" href="manifest.json?v=3.1">
+  <link rel="stylesheet" href="styles.css?v=3.2">
+  <link rel="manifest" href="manifest.json?v=3.2">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
   <header class="app-header" id="app-header">
     <div class="header-top">
       <div class="brand-badge">
-        <span class="flag-icon">🇬🇲</span>
+        <!-- Gambian flag as SVG: the 🇬🇲 emoji renders as the letters "GM" on Windows, which has no flag glyphs -->
+        <span class="flag-icon" role="img" aria-label="The Gambia"><svg viewBox="0 0 36 24" width="30" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="24" fill="#fff"/><rect width="36" height="8" fill="#ce1126"/><rect y="9.333" width="36" height="5.333" fill="#0c1c8c"/><rect y="16" width="36" height="8" fill="#3a7728"/></svg></span>
         <div class="brand-text">
           <span class="brand-title">Gambia FLP Teacher Hub</span>
           <span class="brand-subtitle">MoBSE · World Bank · Learning Masterminds</span>
@@ -312,10 +313,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.1"></script>
+  <script src="app.js?v=3.2"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.1').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.2').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);
