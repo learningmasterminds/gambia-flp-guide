@@ -1037,7 +1037,7 @@ function setupEventListeners() {
   // Share to Telegram / Clipboard
   elements.shareBtn.addEventListener('click', () => {
     const l = state.activeLesson;
-    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: 30 Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/GambiaFLPBot`;
+    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: 30 Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot`;
 
     if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.sendData) {
       window.Telegram.WebApp.sendData(shareText);

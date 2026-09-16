@@ -11,4 +11,4 @@ Digital interactive Teacher Guide for Early Childhood Development (ECD 2) in Wol
 
 ## Live Deployment
 - **GitHub Pages**: [https://learningmasterminds.github.io/gambia-flp-guide/](https://learningmasterminds.github.io/gambia-flp-guide/)
-- **Telegram Bot**: `@GambiaFLPBot`
+- **Telegram Bot**: `@gambiaflp_bot`
