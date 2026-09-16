@@ -11,7 +11,7 @@
     "contractor": "Learning Masterminds",
     "source_document": "Wolof_ECD3_T1_TeacherGuide_Final_Jul17v2a.pdf",
     "source_file_id": "1iCGpKQOpiL65ntlXdiYtz5tYVmP5mz-L",
-    "generated_at": "2026-09-02"
+    "generated_at": "2026-09-16"
   },
   "weeks": [
     {
@@ -94,7 +94,7 @@
         "Participate in conversations with peers and adults.",
         "Continue to learn letters of the alphabet.",
         "Continue to recognize and create rhyming words.",
-        "Begin to learn to write name. . Oral Language Development: Community Circle Time  (10 mins)"
+        "Begin to learn to write name."
       ],
       "materials": [
         "Two items related to the theme of the lesson",
@@ -112,13 +112,13 @@
           "step": 2,
           "title": "Learning Sounds",
           "duration_mins": 5,
-          "content": "2. Learning Sounds        (5 mins)\n Alphabet I-Spy\n• Gather all of the letter cards of the letters that have been learned. Place the letter cards \nin different places around the room where the pupils can see the pictures.\n• Give pupils a minute to look around to see where the picture cards have been placed.\n• Say: Danoo fo po mu tudda \"MA YURNDU.\" Dinaa tudda benna araf te soo gise nataalu \naraf bi, tóbal di joxoñaale nataal bi. Nanu am yu nu ci def. \n• Give pupils a chance to find the picture.\n• Say:  \"Araf bi 'a A 'moo tàmbali  baatu 'anda' nanu ko waxandoor 'a 'anda.\"   \n• Repeat two times slowly while pointing to the keyword.\n• Continue with a few keywords. Be sure to go over letters that have been learned thus far."
+          "content": "Alphabet I-Spy\n• Gather all of the letter cards of the letters that have been learned. Place the letter cards \nin different places around the room where the pupils can see the pictures.\n• Give pupils a minute to look around to see where the picture cards have been placed.\n• Say: Danoo fo po mu tudda \"MA YURNDU.\" Dinaa tudda benna araf te soo gise nataalu \naraf bi, tóbal di joxoñaale nataal bi. Nanu am yu nu ci def. \n• Give pupils a chance to find the picture.\n• Say:  \"Araf bi 'a A 'moo tàmbali  baatu 'anda' nanu ko waxandoor 'a 'anda.\"   \n• Repeat two times slowly while pointing to the keyword.\n• Continue with a few keywords. Be sure to go over letters that have been learned thus far."
         },
         {
           "step": 3,
           "title": "Alphabet",
           "duration_mins": 3,
-          "content": "3. Alphabet         (3 mins)\nAlphabet Song\n• Say: Dina nu wéeyale di jànga araf yi ak wóy (walla nu wax leen).\n• Sing the alphabet song/chant: INSERT\n a  à  b  c  d  e  é  ë  \n f  h  g  I  j  k  l\n\n\t m\t\tn\t\t ñ\t\tŋ\t\to\t\tó\t\tp\n q  r  s  t  u  w  x  y"
+          "content": "Alphabet Song\n• Say: Dina nu wéeyale di jànga araf yi ak wóy (walla nu wax leen).\n• Sing the alphabet song/chant: INSERT\n a  à  b  c  d  e  é  ë  \n f  h  g  I  j  k  l\n\n\t m\t\tn\t\t ñ\t\tŋ\t\to\t\tó\t\tp\n q  r  s  t  u  w  x  y"
         },
         {
           "step": 4,
@@ -1504,9 +1504,9 @@
         },
         {
           "step": 3,
-          "title": "Vocabulary: During Reading       (10",
-          "duration_mins": null,
-          "content": "3. Vocabulary: During Reading (8 mins)\n Read Aloud\n•  Read the story. While reading, make sure pupils are paying attention and putting their \nhands on their head when a vocabulary word is said. At each vocabulary word, stop and \nreview its meaning in the story. \n \n     Ami Mu Ngee Dem Sa Jànguwaay Ba\n Waxtu dem jàngi jot na Ami yakamti naa dem ca jànguwaay ba. Yaayam ne ko; Xaaral \nDinaa la yóbbu be ci yoon wi ci jàllukaay bi jàkkarloo ak sen jànguwaay bi . Ami ne ko: \n\"Léegi mag laa, mën naa yóbbu suma boppa.\" Yaayam tontu ko ne: Mën naa am mag nga \nléegi waay mënaguloo jàlla yoon wi yow kenna. Danga war a moytu bu baax soo dee dox ci \nyoon wi. Yaayam tiye Ami ci loxo be, ci yoon wi, moto bu mag mu ngee romba. Mu xool ci \nndeyjooram, xoolaat ci càmmooñam taxaw di xaar, Ami tiye loxo yaayam bi bu baax. Mu \nlaaj.\n ko: \"Lan la noo xaar?\" Yaayam tontu ko ne: \"Am na moto bu mag buy romba nanu xaar \nbe mu dem. Léegi nanu jàlla óor na\", rek benna béy jóge ci kër yi ci wetu yoon wi di daw \ndi ñów Ami raggal mu tiit mu tiye loxo yaayam bi be mu dégér. Béy ba daw jàlla dem ci \nbeneen wetu yoon bi. Léegi nak Ami ak yaayam bëgga jàlla rek beneen moto bu ndaw di \nrombaat ñu taxawaat di xaar. Yaayi Ami xool ndeyjooram, xoolaat ci càmmooñam ne Ami \n\"Léegi mën na noo jàlla yoon wi benna moto ñówul.\" Ami gàwtu bëgga daw, Yaayam ne ko \ndanga war a jànga nu noo jàlle yoon. \"Da nu bëgga nga dem jàngi am xam xam waay bëggu \nnu nga dem Lopitaan ba.\""
+          "title": "Vocabulary: During Reading",
+          "duration_mins": 8,
+          "content": "Read Aloud\n•  Read the story. While reading, make sure pupils are paying attention and putting their \nhands on their head when a vocabulary word is said. At each vocabulary word, stop and \nreview its meaning in the story. \n \n     Ami Mu Ngee Dem Sa Jànguwaay Ba\n Waxtu dem jàngi jot na Ami yakamti naa dem ca jànguwaay ba. Yaayam ne ko; Xaaral \nDinaa la yóbbu be ci yoon wi ci jàllukaay bi jàkkarloo ak sen jànguwaay bi . Ami ne ko: \n\"Léegi mag laa, mën naa yóbbu suma boppa.\" Yaayam tontu ko ne: Mën naa am mag nga \nléegi waay mënaguloo jàlla yoon wi yow kenna. Danga war a moytu bu baax soo dee dox ci \nyoon wi. Yaayam tiye Ami ci loxo be, ci yoon wi, moto bu mag mu ngee romba. Mu xool ci \nndeyjooram, xoolaat ci càmmooñam taxaw di xaar, Ami tiye loxo yaayam bi bu baax. Mu \nlaaj.\n ko: \"Lan la noo xaar?\" Yaayam tontu ko ne: \"Am na moto bu mag buy romba nanu xaar \nbe mu dem. Léegi nanu jàlla óor na\", rek benna béy jóge ci kër yi ci wetu yoon wi di daw \ndi ñów Ami raggal mu tiit mu tiye loxo yaayam bi be mu dégér. Béy ba daw jàlla dem ci \nbeneen wetu yoon bi. Léegi nak Ami ak yaayam bëgga jàlla rek beneen moto bu ndaw di \nrombaat ñu taxawaat di xaar. Yaayi Ami xool ndeyjooram, xoolaat ci càmmooñam ne Ami \n\"Léegi mën na noo jàlla yoon wi benna moto ñówul.\" Ami gàwtu bëgga daw, Yaayam ne ko \ndanga war a jànga nu noo jàlle yoon. \"Da nu bëgga nga dem jàngi am xam xam waay bëggu \nnu nga dem Lopitaan ba.\""
         },
         {
           "step": 4,
