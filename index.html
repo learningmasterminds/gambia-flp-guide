@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Gambia FLP - Interactive Teacher Guide (ECD 2)</title>
-  <meta name="description" content="Digital interactive Teacher Guide for Early Childhood Development (ECD 2) in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
+  <title>Gambia FLP - Interactive Teacher Guide</title>
+  <meta name="description" content="Digital interactive Teacher Guide for Early Childhood Development (ECD 2 and ECD 3) in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
   <meta name="theme-color" content="#0d3b4c">
+  <!-- Installable web app (Add to Home Screen) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Gambia FLP">
+  <meta name="mobile-web-app-capable" content="yes">
   
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.0">
-  <link rel="manifest" href="manifest.json?v=3.0">
+  <link rel="stylesheet" href="styles.css?v=3.1">
+  <link rel="manifest" href="manifest.json?v=3.1">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -61,9 +68,15 @@
           <option value="ecd3" selected>ECD 3 · Term 1</option>
         </select>
       </div>
-      <div class="online-status-badge" id="online-badge" title="Offline Ready">
-        <span class="status-dot"></span>
-        <span id="status-text">Cached Offline</span>
+      <div class="status-row">
+        <div class="online-status-badge" id="online-badge" title="Offline Ready">
+          <span class="status-dot"></span>
+          <span id="status-text">Cached Offline</span>
+        </div>
+        <button class="install-btn hidden" id="install-btn" type="button" title="Install this guide on your phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Install app</span>
+        </button>
       </div>
     </div>
 
@@ -98,20 +111,8 @@
       </button>
     </nav>
 
-    <!-- Persistent Sticky Classroom 30-min Timer Bar -->
-    <div class="sticky-timer-bar" id="classroom-timer-bar">
-      <div class="timer-display">
-        <span class="timer-icon">⏳</span>
-        <span class="timer-clock" id="timer-clock">30:00</span>
-        <span class="timer-status" id="timer-status">Ready</span>
-      </div>
-      <div class="timer-buttons">
-        <button class="btn-timer" id="timer-start-btn">Start Lesson</button>
-        <button class="btn-timer btn-timer-subtle hidden" id="timer-reset-btn">Reset</button>
-      </div>
-    </div>
-    <!-- Visual Progress Bar for 30-min lesson -->
-    <div class="timer-progress-track">
+    <!-- 30-min lesson progress: a hairline on the header's bottom edge (no layout height) -->
+    <div class="timer-progress-track" aria-hidden="true">
       <div class="timer-progress-fill" id="timer-progress-fill"></div>
     </div>
   </header>
@@ -256,6 +257,21 @@
 
   </main>
 
+  <!-- Floating Classroom 30-min Timer Dock (overlays content, takes no page space) -->
+  <div class="timer-fab" id="classroom-timer-bar" role="group" aria-label="30-minute lesson timer">
+    <div class="timer-display">
+      <span class="timer-icon" aria-hidden="true">⏳</span>
+      <div class="timer-readout">
+        <span class="timer-clock" id="timer-clock">30:00</span>
+        <span class="timer-status" id="timer-status">Ready</span>
+      </div>
+    </div>
+    <div class="timer-buttons">
+      <button class="btn-timer btn-timer-subtle hidden" id="timer-reset-btn" title="Reset to 30:00" aria-label="Reset timer">↺</button>
+      <button class="btn-timer" id="timer-start-btn">Start</button>
+    </div>
+  </div>
+
   <!-- AI Curriculum Coach Modal -->
   <div class="coach-modal-overlay hidden" id="coach-modal-overlay">
     <div class="coach-modal-card">
@@ -296,10 +312,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.0').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.1').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);

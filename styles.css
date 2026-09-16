@@ -194,6 +194,37 @@ body {
   font-weight: 700;
 }
 
+/* Offline badge and Install button share one line under the selectors */
+.status-row {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.install-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18));
+  border: 1px solid rgba(6, 182, 212, 0.45);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.install-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
 .online-status-badge {
   display: flex;
   align-items: center;
@@ -297,7 +328,7 @@ body {
    ========================================================================== */
 
 .main-content {
-  padding: 16px;
+  padding: 16px 16px 104px;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -553,17 +584,24 @@ body {
   transition: width 0.1s linear;
 }
 
-/* Persistent Sticky Classroom Timer Bar in Header */
-.sticky-timer-bar {
-  background: rgba(9, 26, 36, 0.85);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: var(--radius-md);
-  padding: 8px 12px;
+/* Floating Classroom Timer Dock
+   Lives in the bottom-right corner over the content instead of inside the
+   sticky header, so the header no longer spends ~70px of every screen on it. */
+.timer-fab {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 500;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  gap: 10px;
+  padding: 8px 10px 8px 12px;
+  background: rgba(9, 26, 36, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .timer-display {
@@ -572,13 +610,24 @@ body {
   gap: 8px;
 }
 
+.timer-icon {
+  font-size: 16px;
+}
+
+.timer-readout {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
 .timer-clock {
   font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--accent-emerald);
   letter-spacing: 0.05em;
   text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  font-variant-numeric: tabular-nums;
 }
 
 .timer-clock.timer-running {
@@ -592,9 +641,11 @@ body {
 }
 
 .timer-status {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .timer-buttons {
@@ -606,8 +657,9 @@ body {
   background: var(--accent-emerald);
   color: #091a24;
   border: none;
-  padding: 6px 14px;
+  padding: 7px 14px;
   border-radius: var(--radius-pill);
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -623,6 +675,10 @@ body {
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border-subtle);
+  width: 32px;
+  padding: 7px 0;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .btn-timer-subtle:hover {
@@ -630,14 +686,15 @@ body {
   color: var(--text-primary);
 }
 
-/* Timer Progress Track at Header Bottom */
+/* Lesson progress hairline pinned to the header's bottom edge (zero height in flow) */
 .timer-progress-track {
-  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
   overflow: hidden;
-  margin-top: 6px;
 }
 
 .timer-progress-fill {
@@ -1153,7 +1210,10 @@ body {
 /* Toast */
 .toast-notification {
   position: fixed;
-  bottom: 24px;
+  bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  z-index: 600;
+  max-width: calc(100% - 32px);
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(15, 43, 56, 0.95);
@@ -1190,7 +1250,7 @@ body {
     background: white;
     color: black;
   }
-  .app-header, .classroom-timer-bar, .action-footer, .coach-modal-overlay, .search-overlay {
+  .app-header, .timer-fab, .install-btn, .toast-notification, .action-footer, .coach-modal-overlay, .search-overlay {
     display: none !important;
   }
   .lesson-hero-card, .step-card, .meta-drawer-card, .homework-card {

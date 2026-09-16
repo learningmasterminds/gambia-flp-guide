@@ -705,7 +705,7 @@ function startTimer() {
   state.timerRunning = true;
   elements.timerStartBtn.textContent = 'Pause';
   elements.timerResetBtn.classList.remove('hidden');
-  elements.timerStatus.textContent = 'Lesson In Progress';
+  elements.timerStatus.textContent = 'In progress';
   updateTimerDisplay();
 
   state.timerInterval = setInterval(() => {
@@ -718,7 +718,7 @@ function startTimer() {
     } else {
       clearInterval(state.timerInterval);
       state.timerRunning = false;
-      elements.timerStatus.textContent = 'Lesson Completed! 🎉';
+      elements.timerStatus.textContent = 'Done 🎉';
       elements.timerStartBtn.textContent = 'Restart';
       showToast('🎉 30-Minute Lesson Complete!');
       updateTimerDisplay();
@@ -732,7 +732,7 @@ function resetTimer() {
   state.timerRunning = false;
   state.timerSeconds = 1800;
   updateTimerDisplay();
-  elements.timerStartBtn.textContent = 'Start Lesson';
+  elements.timerStartBtn.textContent = 'Start';
   elements.timerStatus.textContent = 'Ready';
   elements.timerResetBtn.classList.add('hidden');
   if (elements.timerProgressFill) {
@@ -1050,6 +1050,72 @@ function setupEventListeners() {
   // Print Card
   elements.printBtn.addEventListener('click', () => {
     window.print();
+  });
+
+  setupInstallPrompt();
+}
+
+// ---------------------------------------------------------------------------
+// Install as an app (Add to Home Screen)
+// Chrome/Edge/Samsung Internet fire `beforeinstallprompt`; we hold the event
+// and show the Install button. iOS Safari has no prompt API, so the button
+// shows a short instruction instead. Once running standalone, the button hides.
+// ---------------------------------------------------------------------------
+let deferredInstallPrompt = null;
+
+function isStandaloneDisplay() {
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+    || window.navigator.standalone === true;
+}
+
+function isIosSafari() {
+  const ua = window.navigator.userAgent;
+  const isIos = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isSafari = /safari/i.test(ua) && !/crios|fxios|edgios/i.test(ua);
+  return isIos && isSafari;
+}
+
+function setupInstallPrompt() {
+  const btn = document.getElementById('install-btn');
+  if (!btn) return;
+
+  if (isStandaloneDisplay()) {
+    btn.classList.add('hidden');
+    return;
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    btn.classList.remove('hidden');
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    btn.classList.add('hidden');
+    showToast('✅ Installed! Open Gambia FLP from your home screen - it works offline.', 5000);
+  });
+
+  // iOS never fires beforeinstallprompt; surface the manual route instead.
+  if (isIosSafari()) {
+    btn.classList.remove('hidden');
+  }
+
+  btn.addEventListener('click', async () => {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      const choice = await deferredInstallPrompt.userChoice.catch(() => null);
+      deferredInstallPrompt = null;
+      if (choice && choice.outcome === 'accepted') {
+        btn.classList.add('hidden');
+      }
+      return;
+    }
+    if (isIosSafari()) {
+      showToast('📲 Tap Share (□↑) then "Add to Home Screen" to install.', 7000);
+      return;
+    }
+    showToast('📲 Open the browser menu (⋮) and choose "Install app" or "Add to Home screen".', 7000);
   });
 }
 
