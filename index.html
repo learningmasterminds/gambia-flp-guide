@@ -23,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.2">
-  <link rel="manifest" href="manifest.json?v=3.2">
+  <link rel="stylesheet" href="styles.css?v=3.3">
+  <link rel="manifest" href="manifest.json?v=3.3">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -32,19 +32,15 @@
     <div class="header-top">
       <div class="brand-badge">
         <!-- Gambian flag as SVG: the 🇬🇲 emoji renders as the letters "GM" on Windows, which has no flag glyphs -->
-        <span class="flag-icon" role="img" aria-label="The Gambia"><svg viewBox="0 0 36 24" width="30" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="24" fill="#fff"/><rect width="36" height="8" fill="#ce1126"/><rect y="9.333" width="36" height="5.333" fill="#0c1c8c"/><rect y="16" width="36" height="8" fill="#3a7728"/></svg></span>
+        <span class="flag-icon" role="img" aria-label="The Gambia"><svg viewBox="0 0 36 24" width="30" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="24" fill="#fff"/><rect width="36" height="8" fill="#ce1126"/><rect y="9.333" width="36" height="5.333" fill="#0c1c8c"/><rect y="16" width="36" height="8" fill="#3a7728"/></svg><span class="status-dot" id="online-badge" title="Cached offline - works without internet"><span class="sr-only" id="status-text">Cached Offline</span></span></span>
         <div class="brand-text">
           <span class="brand-title">Gambia FLP Teacher Hub</span>
           <span class="brand-subtitle">MoBSE · World Bank · Learning Masterminds</span>
         </div>
       </div>
       <div class="header-actions">
-        <button class="icon-btn" id="search-toggle-btn" title="Search lessons" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </button>
-        <button class="icon-btn" id="ai-coach-btn" title="Ask FLP Coach" aria-label="Ask Coach">
-          <span class="ai-sparkle">✨</span>
-          <span class="ai-btn-text">Coach</span>
+        <button class="icon-btn install-btn hidden" id="install-btn" type="button" title="Install app on this device" aria-label="Install app">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         </button>
       </div>
     </div>
@@ -69,16 +65,9 @@
           <option value="ecd3" selected>ECD 3 · Term 1</option>
         </select>
       </div>
-      <div class="status-row">
-        <div class="online-status-badge" id="online-badge" title="Offline Ready">
-          <span class="status-dot"></span>
-          <span id="status-text">Cached Offline</span>
-        </div>
-        <button class="install-btn hidden" id="install-btn" type="button" title="Install this guide on your phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-          <span>Install app</span>
-        </button>
-      </div>
+      <button class="icon-btn" id="search-toggle-btn" title="Search lessons" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
     </div>
 
     <!-- Week Horizontal Scroller -->
@@ -258,6 +247,12 @@
 
   </main>
 
+  <!-- Floating Coach bubble (bottom-left), opposite the timer dock -->
+  <button class="coach-fab" id="ai-coach-btn" title="Ask FLP Coach" aria-label="Ask Coach">
+    <span class="ai-sparkle">✨</span>
+    <span class="ai-btn-text">Coach</span>
+  </button>
+
   <!-- Floating Classroom 30-min Timer Dock (overlays content, takes no page space) -->
   <div class="timer-fab" id="classroom-timer-bar" role="group" aria-label="30-minute lesson timer">
     <div class="timer-display">
@@ -313,10 +308,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.2"></script>
+  <script src="app.js?v=3.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.2').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.3').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);

@@ -71,26 +71,53 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 12px 16px 8px;
+  padding: 10px 16px 8px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
+/* Brand block is a single-height row: title and subtitle each stay on one
+   line and truncate rather than wrapping the header taller on small phones. */
 .brand-badge {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
+  min-width: 0;
 }
 
 .flag-icon {
+  position: relative;
   display: flex;
   flex-shrink: 0;
   line-height: 0;
+}
+
+/* Offline-ready indicator: a green dot on the flag's corner instead of a
+   full-width "Cached Offline" badge row. */
+.flag-icon .status-dot {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 6px var(--accent-emerald);
 }
 
 .flag-icon svg {
@@ -101,25 +128,33 @@ body {
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .brand-title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-primary);
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-subtitle {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header-actions {
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .icon-btn {
@@ -141,14 +176,35 @@ body {
   transform: translateY(-1px);
 }
 
-#ai-coach-btn {
-  width: auto;
-  padding: 0 14px;
+/* Coach lives as a floating bubble bottom-left, mirroring the timer dock,
+   so the header row is left to the brand alone. */
+.coach-fab {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 500;
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(244, 63, 94, 0.2));
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  font-weight: 600;
+  height: 44px;
+  padding: 0 16px 0 12px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.28), rgba(244, 63, 94, 0.28)), rgba(9, 26, 36, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 700;
   font-size: 13px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.coach-fab:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
 }
 
 .ai-sparkle {
@@ -161,8 +217,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
 .language-dropdown-wrapper {
@@ -171,7 +226,11 @@ body {
 }
 
 .grade-dropdown-wrapper {
-  min-width: 130px;
+  min-width: 124px;
+}
+
+.selector-row .icon-btn {
+  flex-shrink: 0;
 }
 
 .custom-select {
@@ -201,35 +260,11 @@ body {
   font-weight: 700;
 }
 
-/* Offline badge and Install button share one line under the selectors */
-.status-row {
-  flex-basis: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
+/* Install-as-app button: shown only while the browser can install */
 .install-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18));
-  border: 1px solid rgba(6, 182, 212, 0.45);
-  color: var(--text-primary);
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.install-btn:hover {
-  filter: brightness(1.15);
-  transform: translateY(-1px);
+  border-color: rgba(6, 182, 212, 0.45);
+  color: var(--accent-cyan);
 }
 
 .online-status-badge {
@@ -255,7 +290,7 @@ body {
 
 /* Week Scroller */
 .week-nav {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .week-scroll-container {
@@ -1257,7 +1292,7 @@ body {
     background: white;
     color: black;
   }
-  .app-header, .timer-fab, .install-btn, .toast-notification, .action-footer, .coach-modal-overlay, .search-overlay {
+  .app-header, .timer-fab, .coach-fab, .install-btn, .toast-notification, .action-footer, .coach-modal-overlay, .search-overlay {
     display: none !important;
   }
   .lesson-hero-card, .step-card, .meta-drawer-card, .homework-card {
