@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Gambia FLP Teacher Guide",
   "short_name": "Gambia FLP",
-  "description": "Interactive ECD 2 and ECD 3 Teacher Guide in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds). Works offline.",
+  "description": "Interactive ECD 2, ECD 3 and Grade 1 Teacher Guide in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds). Works offline.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Gambia FLP - Interactive Teacher Guide</title>
-  <meta name="description" content="Digital interactive Teacher Guide for Early Childhood Development (ECD 2 and ECD 3) in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
+  <meta name="description" content="Digital interactive Teacher Guide for ECD 2, ECD 3 and Grade 1 (Term 1) in all eight Gambian languages of instruction - Gambia Foundational Learning Programme (World Bank / MoBSE / Learning Masterminds).">
   <meta name="theme-color" content="#0d3b4c">
   <!-- Installable web app (Add to Home Screen) -->
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -23,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.4">
-  <link rel="manifest" href="manifest.json?v=3.4">
+  <link rel="stylesheet" href="styles.css?v=3.5">
+  <link rel="manifest" href="manifest.json?v=3.5">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -63,6 +63,7 @@
         <select id="grade-select" class="custom-select" aria-label="Select Grade">
           <option value="ecd2">ECD 2 · Term 1</option>
           <option value="ecd3" selected>ECD 3 · Term 1</option>
+          <option value="grade1">Grade 1 · Term 1</option>
         </select>
       </div>
       <button class="icon-btn" id="search-toggle-btn" title="Search lessons" aria-label="Search">
@@ -101,7 +102,12 @@
       </button>
     </nav>
 
-    <!-- 30-min lesson progress: a hairline on the header's bottom edge (no layout height) -->
+    <!-- Session A / B toggle: only shown for lessons that carry two sessions (Grade 1 national languages) -->
+    <nav class="session-nav hidden" id="session-nav" aria-label="Select Session">
+      <!-- Rendered via JS -->
+    </nav>
+
+    <!-- Lesson progress: a hairline on the header's bottom edge (no layout height) -->
     <div class="timer-progress-track" aria-hidden="true">
       <div class="timer-progress-fill" id="timer-progress-fill"></div>
     </div>
@@ -129,7 +135,7 @@
       <div class="hero-top-meta">
         <span class="lesson-badge" id="hero-lesson-badge">Lesson 1</span>
         <span class="lesson-type-badge" id="hero-type-badge">Pre-reading</span>
-        <span class="timing-badge">⏱️ 30 Mins Daily</span>
+        <span class="timing-badge" id="hero-timing-badge">⏱️ 30 Mins Daily</span>
       </div>
 
       <h1 class="lesson-title" id="hero-lesson-title">Week 1, Day 1: Oral Language & Pre-reading</h1>
@@ -254,7 +260,7 @@
   </button>
 
   <!-- Floating Classroom 30-min Timer Dock (overlays content, takes no page space) -->
-  <div class="timer-fab" id="classroom-timer-bar" role="group" aria-label="30-minute lesson timer">
+  <div class="timer-fab" id="classroom-timer-bar" role="group" aria-label="Lesson timer">
     <div class="timer-display">
       <span class="timer-icon" aria-hidden="true">⏳</span>
       <div class="timer-readout">
@@ -263,7 +269,7 @@
       </div>
     </div>
     <div class="timer-buttons">
-      <button class="btn-timer btn-timer-subtle hidden" id="timer-reset-btn" title="Reset to 30:00" aria-label="Reset timer">↺</button>
+      <button class="btn-timer btn-timer-subtle hidden" id="timer-reset-btn" title="Reset timer" aria-label="Reset timer">↺</button>
       <button class="btn-timer" id="timer-start-btn">Start</button>
     </div>
   </div>
@@ -308,10 +314,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.4"></script>
+  <script src="app.js?v=3.5"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.4').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.5').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);

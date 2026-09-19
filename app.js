@@ -1,6 +1,6 @@
 /**
  * Gambia FLP - Interactive Teacher Guide Application Logic
- * Multi-language ECD 2 Term 1 (8 languages of instruction)
+ * Multi-language ECD 2, ECD 3 and Grade 1, Term 1 (8 languages of instruction)
  */
 
 // Initialize Telegram WebApp SDK if present
@@ -19,9 +19,11 @@ const state = {
   currentLanguage: 'wolof',
   currentWeek: 1,
   currentDay: 1,
+  currentSession: 0,      // index into the lesson's sessions (Grade 1 A/B); 0 otherwise
   curriculumData: null,
-  activeLesson: null,
-  timerSeconds: 1800, // 30 minutes
+  activeLesson: null,     // the session view being shown (lesson merged with its session)
+  timerTotal: 1800,       // seconds in the active session (30 min ECD; 60 min Grade 1 English)
+  timerSeconds: 1800,
   timerInterval: null,
   timerRunning: false,
   isPlayingAudio: false,
@@ -88,8 +90,9 @@ function showToast(msg, duration = 3000) {
 
 // Grade registry
 const GRADES = {
-  ecd2: { label: 'ECD 2 · Term 1', code: 'ECD 2' },
-  ecd3: { label: 'ECD 3 · Term 1', code: 'ECD 3' }
+  ecd2:   { label: 'ECD 2 · Term 1',   code: 'ECD 2' },
+  ecd3:   { label: 'ECD 3 · Term 1',   code: 'ECD 3' },
+  grade1: { label: 'Grade 1 · Term 1', code: 'Grade 1' }
 };
 
 const DEFAULT_GRADE = 'ecd3';
@@ -128,6 +131,18 @@ const CURRICULUM_FILES = {
     soninke:  { label: 'Soninke',  file: './data/soninke_ecd3_term1.json',  audioDir: null },
     manjaku:  { label: 'Manjaku',  file: './data/manjaku_ecd3_term1.json',  audioDir: null },
     english:  { label: 'English',  file: './data/english_ecd3_term1.json',  audioDir: null }
+  },
+  // Grade 1: the seven national languages carry two 30-minute sessions (A/B)
+  // per day; English is one 60-minute lesson.
+  grade1: {
+    wolof:    { label: 'Wolof',    file: './data/wolof_grade1_term1.json',    audioDir: null },
+    seereer:  { label: 'Seereer',  file: './data/seereer_grade1_term1.json',  audioDir: null },
+    mandinka: { label: 'Mandinka', file: './data/mandinka_grade1_term1.json', audioDir: null },
+    pulaar:   { label: 'Pulaar',   file: './data/pulaar_grade1_term1.json',   audioDir: null },
+    jola:     { label: 'Jola',     file: './data/jola_grade1_term1.json',     audioDir: null },
+    soninke:  { label: 'Soninke',  file: './data/soninke_grade1_term1.json',  audioDir: null },
+    manjaku:  { label: 'Manjaku',  file: './data/manjaku_grade1_term1.json',  audioDir: null },
+    english:  { label: 'English',  file: './data/english_grade1_term1.json',  audioDir: null }
   }
 };
 
@@ -167,7 +182,8 @@ const AUDIO_TRACK_CATALOG = {
       ]
     }
   },
-  ecd3: {}
+  ecd3: {},
+  grade1: {}
 };
 
 // Current language label, for UI strings that must name the language.
@@ -184,6 +200,26 @@ function currentGradeLabel() {
   if (meta && meta.grade) return meta.grade;
   const entry = GRADES[state.currentGrade];
   return entry ? entry.code : 'ECD 3';
+}
+
+// A Grade 1 national-language lesson day is two 30-minute sessions (A and B),
+// each with its own outcomes, type and steps. ECD and English lessons are a
+// single session, so the lesson itself is the only session.
+function sessionsOf(lesson) {
+  return Array.isArray(lesson.sessions) && lesson.sessions.length ? lesson.sessions : [lesson];
+}
+
+// The lesson as seen through one of its sessions: day-level fields (week,
+// day, lesson number) with the session's own content on top.
+function lessonView(lesson, idx) {
+  const sessions = sessionsOf(lesson);
+  const i = Math.min(Math.max(idx || 0, 0), sessions.length - 1);
+  const sess = sessions[i];
+  return sess === lesson ? lesson : Object.assign({}, lesson, sess, {
+    sessionIndex: i,
+    sessionCount: sessions.length,
+    theme: lesson.theme || ''
+  });
 }
 
 // Tracks for the active grade, language and week, or [] when none are recorded.
@@ -247,6 +283,7 @@ async function switchCurriculum(langKey, gradeKey) {
   state.curriculumData = data;
   state.currentWeek = 1;
   state.currentDay = 1;
+  state.currentSession = 0;
   applyLanguageChrome();
   renderWeekPills();
   elements.dayButtons.forEach(b => {
@@ -287,6 +324,8 @@ async function loadCurriculum() {
   const dy = parseInt(params.get('day'), 10);
   if (wk >= 1 && wk <= 10) state.currentWeek = wk;
   if (dy >= 1 && dy <= 5) state.currentDay = dy;
+  const sess = (params.get('session') || '').toLowerCase();
+  if (sess === 'b' || sess === '2') state.currentSession = 1;
 
   const gradeTable = CURRICULUM_FILES[state.currentGrade] || CURRICULUM_FILES[DEFAULT_GRADE];
   const entry = gradeTable[state.currentLanguage] || gradeTable[DEFAULT_LANGUAGE];
@@ -334,6 +373,7 @@ function renderWeekPills() {
       document.querySelectorAll('.week-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       state.currentWeek = w;
+      state.currentSession = 0;
       loadLesson(state.currentWeek, state.currentDay);
     });
 
@@ -345,22 +385,39 @@ function renderWeekPills() {
 function loadLesson(week, day) {
   if (!state.curriculumData) return;
 
-  const lesson = state.curriculumData.lessons.find(l => l.week === week && l.day_number === day);
+  let lesson = state.curriculumData.lessons.find(l => l.week === week && l.day_number === day);
   if (!lesson) {
     console.error(`Lesson not found for Week ${week}, Day ${day}`);
     return;
   }
 
+  // Keep the day tabs in step with the lesson shown (deep links set the day
+  // without a click, so the highlight used to stay on Monday).
+  elements.dayButtons.forEach(b => b.classList.toggle('active', parseInt(b.dataset.day, 10) === day));
+
+  const dayLesson = lesson;
+  renderSessionNav(dayLesson);
+  lesson = lessonView(dayLesson, state.currentSession);
   state.activeLesson = lesson;
 
   // Stop any active audio when switching lessons
   stopAudioPlayback();
 
   // Update Hero Card Meta
-  elements.heroBadge.textContent = `Lesson ${lesson.lesson_number}`;
-  elements.heroTypeBadge.textContent = lesson.lesson_type;
-  elements.heroTitle.textContent = `Week ${lesson.week}, Day ${lesson.day_number} (${lesson.day_name}): ${lesson.lesson_type}`;
+  const sessionTag = lesson.sessionCount > 1 ? ` · Session ${lesson.session}` : '';
+  const minutes = lesson.duration_mins || 30;
+  elements.heroBadge.textContent = `Lesson ${lesson.lesson_number}${sessionTag}`;
+  elements.heroTypeBadge.textContent = lesson.lesson_type || currentGradeLabel();
+  elements.heroTitle.textContent = `Week ${lesson.week}, Day ${lesson.day_number} (${lesson.day_name})${sessionTag}: ${lesson.lesson_type || 'Lesson'}`;
   elements.heroTheme.innerHTML = `Weekly Theme: <strong>${escapeHtml(lesson.theme || 'Not specified')}</strong>`;
+  const timingBadge = document.getElementById('hero-timing-badge');
+  if (timingBadge) {
+    timingBadge.textContent = lesson.sessionCount > 1
+      ? `⏱️ ${minutes} Mins · ${lesson.sessionCount} sessions today`
+      : `⏱️ ${minutes} Mins Daily`;
+  }
+  const totalBadge = document.getElementById('steps-total-time');
+  if (totalBadge) totalBadge.textContent = `${minutes} Mins Total`;
 
   // Specs
   // target_letter is absent for most lessons across every language; say so
@@ -462,8 +519,39 @@ function loadLesson(week, day) {
     elements.homeworkText.classList.add('not-extracted');
   }
 
-  // Reset timer to 30:00 on new lesson load
+  // Reset timer to the session length on new lesson load
+  state.timerTotal = minutes * 60;
   resetTimer();
+}
+
+// Session A / B toggle, shown only when the day carries more than one session.
+function renderSessionNav(dayLesson) {
+  const nav = document.getElementById('session-nav');
+  if (!nav) return;
+  const sessions = sessionsOf(dayLesson);
+  if (sessions.length < 2) {
+    state.currentSession = 0;
+    nav.classList.add('hidden');
+    nav.innerHTML = '';
+    return;
+  }
+  if (state.currentSession >= sessions.length) state.currentSession = 0;
+  nav.innerHTML = '';
+  sessions.forEach((sess, i) => {
+    const btn = document.createElement('button');
+    btn.className = `session-btn ${i === state.currentSession ? 'active' : ''}`;
+    btn.type = 'button';
+    btn.innerHTML = `<span class="session-label">Session ${escapeHtml(sess.session || String.fromCharCode(65 + i))}</span>` +
+      `<span class="session-sub">${escapeHtml(sess.lesson_type || '')}${sess.duration_mins ? ` · ${sess.duration_mins} min` : ''}</span>`;
+    btn.addEventListener('click', () => {
+      if (state.currentSession === i) return;
+      state.currentSession = i;
+      loadLesson(state.currentWeek, state.currentDay);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    nav.appendChild(btn);
+  });
+  nav.classList.remove('hidden');
 }
 
 // Clean Structured Formatter for Activity Content
@@ -676,7 +764,7 @@ function updateTimerDisplay() {
 
   // Update progress bar
   if (elements.timerProgressFill) {
-    const pct = ((1800 - state.timerSeconds) / 1800) * 100;
+    const pct = ((state.timerTotal - state.timerSeconds) / state.timerTotal) * 100;
     elements.timerProgressFill.style.width = `${pct}%`;
   }
 
@@ -713,14 +801,14 @@ function startTimer() {
       state.timerSeconds--;
       updateTimerDisplay();
       if (state.timerSeconds === 300) {
-        showToast('⏱️ 5 Minutes remaining in this 30-min lesson!');
+        showToast(`⏱️ 5 Minutes remaining in this ${Math.round(state.timerTotal / 60)}-min lesson!`);
       }
     } else {
       clearInterval(state.timerInterval);
       state.timerRunning = false;
       elements.timerStatus.textContent = 'Done 🎉';
       elements.timerStartBtn.textContent = 'Restart';
-      showToast('🎉 30-Minute Lesson Complete!');
+      showToast(`🎉 ${Math.round(state.timerTotal / 60)}-Minute Lesson Complete!`);
       updateTimerDisplay();
       playChime();
     }
@@ -730,7 +818,7 @@ function startTimer() {
 function resetTimer() {
   clearInterval(state.timerInterval);
   state.timerRunning = false;
-  state.timerSeconds = 1800;
+  state.timerSeconds = state.timerTotal || 1800;
   updateTimerDisplay();
   elements.timerStartBtn.textContent = 'Start';
   elements.timerStatus.textContent = 'Ready';
@@ -948,6 +1036,7 @@ function setupEventListeners() {
       elements.dayButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.currentDay = parseInt(btn.dataset.day, 10);
+      state.currentSession = 0; // a new day starts with Session A
       loadLesson(state.currentWeek, state.currentDay);
     });
   });
@@ -976,7 +1065,9 @@ function setupEventListeners() {
       return;
     }
     const matches = state.curriculumData.lessons.filter(l => {
-      const actText = l.activities.map(a => a.content + ' ' + a.title).join(' ');
+      const actText = sessionsOf(l)
+        .flatMap(s => (s.activities || []).map(a => a.content + ' ' + a.title))
+        .join(' ');
       return (l.theme && l.theme.toLowerCase().includes(q)) ||
              (l.target_letter && l.target_letter.toLowerCase().includes(q)) ||
              (l.vocabulary && l.vocabulary.some(v => v.toLowerCase().includes(q))) ||
@@ -1001,6 +1092,9 @@ function setupEventListeners() {
         elements.searchOverlay.classList.add('hidden');
         state.currentWeek = m.week;
         state.currentDay = m.day_number;
+        // Open the session that actually contains the match
+        const hitIdx = sessionsOf(m).findIndex(s => (s.activities || []).some(a => (a.content + ' ' + a.title).toLowerCase().includes(q)));
+        state.currentSession = hitIdx >= 0 ? hitIdx : 0;
         renderWeekPills();
         elements.dayButtons.forEach(b => {
           b.classList.toggle('active', parseInt(b.dataset.day, 10) === state.currentDay);
@@ -1037,7 +1131,9 @@ function setupEventListeners() {
   // Share to Telegram / Clipboard
   elements.shareBtn.addEventListener('click', () => {
     const l = state.activeLesson;
-    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: 30 Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot`;
+    const sessionTag = l.sessionCount > 1 ? ` · Session ${l.session}` : '';
+    const sessionParam = l.sessionCount > 1 ? `&session=${String(l.session || 'a').toLowerCase()}` : '';
+    const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number}${sessionTag} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: ${l.duration_mins || 30} Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}${sessionParam}`;
 
     if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.sendData) {
       window.Telegram.WebApp.sendData(shareText);
