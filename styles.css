@@ -1414,11 +1414,56 @@ body {
   color: var(--text-muted);
 }
 
-.hub-link {
-  text-decoration: none;
+/* Header switch between the two guides. A labelled pill, not a bare icon:
+   the facilitator guide is a different audience and was easy to miss. */
+.switch-guide-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 12px 0 9px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.55);
+  color: var(--text-primary);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.18);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.switch-guide-btn:hover {
+  background: rgba(16, 185, 129, 0.24);
+  transform: translateY(-1px);
+}
+.switch-guide-hub {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+}
+.switch-guide-hub:hover { background: rgba(245, 158, 11, 0.22); }
+.switch-guide-icon { font-size: 17px; line-height: 1; }
+.switch-guide-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.switch-guide-kicker {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+.switch-guide-hub .switch-guide-kicker { color: var(--accent-gold); }
+.switch-guide-label {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+}
+/* Narrow phones: keep the label, let the brand subtitle give way */
+@media (max-width: 400px) {
+  .switch-guide-btn { padding: 0 10px 0 8px; gap: 5px; }
+  .switch-guide-label { font-size: 11px; }
 }
 
 .fac-session-nav {

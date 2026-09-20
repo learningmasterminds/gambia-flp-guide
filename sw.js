@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gambia-flp-v14';
+const CACHE_NAME = 'gambia-flp-v15';
 
 // Only the app shell and the primary audio source per track. The duplicate
 // fallback encodings are fetched on demand rather than bloating install.
@@ -15,7 +15,7 @@ const ASSETS_TO_CACHE = [
   './data/wolof_ecd2_term1.json',
   './data/wolof_grade1_term1.json',
   './facilitator.html',
-  './facilitator.js?v=3.6',
+  './facilitator.js?v=3.7',
   './data/facilitator_guide.json',
   './audio/wolof/wol_ecd2_w01_letter_a.ogg',
   './audio/wolof/wol_ecd2_w01_song.m4a',
