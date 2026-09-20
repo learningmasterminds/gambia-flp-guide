@@ -1481,9 +1481,22 @@ body {
   white-space: nowrap;
 }
 
+/* The modes card spans the grid so its chips wrap instead of widening it */
+.facilitator-page .quick-specs-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.facilitator-page .spec-card { min-width: 0; }
+.facilitator-page .spec-card:first-child {
+  grid-column: 1 / -1;
+}
+.facilitator-page .spec-card:first-child .spec-val {
+  white-space: normal;
+  overflow: visible;
+}
 .spec-card .fac-mode-chip {
   font-size: 10px;
   padding: 1px 6px;
+  white-space: normal;
 }
 
 .fac-mode-row {

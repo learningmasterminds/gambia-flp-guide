@@ -252,9 +252,9 @@ function renderSession() {
   const modes = sessionModes(s);
   el.heroModes.innerHTML = modes.length ? modes.map(modeChip).join(' ') : '—';
   el.heroSteps.textContent = `${s.blocks.length} step${s.blocks.length === 1 ? '' : 's'}`;
-  el.heroSource.textContent = s.source_label && s.source_label !== `Session ${s.session}`
-    ? `Labelled "${s.source_label}"`
-    : s.source_label || '—';
+  // the document's own numbering, which repeats and skips (two "Session 7"s
+  // on Day 1), so trainers can match a printed page to the screen
+  el.heroSource.textContent = s.source_label || '—';
   el.stepsTotal.textContent = `${minutes} Mins Total`;
 
   // Materials
