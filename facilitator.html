@@ -20,8 +20,8 @@
   <!-- Telegram WebApp SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=3.8">
-  <link rel="manifest" href="manifest.json?v=3.8">
+  <link rel="stylesheet" href="styles.css?v=3.9">
+  <link rel="manifest" href="manifest.json?v=3.9">
 </head>
 <body class="facilitator-page">
   <header class="app-header" id="app-header">
@@ -182,10 +182,10 @@
 
   <div class="toast-notification hidden" id="toast-notification"></div>
 
-  <script src="facilitator.js?v=3.8"></script>
+  <script src="facilitator.js?v=3.9"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.8').then(function(reg) { reg.update(); })
+      navigator.serviceWorker.register('sw.js?v=3.9').then(function(reg) { reg.update(); })
         .catch(function(err) { console.warn('SW registration:', err); });
     }
   </script>

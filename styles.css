@@ -1460,6 +1460,33 @@ body {
   font-size: 12px;
   font-weight: 700;
 }
+/* Callout strip above the lesson: names the Facilitator Guide in words */
+.fac-callout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.18), rgba(6, 182, 212, 0.10));
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.15);
+  transition: all 0.2s ease;
+}
+.fac-callout:hover { border-color: var(--accent-emerald); transform: translateY(-1px); }
+.fac-callout-icon { font-size: 24px; line-height: 1; flex-shrink: 0; }
+.fac-callout-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.fac-callout-text strong {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--accent-emerald);
+}
+.fac-callout-text span { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+.fac-callout-arrow { margin-left: auto; font-size: 20px; color: var(--accent-emerald); flex-shrink: 0; }
+@media print { .fac-callout { display: none !important; } }
+
 /* Narrow phones: keep the label, let the brand subtitle give way */
 @media (max-width: 400px) {
   .switch-guide-btn { padding: 0 10px 0 8px; gap: 5px; }

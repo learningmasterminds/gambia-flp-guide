@@ -23,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.8">
-  <link rel="manifest" href="manifest.json?v=3.8">
+  <link rel="stylesheet" href="styles.css?v=3.9">
+  <link rel="manifest" href="manifest.json?v=3.9">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -133,7 +133,17 @@
 
   <!-- Main Content Container -->
   <main class="main-content" id="main-content">
-    
+
+    <!-- Trainers' entry point, spelled out: the header pill alone was missed -->
+    <a class="fac-callout" href="facilitator.html">
+      <span class="fac-callout-icon" aria-hidden="true">🎓</span>
+      <span class="fac-callout-text">
+        <strong>Facilitator Guide — for trainers</strong>
+        <span>Delivering the ECD 2&amp;3 / Grade 1 teacher training? The session-by-session facilitation scripts are here.</span>
+      </span>
+      <span class="fac-callout-arrow" aria-hidden="true">→</span>
+    </a>
+
     <!-- Hero Lesson Card -->
     <section class="lesson-hero-card" id="lesson-hero-card">
       <div class="hero-top-meta">
@@ -318,10 +328,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.8"></script>
+  <script src="app.js?v=3.9"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.8').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.9').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);
