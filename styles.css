@@ -1381,3 +1381,306 @@ body {
   opacity: 0.6;
   font-style: italic;
 }
+
+/* ==========================================================================
+   Facilitator Guide page (facilitator.html) - training agenda for trainers.
+   Reuses the header, pills, hero and step cards above; these are the parts
+   that have no counterpart in the lesson pages.
+   ========================================================================== */
+
+.fac-audience-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.fac-audience-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.fac-guide-version {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hub-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fac-session-nav {
+  margin-bottom: 4px;
+}
+
+.fac-session-chip {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 96px;
+  max-width: 170px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.fac-session-chip .fac-chip-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.fac-session-chip .fac-chip-title {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.fac-session-chip.active {
+  background: var(--bg-surface-elevated);
+  border-color: var(--accent-gold);
+  box-shadow: inset 0 0 0 1px var(--accent-gold);
+}
+.fac-session-chip.active .fac-chip-num {
+  color: var(--accent-gold);
+}
+
+.fac-mode-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin: 2px 4px 2px 0;
+  white-space: nowrap;
+}
+
+.spec-card .fac-mode-chip {
+  font-size: 10px;
+  padding: 1px 6px;
+}
+
+.fac-mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4px 0 8px;
+}
+
+/* Cue groups: the coloured left border says who is doing what */
+.fac-cue {
+  border-left: 3px solid var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 8px 12px;
+  margin: 8px 0;
+}
+
+.fac-cue-head {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.fac-cue-label {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.fac-cue-text {
+  color: var(--text-primary);
+}
+
+.fac-cue .step-bullet-list { margin: 4px 0; }
+.fac-cue .step-paragraph { margin-bottom: 6px; }
+.fac-cue .step-paragraph:last-child { margin-bottom: 0; }
+
+.fac-cue-say {
+  border-left-color: var(--accent-gold);
+  background: rgba(245, 158, 11, 0.08);
+}
+.fac-cue-say .fac-cue-label { color: var(--accent-gold); }
+.fac-cue-say .fac-cue-text,
+.fac-cue-say .bullet-item,
+.fac-cue-say .step-paragraph { color: #fef3c7; }
+
+.fac-cue-do {
+  border-left-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.07);
+}
+.fac-cue-do .fac-cue-label { color: var(--accent-cyan); }
+
+.fac-cue-ask {
+  border-left-color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.08);
+}
+.fac-cue-ask .fac-cue-label { color: var(--accent-emerald); }
+.fac-cue-ask .fac-cue-text { font-style: italic; }
+
+.fac-cue-display {
+  border-left-color: #a78bfa;
+  background: rgba(167, 139, 250, 0.08);
+}
+.fac-cue-display .fac-cue-label { color: #c4b5fd; }
+
+.fac-cue-key {
+  border-left-color: var(--accent-rose);
+  background: rgba(244, 63, 94, 0.08);
+}
+.fac-cue-key .fac-cue-label { color: #fda4af; }
+
+.fac-cue-response {
+  border-left-color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.08);
+}
+.fac-cue-response .fac-cue-label { color: var(--text-secondary); }
+
+.fac-cue-note,
+.fac-note {
+  font-style: italic;
+  color: var(--text-muted);
+}
+.fac-cue-note .fac-cue-label { color: var(--text-muted); }
+
+.fac-note {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.fac-sub-list {
+  margin: 4px 0 4px 14px !important;
+}
+.fac-sub-list .bullet-item::before {
+  content: "◦";
+}
+
+.fac-table-wrap {
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.fac-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12.5px;
+  min-width: 320px;
+}
+
+.fac-table th,
+.fac-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+.fac-table th:last-child,
+.fac-table td:last-child { border-right: none; }
+.fac-table tr:last-child td { border-bottom: none; }
+
+.fac-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.fac-day-overview {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fac-overview-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.fac-overview-btn:hover { background: rgba(255, 255, 255, 0.04); }
+.fac-day-overview li.active .fac-overview-btn {
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+}
+
+.fac-overview-num {
+  font-weight: 800;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.fac-overview-mins {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.fac-pager {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 4px;
+}
+
+.fac-pager-btn {
+  flex: 1;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+.fac-pager-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fac-source-note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media print {
+  .fac-pager, .fac-session-nav { display: none !important; }
+  .fac-cue { border-left-color: #999; background: #f6f6f6; }
+  .fac-cue-say .fac-cue-text, .fac-cue-say .bullet-item, .fac-cue-say .step-paragraph,
+  .fac-table th, .fac-table td, .fac-cue-text { color: black; }
+}

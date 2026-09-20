@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gambia-flp-v13';
+const CACHE_NAME = 'gambia-flp-v14';
 
 // Only the app shell and the primary audio source per track. The duplicate
 // fallback encodings are fetched on demand rather than bloating install.
@@ -14,6 +14,9 @@ const ASSETS_TO_CACHE = [
   './data/wolof_ecd3_term1.json',
   './data/wolof_ecd2_term1.json',
   './data/wolof_grade1_term1.json',
+  './facilitator.html',
+  './facilitator.js?v=3.6',
+  './data/facilitator_guide.json',
   './audio/wolof/wol_ecd2_w01_letter_a.ogg',
   './audio/wolof/wol_ecd2_w01_song.m4a',
   './audio/wolof/wol_ecd2_w01_vocab.ogg',
@@ -94,12 +97,16 @@ self.addEventListener('fetch', (event) => {
       }
       return response;
     }).catch(() => {
-      return caches.match(request).then((cached) => {
+      // Cache keys are query-sensitive, but the query is only ever a deep
+      // link (?day=..&session=..) or a cache-buster (?v=..), so the same
+      // file answers any of them.
+      return caches.match(request, { ignoreSearch: true }).then((cached) => {
         if (cached) return cached;
-        // Navigation requests fall back to the cached shell.
+        // Navigation requests fall back to the cached shell of that page.
         const accept = request.headers.get('accept') || '';
         if (request.mode === 'navigate' || accept.includes('text/html')) {
-          return caches.match('./index.html');
+          const shell = url.pathname.endsWith('facilitator.html') ? './facilitator.html' : './index.html';
+          return caches.match(shell);
         }
         return Response.error();
       });

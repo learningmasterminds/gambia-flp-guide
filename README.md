@@ -9,6 +9,7 @@ Digital interactive Teacher Guide for ECD 2, ECD 3 and Grade 1 (Term 1) in all e
 - **Offline PWA & Telegram Mini App (TMA)**: Pre-caches curriculum content so rural teachers have 100% offline access.
 - **Pedagogical AI Coach**: Context-aware guidance for remediation, letter sound pronunciation, and classroom routines.
 - **Search Engine**: Instant lookup for letters, vocabulary words, songs, and story read-alouds.
+- **Facilitator Guide** (`facilitator.html`, 🎓 in the header): the abridged Literacy Facilitator Guide (September 2026) for the *trainers* who deliver the ECD 2&3 / Grade 1 GNLOI teacher training — a 6-day agenda navigated Day → Session, each session a scripted sequence of facilitation blocks (Facilitator Focus, Whole Group Discussion, Reflect Together…) with Say / Do / Ask cues, a session timer, search and deep links (`facilitator.html?day=2&session=9`). Data: `data/facilitator_guide.json` (built by `../extract_facilitator_guide.py` from the `.docx`). Unlike the lesson data it is English-only and not tied to a language or grade.
 
 ## Live Deployment
 - **GitHub Pages**: [https://learningmasterminds.github.io/gambia-flp-guide/](https://learningmasterminds.github.io/gambia-flp-guide/)
