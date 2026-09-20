@@ -1135,11 +1135,20 @@ function setupEventListeners() {
     const sessionParam = l.sessionCount > 1 ? `&session=${String(l.session || 'a').toLowerCase()}` : '';
     const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number}${sessionTag} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: ${l.duration_mins || 30} Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}${sessionParam}`;
 
-    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.sendData) {
-      window.Telegram.WebApp.sendData(shareText);
-    } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(shareText);
-      showToast('📋 Lesson summary copied to clipboard!');
+    // sendData only reaches the bot when the Mini App was opened from a
+    // reply-keyboard button (no query_id); from the inline buttons the bot
+    // uses it is a silent no-op, so the clipboard is the reliable route.
+    const tg = window.Telegram && window.Telegram.WebApp;
+    const canSend = tg && tg.sendData && tg.initDataUnsafe && !tg.initDataUnsafe.query_id && tg.initData;
+    if (canSend) {
+      tg.sendData(shareText);
+      return;
+    }
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareText).then(
+        () => showToast('📋 Lesson summary copied - paste it into your Telegram chat.'),
+        () => showToast('⚠️ Could not copy. Use Print instead.')
+      );
     }
   });
 

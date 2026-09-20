@@ -23,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.7">
-  <link rel="manifest" href="manifest.json?v=3.7">
+  <link rel="stylesheet" href="styles.css?v=3.8">
+  <link rel="manifest" href="manifest.json?v=3.8">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -318,10 +318,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.7"></script>
+  <script src="app.js?v=3.8"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.7').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=3.8').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);
