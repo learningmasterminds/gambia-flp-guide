@@ -23,8 +23,8 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.9">
-  <link rel="manifest" href="manifest.json?v=3.9">
+  <link rel="stylesheet" href="styles.css?v=4.0">
+  <link rel="manifest" href="manifest.json?v=4.0">
 </head>
 <body>
   <!-- Header / Navigation Bar -->
@@ -64,10 +64,15 @@
         </select>
       </div>
       <div class="grade-dropdown-wrapper">
-        <select id="grade-select" class="custom-select" aria-label="Select Grade">
-          <option value="ecd2">ECD 2 · Term 1</option>
-          <option value="ecd3" selected>ECD 3 · Term 1</option>
-          <option value="grade1">Grade 1 · Term 1</option>
+        <select id="grade-select" class="custom-select" aria-label="Select Grade and Subject">
+          <optgroup label="📖 Literacy">
+            <option value="ecd2">ECD 2 · Term 1</option>
+            <option value="ecd3" selected>ECD 3 · Term 1</option>
+            <option value="grade1">Grade 1 · Term 1</option>
+          </optgroup>
+          <optgroup label="🔢 Numeracy">
+            <option value="grade1-numeracy">Grade 1 Numeracy</option>
+          </optgroup>
         </select>
       </div>
       <button class="icon-btn" id="search-toggle-btn" title="Search lessons" aria-label="Search">
@@ -328,10 +333,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=3.9"></script>
+  <script src="app.js?v=4.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.9').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=4.0').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);

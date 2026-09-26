@@ -1769,3 +1769,130 @@ body {
   .fac-cue-say .fac-cue-text, .fac-cue-say .bullet-item, .fac-cue-say .step-paragraph,
   .fac-table th, .fac-table td, .fac-cue-text { color: black; }
 }
+
+/* ==========================================================================
+   Grade 1 Numeracy (subject switch in the grade select)
+   ========================================================================== */
+.custom-select optgroup {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.custom-select option {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+.custom-select option:disabled {
+  color: var(--text-muted);
+}
+
+/* Activity code (G1T1U1N1) and curriculum outcome code (1.1.2.1) */
+.num-code {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 4px;
+  padding: 1px 5px;
+  vertical-align: 1px;
+}
+
+/* The activity title in the national language, under the English one */
+.num-act-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.num-nl-title {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.num-pb-ref {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--accent-emerald);
+}
+
+/* Mental Maths / Reinforcement pools: one collapsible item per activity */
+.num-pool-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  margin: 6px 0;
+}
+.num-pool-item > summary {
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.45;
+  list-style-position: inside;
+}
+.num-pool-item > summary .num-nl-title {
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.num-pool-item[open] > summary {
+  border-bottom: 1px solid var(--border-subtle);
+}
+.num-pool-body {
+  padding: 6px 10px 8px;
+}
+
+.styled-list li.num-outcomes-head {
+  list-style: none;
+  margin: 12px 0 4px -18px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.styled-list li.num-unit-outcome {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+/* Unit codes ("1.10") are wider than a target letter */
+.subject-numeracy #hero-target-letter {
+  font-size: 20px;
+}
+
+/* Facilitator page: Literacy | Numeracy guide switch */
+.fac-guide-switch {
+  display: inline-flex;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.fac-guide-btn {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 0;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+.fac-guide-btn + .fac-guide-btn {
+  border-left: 1px solid var(--border-subtle);
+}
+.fac-guide-btn.active {
+  background: rgba(6, 182, 212, 0.18);
+  color: var(--accent-cyan);
+}
+
+@media print {
+  .num-pool-item { border: 0; }
+  .fac-guide-switch { display: none !important; }
+}

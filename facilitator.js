@@ -1,14 +1,16 @@
 /**
  * Gambia FLP - Facilitator Guide (teacher-training agenda)
  *
- * Renders data/facilitator_guide.json: the abridged Literacy Facilitator
- * Guide, a 6-day training agenda for the trainers who deliver the ECD 2&3 and
- * Grade 1 GNLOI teacher training. Navigation is Day -> Session (not
- * language/grade/week/day as in app.js), and each session is a sequence of
- * facilitation blocks ("Facilitator Focus", "Whole Group Discussion", ...)
- * with Say / Do / Ask cues.
+ * Renders one of two abridged facilitator guides for the trainers who deliver
+ * the GNLOI teacher training:
+ *   literacy  data/facilitator_guide.json            6 training days -> sessions
+ *   numeracy  data/facilitator_guide_numeracy.json   modules -> sessions
+ * Navigation is Day (or Module) -> Session (not language/grade/week/day as in
+ * app.js), and each session is a sequence of facilitation blocks
+ * ("Facilitator Focus", "Whole Group Discussion", ...) with Say / Do / Ask cues.
  *
- * Deep link: facilitator.html?day=2&session=3
+ * Deep links: facilitator.html?day=2&session=3
+ *             facilitator.html?guide=numeracy&module=2&session=3
  */
 
 if (window.Telegram && window.Telegram.WebApp) {
@@ -18,7 +20,10 @@ if (window.Telegram && window.Telegram.WebApp) {
   if (tg.setHeaderColor) tg.setHeaderColor('#091a24');
 }
 
-const GUIDE_FILE = './data/facilitator_guide.json';
+const GUIDES = {
+  literacy: { file: './data/facilitator_guide.json', group: 'Day', param: 'day' },
+  numeracy: { file: './data/facilitator_guide_numeracy.json', group: 'Module', param: 'module' }
+};
 const HUB_URL = 'https://learningmasterminds.github.io/gambia-flp-guide/';
 
 // Icons for the facilitation modes in the guide's left-hand column.
@@ -39,7 +44,10 @@ const MODE_ICONS = {
   'Flip Classroom': '🔄',
   'Individual Activity': '✍️',
   'Role Play': '🎬',
-  'Demonstration': '🎯'
+  'Demonstration': '🎯',
+  'Facilitator Demonstration': '🎯',
+  'Pair Practice Activity': '🤝',
+  'Case Study': '🔎'
 };
 
 // Cue labels -> visual treatment. "Say" is the facilitator's spoken script,
@@ -73,6 +81,7 @@ const CUE_STYLES = {
 };
 
 const state = {
+  guideKey: 'literacy',
   guide: null,
   days: [],
   dayIndex: 0,
@@ -138,6 +147,12 @@ function showToast(msg, duration = 3000) {
 }
 
 function currentDay() { return state.days[state.dayIndex]; }
+function groupLabel() { return GUIDES[state.guideKey].group; }
+// "Day 2" / "Module 2"; the numeracy guide's module 0 is its introduction.
+function groupName(d) {
+  if (state.guideKey === 'numeracy' && d.day === 0) return d.title || 'Before the Training';
+  return `${groupLabel()} ${d.day}`;
+}
 function currentSession() { return currentDay().sessions[state.sessionIndex]; }
 
 function sessionModes(session) {
@@ -154,25 +169,48 @@ function modeChip(mode) {
 // ---------------------------------------------------------------------------
 // Loading and navigation
 // ---------------------------------------------------------------------------
-async function loadGuide() {
+let listenersReady = false;
+
+// Parsed guides, so switching back to a guide already opened does not wait on
+// the network (the service worker answers data requests network-first).
+const guideCache = {};
+let pendingGuide = null;
+
+async function loadGuide(guideKey, fromUrl = true) {
+  const params = new URLSearchParams(location.search);
+  if (!guideKey) guideKey = (params.get('guide') || '').toLowerCase() === 'numeracy' ? 'numeracy' : 'literacy';
+  pendingGuide = guideKey;
+  let guide;
   try {
-    const res = await fetch(GUIDE_FILE);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    state.guide = await res.json();
+    if (!guideCache[guideKey]) {
+      guideCache[guideKey] = fetch(GUIDES[guideKey].file).then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      });
+    }
+    guide = await guideCache[guideKey];
   } catch (err) {
+    delete guideCache[guideKey];
     console.error('Facilitator guide failed to load:', err);
     showToast('Could not load the facilitator guide. Check your connection and reload.', 6000);
     return;
   }
-  state.days = state.guide.days || [];
-  if (!state.days.length) {
+  if (pendingGuide !== guideKey) return;   // a later switch won the race
+  // The numeracy guide groups sessions by module; give it the day shape the
+  // rest of this file walks (d.day is the module number there).
+  const days = guide.days || (guide.modules || []).map(m => ({ day: m.module, title: m.title, sessions: m.sessions }));
+  if (!days.length) {
     showToast('The facilitator guide has no sessions.', 6000);
     return;
   }
+  state.guideKey = guideKey;
+  state.guide = guide;
+  state.days = days;
+  state.dayIndex = 0;
+  state.sessionIndex = 0;
 
-  const params = new URLSearchParams(location.search);
-  const wantedDay = parseInt(params.get('day'), 10);
-  const wantedSession = parseInt(params.get('session'), 10);
+  const wantedDay = fromUrl ? parseInt(params.get(GUIDES[guideKey].param), 10) : NaN;
+  const wantedSession = fromUrl ? parseInt(params.get('session'), 10) : NaN;
   const dIdx = state.days.findIndex(d => d.day === wantedDay);
   if (dIdx >= 0) {
     state.dayIndex = dIdx;
@@ -186,9 +224,27 @@ async function loadGuide() {
     el.sourceNote.textContent = `Source: ${meta.programme || 'Gambia FLP teacher training'} — ${meta.title || 'Facilitator Guide'}, ${meta.version || ''}. ` +
       `${meta.note || ''}`;
   }
-  document.title = `Gambia FLP - Facilitator Guide (${meta.version || 'Teacher Training'})`;
+  document.title = `Gambia FLP - ${guideKey === 'numeracy' ? 'Numeracy ' : ''}Facilitator Guide (${meta.version || 'Teacher Training'})`;
+  document.querySelectorAll('.fac-guide-btn').forEach(b => {
+    const on = b.dataset.guide === guideKey;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const dayNav = document.getElementById('day-nav');
+  if (dayNav) dayNav.setAttribute('aria-label', guideKey === 'numeracy' ? 'Select module' : 'Select training day');
+  if (el.hubLink) el.hubLink.setAttribute('href', guideKey === 'numeracy' ? './?subject=numeracy&grade=grade1' : './');
+  if (el.searchInput) {
+    el.searchInput.placeholder = guideKey === 'numeracy'
+      ? 'Search sessions: CPA, screener, place value, games...'
+      : 'Search sessions: screener, blending, PLC, songs...';
+    el.searchInput.value = '';
+    el.searchResults.innerHTML = '';
+  }
 
-  setupEventListeners();
+  if (!listenersReady) {
+    setupEventListeners();
+    listenersReady = true;
+  }
   renderDayPills();
   renderSessionChips();
   renderSession();
@@ -209,10 +265,18 @@ function renderDayPills() {
     const pill = document.createElement('button');
     pill.type = 'button';
     pill.className = `week-pill ${i === state.dayIndex ? 'active' : ''}`;
-    pill.textContent = `Day ${d.day} · ${d.sessions.length} session${d.sessions.length === 1 ? '' : 's'}`;
+    const short = d.title && d.title.length > 26 ? d.title.slice(0, 25).trim() + '…' : d.title;
+    pill.textContent = state.guideKey === 'numeracy'
+      ? `${groupName(d)}${d.day ? ' · ' + short : ''}`
+      : `Day ${d.day} · ${d.sessions.length} session${d.sessions.length === 1 ? '' : 's'}`;
+    pill.title = `${d.title ? d.title + ' - ' : ''}${d.sessions.length} session${d.sessions.length === 1 ? '' : 's'}`;
     pill.addEventListener('click', () => goTo(i, 0));
     el.dayScroll.appendChild(pill);
   });
+  const active = el.dayScroll.querySelector('.active');
+  if (active) {
+    el.dayScroll.scrollLeft = Math.max(0, active.offsetLeft - (el.dayScroll.clientWidth - active.offsetWidth) / 2);
+  }
 }
 
 function renderSessionChips() {
@@ -243,11 +307,16 @@ function renderSession() {
   const s = currentSession();
   const minutes = s.duration_mins || 30;
   const nDays = state.guide.metadata.total_days || state.days[state.days.length - 1].day;
+  const numeracy = state.guideKey === 'numeracy';
 
-  el.heroBadge.textContent = `Day ${day.day} · Session ${s.session}`;
+  el.heroBadge.textContent = numeracy
+    ? `${day.day ? 'Module ' + day.day : 'Introduction'} · ${/^Session/.test(s.source_label) ? s.source_label : 'Session ' + s.session}`
+    : `Day ${day.day} · Session ${s.session}`;
   el.heroTiming.textContent = `⏱️ ${minutes} Mins`;
   el.heroTitle.textContent = s.title || `Session ${s.session}`;
-  el.heroSub.innerHTML = `Training day <strong>${day.day} of ${nDays}</strong> · session ${s.session} of ${day.sessions.length}`;
+  el.heroSub.innerHTML = numeracy
+    ? `${escapeHtml(groupName(day))}${day.day ? ': <strong>' + escapeHtml(day.title) + '</strong>' : ''} · session ${s.session} of ${day.sessions.length}`
+    : `Training day <strong>${day.day} of ${nDays}</strong> · session ${s.session} of ${day.sessions.length}`;
 
   const modes = sessionModes(s);
   el.heroModes.innerHTML = modes.length ? modes.map(modeChip).join(' ') : '—';
@@ -271,7 +340,9 @@ function renderSession() {
   }
 
   // Day overview
-  el.overviewTitle.textContent = `🗓️ Day ${day.day} overview (${day.sessions.length} sessions)`;
+  el.overviewTitle.textContent = numeracy
+    ? `📚 ${groupName(day)} overview (${day.sessions.length} session${day.sessions.length === 1 ? '' : 's'})`
+    : `🗓️ Day ${day.day} overview (${day.sessions.length} sessions)`;
   el.overviewList.innerHTML = '';
   day.sessions.forEach((o, i) => {
     const li = document.createElement('li');
@@ -310,7 +381,9 @@ function renderSession() {
   // URL reflects the session so the address bar is shareable
   try {
     const url = new URL(location.href);
-    url.searchParams.set('day', day.day);
+    ['guide', 'day', 'module'].forEach(k => url.searchParams.delete(k));
+    if (numeracy) url.searchParams.set('guide', 'numeracy');
+    url.searchParams.set(GUIDES[state.guideKey].param, day.day);
     url.searchParams.set('session', s.session);
     history.replaceState(null, '', url);
   } catch (e) { /* file:// or sandboxed */ }
@@ -423,7 +496,7 @@ function runSearch(q) {
     const item = document.createElement('div');
     item.className = 'search-result-item';
     item.innerHTML = `
-      <strong style="color: var(--accent-gold); font-size: 13px;">Day ${h.d.day} · Session ${h.s.session}</strong>
+      <strong style="color: var(--accent-gold); font-size: 13px;">${escapeHtml(groupName(h.d))} · ${escapeHtml(state.guideKey === 'numeracy' && /^Session/.test(h.s.source_label) ? h.s.source_label : 'Session ' + h.s.session)}</strong>
       <div style="font-size: 12px; color: var(--text-primary);">${escapeHtml(h.s.title)}</div>
       <div style="font-size: 11px; color: var(--text-muted);">${h.block ? 'Step: ' + escapeHtml(h.block.title || (h.block.modes || [])[0] || '') : 'Title / materials'} · ${h.s.duration_mins || 30} min</div>`;
     item.addEventListener('click', () => {
@@ -547,7 +620,10 @@ function setupEventListeners() {
     const d = currentDay();
     const s = currentSession();
     const steps = s.blocks.map((b, i) => `${i + 1}. ${b.title || (b.modes || [])[0] || 'Step'}${b.duration_mins ? ` (${b.duration_mins} min)` : ''}`).join('\n');
-    const shareText = `🎓 *Gambia FLP - Facilitator Guide (Teacher Training)*\n\n📌 *Day ${d.day}, Session ${s.session}: ${s.title}*\n⏱️ *Duration*: ${s.duration_mins || 30} Minutes\n📦 *Materials*: ${(s.materials || []).join(', ') || 'not listed'}\n\n📋 *Steps*\n${steps}\n\n📖 *Open Full Guide*: https://t.me/gambiaflp_bot\n🌐 ${HUB_URL}facilitator.html?day=${d.day}&session=${s.session}`;
+    const numeracy = state.guideKey === 'numeracy';
+    const where = numeracy ? `${groupName(d)}, ${/^Session/.test(s.source_label) ? s.source_label : 'Session ' + s.session}` : `Day ${d.day}, Session ${s.session}`;
+    const link = numeracy ? `facilitator.html?guide=numeracy&module=${d.day}&session=${s.session}` : `facilitator.html?day=${d.day}&session=${s.session}`;
+    const shareText = `🎓 *Gambia FLP - ${numeracy ? 'Numeracy ' : ''}Facilitator Guide (Teacher Training)*\n\n📌 *${where}: ${s.title}*\n⏱️ *Duration*: ${s.duration_mins || 30} Minutes\n📦 *Materials*: ${(s.materials || []).join(', ') || 'not listed'}\n\n📋 *Steps*\n${steps}\n\n📖 *Open Full Guide*: https://t.me/gambiaflp_bot\n🌐 ${HUB_URL}${link}`;
     // sendData only reaches the bot when the Mini App was opened from a
     // reply-keyboard button (no query_id); from the inline buttons the bot
     // uses it is a silent no-op, so the clipboard is the reliable route.
@@ -566,6 +642,13 @@ function setupEventListeners() {
   });
 
   el.printBtn.addEventListener('click', () => window.print());
+
+  document.querySelectorAll('.fac-guide-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      if (b.dataset.guide === state.guideKey) return;
+      loadGuide(b.dataset.guide, false).then(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    });
+  });
 }
 
-document.addEventListener('DOMContentLoaded', loadGuide);
+document.addEventListener('DOMContentLoaded', () => loadGuide());

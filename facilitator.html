@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Gambia FLP - Facilitator Guide (Teacher Training)</title>
-  <meta name="description" content="Abridged Literacy Facilitator Guide for the Gambia Foundational Learning Programme ECD 2&3 and Grade 1 GNLOI teacher training - session-by-session facilitation scripts for trainers.">
+  <meta name="description" content="Abridged Literacy and Numeracy Facilitator Guides for the Gambia Foundational Learning Programme ECD 2&3 and Grade 1 GNLOI teacher training - session-by-session facilitation scripts for trainers.">
   <meta name="theme-color" content="#0d3b4c">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,8 +20,8 @@
   <!-- Telegram WebApp SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=3.9">
-  <link rel="manifest" href="manifest.json?v=3.9">
+  <link rel="stylesheet" href="styles.css?v=4.0">
+  <link rel="manifest" href="manifest.json?v=4.0">
 </head>
 <body class="facilitator-page">
   <header class="app-header" id="app-header">
@@ -47,6 +47,10 @@
     <!-- Audience strip: this guide is for trainers, not classroom teachers -->
     <div class="fac-audience-row">
       <span class="fac-audience-badge">🎓 For facilitators &amp; trainers</span>
+      <div class="fac-guide-switch" role="group" aria-label="Choose facilitator guide">
+        <button type="button" class="fac-guide-btn" data-guide="literacy">📖 Literacy</button>
+        <button type="button" class="fac-guide-btn" data-guide="numeracy">🔢 Numeracy</button>
+      </div>
       <span class="fac-guide-version" id="fac-guide-version">Abridged Facilitator Guide · September 2026</span>
     </div>
 
@@ -182,10 +186,10 @@
 
   <div class="toast-notification hidden" id="toast-notification"></div>
 
-  <script src="facilitator.js?v=3.9"></script>
+  <script src="facilitator.js?v=4.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=3.9').then(function(reg) { reg.update(); })
+      navigator.serviceWorker.register('sw.js?v=4.0').then(function(reg) { reg.update(); })
         .catch(function(err) { console.warn('SW registration:', err); });
     }
   </script>

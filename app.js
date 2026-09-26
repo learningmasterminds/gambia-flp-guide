@@ -15,6 +15,7 @@ if (window.Telegram && window.Telegram.WebApp) {
 
 // State Management
 const state = {
+  currentSubject: 'literacy', // 'literacy' | 'numeracy' (numeracy: Grade 1, national languages only)
   currentGrade: 'ecd3',
   currentLanguage: 'wolof',
   currentWeek: 1,
@@ -186,6 +187,103 @@ const AUDIO_TRACK_CATALOG = {
   grade1: {}
 };
 
+// Grade 1 Numeracy Teacher Guides (7 national languages; there is no English
+// or ECD numeracy guide). Built by ../extract_numeracy_grade1.py. The data is
+// units -> lessons, not weeks -> days; adaptNumeracy() maps it onto the
+// lesson shape the rest of this file renders (unit = week pill, lesson = day tab).
+const NUMERACY_FILES = {
+  grade1: {
+    wolof:    { label: 'Wolof',    file: './data/wolof_grade1_term1_numeracy.json' },
+    seereer:  { label: 'Seereer',  file: './data/seereer_grade1_term1_numeracy.json' },
+    mandinka: { label: 'Mandinka', file: './data/mandinka_grade1_term1_numeracy.json' },
+    pulaar:   { label: 'Pulaar',   file: './data/pulaar_grade1_term1_numeracy.json' },
+    jola:     { label: 'Jola',     file: './data/jola_grade1_term1_numeracy.json' },
+    soninke:  { label: 'Soninke',  file: './data/soninke_grade1_term1_numeracy.json' },
+    manjaku:  { label: 'Manjaku',  file: './data/manjaku_grade1_term1_numeracy.json' }
+  }
+};
+
+// The grade <select> carries the subject too: "grade1-numeracy" is Grade 1
+// Numeracy; every other value is a literacy grade.
+function parseGradeValue(value) {
+  const m = /^(\w+)-numeracy$/.exec(value || '');
+  return m ? { grade: m[1], subject: 'numeracy' } : { grade: value, subject: 'literacy' };
+}
+
+function gradeValue() {
+  return state.currentSubject === 'numeracy' ? `${state.currentGrade}-numeracy` : state.currentGrade;
+}
+
+function isNumeracy() {
+  return state.currentSubject === 'numeracy';
+}
+
+function datasetEntry(langKey, gradeKey, subject) {
+  const table = subject === 'numeracy' ? NUMERACY_FILES[gradeKey] : CURRICULUM_FILES[gradeKey];
+  return table ? table[langKey] || null : null;
+}
+
+// Numeracy JSON -> the lesson shape app.js renders. Each lesson becomes a
+// "day" of its unit, and its 60 minutes become step cards: the two warm-up
+// slots (drawn from the unit's Mental Maths and Reinforcement pools), the
+// new-content activities, and the Closure.
+function adaptNumeracy(data) {
+  const units = {};
+  (data.units || []).forEach(u => { units[u.unit] = u; });
+  const stepsText = (steps) => (steps || []).map(s => s.text).join(' ');
+  const lessons = (data.lessons || []).map(l => {
+    const u = units[l.unit] || { unit: l.unit, code: `1.${l.unit}`, title: '', mental: [], reinforcement: [], outcomes: [] };
+    const pool = (kind, label, list, mins) => ({
+      numeracy: 'pool', poolKind: kind, title: `${label} (2 or 3 activities)`, duration_mins: mins || 10,
+      pool: list || [],
+      content: (list || []).map(a => `${a.title} ${a.title_nl} ${stepsText(a.steps)}`).join(' ')
+    });
+    const acts = [
+      pool('mental', 'Mental Maths', u.mental, l.mental_minutes),
+      pool('reinforcement', 'Reinforcement', u.reinforcement, l.reinforcement_minutes)
+    ];
+    (l.activities || []).forEach(a => acts.push({
+      numeracy: 'activity', title: a.title || a.code, duration_mins: a.minutes, code: a.code,
+      title_nl: a.title_nl, steps: a.steps, pb_refs: a.pb_refs || [],
+      content: `${a.code} ${a.title_nl} ${stepsText(a.steps)}`
+    }));
+    const closure = l.closure || null;
+    if (closure) {
+      acts.push({
+        numeracy: 'closure', title: 'Closure', duration_mins: closure.minutes || 10,
+        assessment: closure.assessment || '', content: closure.assessment || ''
+      });
+    }
+    const pb = [];
+    (l.activities || []).forEach(a => (a.pb_refs || []).forEach(r => { if (!pb.includes(r)) pb.push(r); }));
+    return {
+      subject: 'numeracy',
+      week: l.unit,
+      day_number: l.lesson_in_unit,
+      day_name: `Lesson ${l.id}`,
+      lesson_number: l.id,
+      lesson_type: l.title,
+      theme: u.title,
+      unit_code: u.code || `1.${l.unit}`,
+      unit_outcomes: u.outcomes || [],
+      duration_mins: l.minutes || 60,
+      learning_outcomes: l.objectives || [],
+      materials: l.materials || [],
+      target_letter: '',
+      vocabulary: [],
+      pb_refs: pb,
+      has_closure: !!closure,
+      activities: acts,
+      homework: closure && closure.homework ? closure.homework : ''
+    };
+  });
+  const meta = Object.assign({}, data.metadata, {
+    total_weeks: (data.units || []).length || 11,
+    grade: 'Grade 1 Numeracy'
+  });
+  return { metadata: meta, lessons, units: data.units || [], source_notes: data.source_notes || [] };
+}
+
 // Current language label, for UI strings that must name the language.
 function currentLanguageLabel() {
   const meta = state.curriculumData && state.curriculumData.metadata;
@@ -232,13 +330,22 @@ function tracksFor(langKey, week) {
   return byLang[week] || [];
 }
 
-// Switch Grade Dynamically
-async function switchGrade(gradeKey) {
-  if (!GRADES[gradeKey]) {
-    console.error('Unknown grade:', gradeKey);
+// Switch Grade (and subject) Dynamically
+async function switchGrade(value) {
+  const { grade, subject } = parseGradeValue(value);
+  if (!GRADES[grade]) {
+    console.error('Unknown grade:', value);
     return;
   }
-  await switchCurriculum(state.currentLanguage, gradeKey);
+  let lang = state.currentLanguage;
+  if (subject === 'numeracy' && !datasetEntry(lang, grade, subject)) {
+    // no English numeracy guide: fall back to a national language
+    lang = DEFAULT_LANGUAGE;
+    await switchCurriculum(lang, grade, subject,
+      '🔢 Numeracy guides are in the 7 national languages - showing Wolof Grade 1 Numeracy.');
+    return;
+  }
+  await switchCurriculum(lang, grade, subject);
 }
 
 // Switch Language Dynamically
@@ -248,16 +355,34 @@ async function switchLanguage(langKey) {
     showToast('⚠️ Unknown language selected.');
     return;
   }
-  await switchCurriculum(langKey, state.currentGrade);
+  await switchCurriculum(langKey, state.currentGrade, state.currentSubject);
 }
 
-// Switch Curriculum (Language & Grade)
-async function switchCurriculum(langKey, gradeKey) {
-  const gradeTable = CURRICULUM_FILES[gradeKey];
-  const entry = gradeTable ? gradeTable[langKey] : null;
+// Parsed (and, for numeracy, adapted) datasets by file, so flipping back to a
+// language or subject already opened does not wait on the network: the
+// service worker answers data requests network-first.
+const datasetCache = new Map();
+let switchRequestId = 0;
+
+function fetchDataset(file, subject) {
+  if (!datasetCache.has(file)) {
+    const p = fetch(file).then(res => {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    }).then(json => (subject === 'numeracy' ? adaptNumeracy(json) : json));
+    p.catch(() => datasetCache.delete(file));
+    datasetCache.set(file, p);
+  }
+  return datasetCache.get(file);
+}
+
+// Switch Curriculum (Language, Grade & Subject)
+async function switchCurriculum(langKey, gradeKey, subject = state.currentSubject, notice = '') {
+  const entry = datasetEntry(langKey, gradeKey, subject);
   if (!entry) {
-    console.error('Unknown dataset:', gradeKey, langKey);
+    console.error('Unknown dataset:', subject, gradeKey, langKey);
     showToast('⚠️ Dataset not found.');
+    syncSelects();
     return;
   }
 
@@ -266,18 +391,22 @@ async function switchCurriculum(langKey, gradeKey) {
   state.activeTracks = [];
   state.selectedTrackIndex = 0;
 
+  const requestId = ++switchRequestId;
   let data;
   try {
-    const res = await fetch(entry.file);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    data = await res.json();
+    data = await fetchDataset(entry.file, subject);
   } catch (err) {
-    console.error('Failed to load dataset', gradeKey, langKey, err);
-    showToast(`⚠️ Could not load ${entry.label} ${GRADES[gradeKey].code}. Still showing ${currentLanguageLabel()} ${currentGradeLabel()}.`);
+    if (requestId !== switchRequestId) return;
+    console.error('Failed to load dataset', subject, gradeKey, langKey, err);
+    const what = subject === 'numeracy' ? `${GRADES[gradeKey].code} Numeracy` : GRADES[gradeKey].code;
+    showToast(`⚠️ Could not load ${entry.label} ${what}. Still showing ${currentLanguageLabel()} ${currentGradeLabel()}.`);
     syncSelects();
     return;
   }
 
+  if (requestId !== switchRequestId) return;   // a later switch won the race
+
+  state.currentSubject = subject;
   state.currentGrade = gradeKey;
   state.currentLanguage = langKey;
   state.curriculumData = data;
@@ -290,7 +419,8 @@ async function switchCurriculum(langKey, gradeKey) {
     b.classList.toggle('active', parseInt(b.dataset.day, 10) === 1);
   });
   loadLesson(1, 1);
-  showToast(`🗣️ Switched to ${currentLanguageLabel()} ${currentGradeLabel()}`);
+  if (notice) showToast(notice, 4500);
+  else showToast(`🗣️ Switched to ${currentLanguageLabel()} ${currentGradeLabel()}`);
 }
 
 // Keep select inputs in step with state
@@ -298,7 +428,13 @@ function syncSelects() {
   const lSel = document.getElementById('language-select');
   if (lSel && lSel.value !== state.currentLanguage) lSel.value = state.currentLanguage;
   const gSel = document.getElementById('grade-select');
-  if (gSel && gSel.value !== state.currentGrade) gSel.value = state.currentGrade;
+  if (gSel && gSel.value !== gradeValue()) gSel.value = gradeValue();
+  // English has no numeracy guide
+  if (lSel) {
+    Array.from(lSel.options).forEach(o => {
+      o.disabled = isNumeracy() && !datasetEntry(o.value, state.currentGrade, 'numeracy');
+    });
+  }
 }
 
 // Language and grade specific chrome
@@ -309,30 +445,101 @@ function applyLanguageChrome() {
   const sub = document.getElementById('audio-sub');
   if (sub) sub.textContent = `Select a track to listen in ${label}`;
   syncSelects();
+  applySubjectChrome();
+}
+
+// Labels that differ between the literacy and numeracy guides. The literacy
+// wording is captured from the page on first call so it can be restored.
+const LITERACY_CHROME = {};
+function applySubjectChrome() {
+  const num = isNumeracy();
+  const set = (sel, key, numText, attr = 'textContent') => {
+    const node = document.querySelector(sel);
+    if (!node) return;
+    if (!(key in LITERACY_CHROME)) LITERACY_CHROME[key] = node[attr];
+    node[attr] = num ? numText : LITERACY_CHROME[key];
+  };
+  document.body.classList.toggle('subject-numeracy', num);
+  set('#letter-spec-card .spec-label', 'letterLabel', 'Unit');
+  set('#vocab-spec-card .spec-label', 'vocabLabel', 'Pupil Book');
+  set('#routine-spec-card .spec-label', 'routineLabel', 'Lesson Flow');
+  set('.outcomes-block h3', 'outcomesHead', 'Lesson Objectives (by the end of the lesson pupils will be able to):');
+  set('#search-input', 'searchPh', 'Search activity, game, number, shape...', 'placeholder');
+  set('.fac-callout-text span', 'facCallout', 'Delivering the Grade 1 numeracy teacher training? The session-by-session facilitation scripts are here.');
+  // Trainers land on the guide that matches the subject being viewed
+  document.querySelectorAll('a[href^="facilitator.html"]').forEach(a => {
+    a.setAttribute('href', num ? 'facilitator.html?guide=numeracy' : 'facilitator.html');
+  });
+  const bar = document.getElementById('audio-companion-bar');
+  if (bar) bar.classList.toggle('hidden', num);   // no audio companion for numeracy
+  const chips = document.getElementById('coach-prompts');
+  if (chips) {
+    const defs = num ? NUMERACY_COACH_CHIPS : null;
+    chips.querySelectorAll('.prompt-chip').forEach((chip, i) => {
+      if (!chip.dataset.litQuery) { chip.dataset.litQuery = chip.dataset.query; chip.dataset.litText = chip.textContent; }
+      chip.dataset.query = defs && defs[i] ? defs[i].query : chip.dataset.litQuery;
+      chip.textContent = defs && defs[i] ? defs[i].text : chip.dataset.litText;
+    });
+  }
+}
+
+const NUMERACY_COACH_CHIPS = [
+  { query: 'How do I support a pupil who is struggling with counting?', text: '💡 Counting support' },
+  { query: 'Give me a quick mental maths warm up game.', text: '⚡ Mental maths game' },
+  { query: 'How do I use concrete, pictorial and abstract steps in this lesson?', text: '🧮 Concrete → pictorial → abstract' }
+];
+
+// Day tabs: Mon-Fri for literacy; Lesson 1-5 of the unit for numeracy.
+function renderDayTabs() {
+  elements.dayButtons.forEach(btn => {
+    const k = parseInt(btn.dataset.day, 10);
+    const label = btn.querySelector('.day-label');
+    const sub = btn.querySelector('.day-sub');
+    if (!label || !sub) return;
+    if (!btn.dataset.litLabel) { btn.dataset.litLabel = label.textContent; btn.dataset.litSub = sub.textContent; }
+    if (isNumeracy()) {
+      label.textContent = `1.${state.currentWeek}.${k}`;
+      sub.textContent = `Lesson ${k}`;
+    } else {
+      label.textContent = btn.dataset.litLabel;
+      sub.textContent = btn.dataset.litSub;
+    }
+  });
 }
 
 // Load Curriculum Data
 async function loadCurriculum() {
   const params = new URLSearchParams(location.search);
+  if ((params.get('subject') || '').toLowerCase() === 'numeracy') state.currentSubject = 'numeracy';
+
   const wantedLang = (params.get('lang') || '').toLowerCase();
   if (LANGUAGES[wantedLang]) state.currentLanguage = wantedLang;
 
   const wantedGrade = (params.get('grade') || '').toLowerCase();
   if (GRADES[wantedGrade]) state.currentGrade = wantedGrade;
+  if (isNumeracy()) {
+    if (!NUMERACY_FILES[state.currentGrade]) state.currentGrade = 'grade1';
+    if (!datasetEntry(state.currentLanguage, state.currentGrade, 'numeracy')) state.currentLanguage = DEFAULT_LANGUAGE;
+  }
 
-  const wk = parseInt(params.get('week'), 10);
-  const dy = parseInt(params.get('day'), 10);
-  if (wk >= 1 && wk <= 10) state.currentWeek = wk;
+  // numeracy deep links may say unit/lesson; week/day mean the same thing
+  const wk = parseInt(params.get('week') || params.get('unit'), 10);
+  const dy = parseInt(params.get('day') || params.get('lesson'), 10);
+  if (wk >= 1 && wk <= 12) state.currentWeek = wk;
   if (dy >= 1 && dy <= 5) state.currentDay = dy;
   const sess = (params.get('session') || '').toLowerCase();
   if (sess === 'b' || sess === '2') state.currentSession = 1;
 
-  const gradeTable = CURRICULUM_FILES[state.currentGrade] || CURRICULUM_FILES[DEFAULT_GRADE];
-  const entry = gradeTable[state.currentLanguage] || gradeTable[DEFAULT_LANGUAGE];
+  let entry = datasetEntry(state.currentLanguage, state.currentGrade, state.currentSubject);
+  if (!entry) {
+    state.currentSubject = 'literacy';
+    const gradeTable = CURRICULUM_FILES[state.currentGrade] || CURRICULUM_FILES[DEFAULT_GRADE];
+    entry = gradeTable[state.currentLanguage] || gradeTable[DEFAULT_LANGUAGE];
+  }
   try {
-    const res = await fetch(entry.file);
-    if (!res.ok) throw new Error('Failed to load JSON: HTTP ' + res.status);
-    state.curriculumData = await res.json();
+    state.curriculumData = await fetchDataset(entry.file, state.currentSubject);
+    const total = state.curriculumData.metadata.total_weeks || 10;
+    if (state.currentWeek > total) state.currentWeek = 1;
   } catch (err) {
     console.error('Curriculum data failed to load:', err);
     showToast('Could not load lesson data. Check your connection and reload.', 6000);
@@ -367,7 +574,9 @@ function renderWeekPills() {
     // Find week theme from first lesson of that week
     const firstLesson = state.curriculumData.lessons.find(l => l.week === w);
     const themeName = firstLesson && firstLesson.theme ? ` · ${firstLesson.theme}` : '';
-    pill.textContent = `Week ${w}${themeName}`;
+    pill.textContent = isNumeracy()
+      ? `Unit ${firstLesson ? firstLesson.unit_code : '1.' + w}${themeName}`
+      : `Week ${w}${themeName}`;
 
     pill.addEventListener('click', () => {
       document.querySelectorAll('.week-pill').forEach(p => p.classList.remove('active'));
@@ -394,6 +603,12 @@ function loadLesson(week, day) {
   // Keep the day tabs in step with the lesson shown (deep links set the day
   // without a click, so the highlight used to stay on Monday).
   elements.dayButtons.forEach(b => b.classList.toggle('active', parseInt(b.dataset.day, 10) === day));
+  renderDayTabs();
+
+  if (lesson.subject === 'numeracy') {
+    renderNumeracyLesson(lesson);
+    return;
+  }
 
   const dayLesson = lesson;
   renderSessionNav(dayLesson);
@@ -522,6 +737,137 @@ function loadLesson(week, day) {
   // Reset timer to the session length on new lesson load
   state.timerTotal = minutes * 60;
   resetTimer();
+}
+
+// ---------------------------------------------------------------------------
+// Numeracy lesson (Grade 1): 60 minutes = Mental Maths 10 + Reinforcement 10
+// (2 or 3 activities from the unit's pools) + new-content activities +
+// Closure 10. Teacher lines ("Say:") are in the national language.
+// ---------------------------------------------------------------------------
+function renderNumeracyLesson(lesson) {
+  renderSessionNav(lesson);           // hides the Session A/B toggle
+  state.currentSession = 0;
+  state.activeLesson = lesson;
+  stopAudioPlayback();
+  state.activeTracks = [];
+
+  const minutes = lesson.duration_mins || 60;
+  elements.heroBadge.textContent = `Lesson ${lesson.lesson_number}`;
+  elements.heroTypeBadge.textContent = `Numeracy · Unit ${lesson.unit_code}`;
+  elements.heroTitle.textContent = lesson.lesson_type || `Lesson ${lesson.lesson_number}`;
+  elements.heroTheme.innerHTML = `Unit ${escapeHtml(lesson.unit_code)}: <strong>${escapeHtml(lesson.theme || 'Not specified')}</strong>`;
+  const timingBadge = document.getElementById('hero-timing-badge');
+  if (timingBadge) timingBadge.textContent = `⏱️ ${minutes} Mins Daily`;
+  const totalBadge = document.getElementById('steps-total-time');
+  if (totalBadge) totalBadge.textContent = `${minutes} Mins Total`;
+
+  elements.heroLetter.textContent = lesson.unit_code;
+  elements.heroVocab.textContent = lesson.pb_refs.length ? `Activity ${lesson.pb_refs.join(' · ')}` : '—';
+  const nAct = lesson.activities.filter(a => a.numeracy === 'activity').length;
+  elements.heroRoutine.textContent = ['Mental Maths', 'Reinforcement',
+    `${nAct} ${nAct === 1 ? 'activity' : 'activities'}`].concat(lesson.has_closure ? ['Closure'] : []).join(' → ');
+
+  // Objectives, then the unit's curriculum outcomes
+  elements.outcomesList.innerHTML = '';
+  if (lesson.learning_outcomes.length) {
+    lesson.learning_outcomes.forEach(o => {
+      const li = document.createElement('li');
+      li.textContent = o;
+      elements.outcomesList.appendChild(li);
+    });
+  } else {
+    elements.outcomesList.innerHTML = '<li class="not-extracted">No objectives are printed for this lesson in the source Teacher Guide.</li>';
+  }
+  if (lesson.unit_outcomes.length) {
+    const head = document.createElement('li');
+    head.className = 'num-outcomes-head';
+    head.textContent = `Unit ${lesson.unit_code} curriculum outcomes`;
+    elements.outcomesList.appendChild(head);
+    lesson.unit_outcomes.forEach(o => {
+      const li = document.createElement('li');
+      li.className = 'num-unit-outcome';
+      li.innerHTML = `<span class="num-code">${escapeHtml(o.code)}</span> ${escapeHtml(o.text)}`;
+      elements.outcomesList.appendChild(li);
+    });
+  }
+
+  elements.materialsTags.innerHTML = '';
+  if (lesson.materials.length) {
+    lesson.materials.forEach(mat => {
+      const span = document.createElement('span');
+      span.className = 'tag-item';
+      span.textContent = mat;
+      elements.materialsTags.appendChild(span);
+    });
+  } else {
+    elements.materialsTags.innerHTML = '<span class="tag-item not-extracted">Not listed in the source guide</span>';
+  }
+
+  elements.stepsList.innerHTML = '';
+  lesson.activities.forEach((act, idx) => {
+    const card = document.createElement('div');
+    card.className = `step-card num-step num-step-${act.numeracy}`;
+    card.innerHTML = `
+      <div class="step-card-header">
+        <div class="step-title-wrap">
+          <div class="step-num-badge">${idx + 1}</div>
+          <div class="step-title">${escapeHtml(act.title)}</div>
+        </div>
+        ${act.duration_mins ? `<span class="step-duration">⏱️ ${act.duration_mins} mins</span>` : ''}
+      </div>
+      <div class="step-body">${numeracyCardBody(act, lesson)}</div>`;
+    elements.stepsList.appendChild(card);
+  });
+  if (!lesson.has_closure) {
+    const note = document.createElement('p');
+    note.className = 'step-paragraph not-extracted';
+    note.textContent = 'This lesson has no Closure block in the source Teacher Guide.';
+    elements.stepsList.appendChild(note);
+  }
+
+  if (lesson.homework) {
+    elements.homeworkText.classList.remove('not-extracted');
+    elements.homeworkText.textContent = lesson.homework;
+  } else {
+    elements.homeworkText.textContent = 'No homework task is given for this lesson in the source Teacher Guide.';
+    elements.homeworkText.classList.add('not-extracted');
+  }
+
+  state.timerTotal = minutes * 60;
+  resetTimer();
+}
+
+function numeracySteps(steps) {
+  const lang = escapeHtml(currentLanguageLabel());
+  return (steps || []).map(s => s.type === 'say'
+    ? `<div class="teacher-dialogue"><strong>🗣️ Say (${lang}):</strong> <em>${escapeHtml(s.text)}</em></div>`
+    : `<p class="step-paragraph">${escapeHtml(s.text)}</p>`).join('');
+}
+
+function numeracyCardBody(act, lesson) {
+  if (act.numeracy === 'pool') {
+    const what = act.poolKind === 'mental' ? 'Mental Maths' : 'Reinforcement';
+    if (!act.pool.length) {
+      return `<p class="step-paragraph not-extracted">The Teacher Guide lists no ${what} activities for Unit ${escapeHtml(lesson.unit_code)}. Use a short counting routine from the lesson.</p>`;
+    }
+    const items = act.pool.map(a => `
+      <details class="num-pool-item">
+        <summary><span class="num-code">${escapeHtml(a.code)}</span> <span class="num-pool-title">${escapeHtml(a.title)}</span>
+          ${a.title_nl ? `<span class="num-nl-title">${escapeHtml(a.title_nl)}</span>` : ''}</summary>
+        <div class="num-pool-body">${numeracySteps(a.steps)}</div>
+      </details>`).join('');
+    return `<p class="step-paragraph">Choose 2 or 3 of Unit ${escapeHtml(lesson.unit_code)}'s ${what.toLowerCase()} activities (tap one to open it):</p>${items}`;
+  }
+  if (act.numeracy === 'closure') {
+    return act.assessment
+      ? `<h4 class="step-subheading">📝 Assessment task</h4><p class="step-paragraph">${escapeHtml(act.assessment)}</p>`
+      : '<p class="step-paragraph not-extracted">No assessment task is printed for this Closure.</p>';
+  }
+  const pb = act.pb_refs.length
+    ? `<p class="num-pb-ref">📘 Pupil Book: Activity ${act.pb_refs.map(escapeHtml).join(', ')}</p>` : '';
+  return `<div class="num-act-meta"><span class="num-code">${escapeHtml(act.code)}</span>` +
+    (act.title_nl ? ` <span class="num-nl-title">${escapeHtml(act.title_nl)}</span>` : '') + `</div>` +
+    numeracySteps(act.steps) + pb;
 }
 
 // Session A / B toggle, shown only when the day carries more than one session.
@@ -989,6 +1335,7 @@ function handleCoachQuery(userQuery) {
 
 // Pedagogical Knowledge Response Generator
 function generateCoachResponse(query, lesson) {
+  if (lesson && lesson.subject === 'numeracy') return numeracyCoachResponse(query, lesson);
   const q = query.toLowerCase();
   const letter = lesson.target_letter || 'a';
   const theme = lesson.theme || 'Community';
@@ -1010,6 +1357,57 @@ function generateCoachResponse(query, lesson) {
   }
 
   return `<strong>Teaching Tip for Lesson ${lesson.lesson_number} (${lesson.lesson_type}):</strong><br>Remember to adhere strictly to the <strong>30-minute pacing</strong>. Keep transitions between Circle Time (10m), Sounds (5m), Letter of the Week (5m), and Writing (5m) snappy and active. Praise pupil participation in ${currentLanguageLabel()} throughout.`;
+}
+
+function shareLessonText(shareText) {
+  // sendData only reaches the bot when the Mini App was opened from a
+  // reply-keyboard button (no query_id); from the inline buttons the bot
+  // uses it is a silent no-op, so the clipboard is the reliable route.
+  const tg = window.Telegram && window.Telegram.WebApp;
+  const canSend = tg && tg.sendData && tg.initDataUnsafe && !tg.initDataUnsafe.query_id && tg.initData;
+  if (canSend) {
+    tg.sendData(shareText);
+    return;
+  }
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(shareText).then(
+      () => showToast('📋 Lesson summary copied - paste it into your Telegram chat.'),
+      () => showToast('⚠️ Could not copy. Use Print instead.')
+    );
+  }
+}
+
+// Numeracy answers are built from the lesson and its unit, not from the
+// literacy tips above (letters, pencil grip) that do not apply.
+function numeracyCoachResponse(query, lesson) {
+  const q = query.toLowerCase();
+  const lang = escapeHtml(currentLanguageLabel());
+  const pools = lesson.activities.filter(a => a.numeracy === 'pool');
+  const mental = (pools.find(p => p.poolKind === 'mental') || { pool: [] }).pool;
+  const acts = lesson.activities.filter(a => a.numeracy === 'activity');
+
+  if (q.includes('struggl') || q.includes('support') || q.includes('behind') || q.includes('count')) {
+    return `<strong>Supporting a pupil in Lesson ${escapeHtml(lesson.lesson_number)}:</strong><br>` +
+      `1. <strong>Go back to concrete</strong>: give the pupil counters, sticks or bottle caps and have them touch and move each one as they count aloud in ${lang}.<br>` +
+      `2. <strong>Smaller numbers first</strong>: repeat the activity with numbers up to 5 before moving to 10.<br>` +
+      `3. <strong>Pair them</strong> with a confident partner for the Pupil Book task${lesson.pb_refs.length ? ` (Activity ${escapeHtml(lesson.pb_refs.join(', '))})` : ''}, then check them first during the Closure.`;
+  }
+  if (q.includes('game') || q.includes('warm') || q.includes('mental')) {
+    if (!mental.length) {
+      return `Unit ${escapeHtml(lesson.unit_code)} has no Mental Maths list in the Teacher Guide. A quick option: count forwards and backwards to 10 in ${lang} and in English, clapping on each number.`;
+    }
+    return `<strong>Mental Maths for Unit ${escapeHtml(lesson.unit_code)}</strong> (pick 2 or 3, 10 minutes in total):<br>` +
+      mental.map(a => `• ${escapeHtml(a.title)}${a.title_nl ? ` — <em>${escapeHtml(a.title_nl)}</em>` : ''}`).join('<br>');
+  }
+  if (q.includes('concrete') || q.includes('pictorial') || q.includes('abstract') || q.includes('cpa')) {
+    return `<strong>Concrete → Pictorial → Abstract in this lesson:</strong><br>` +
+      `• <strong>Concrete</strong>: pupils handle real objects (counters, classroom items) during ${escapeHtml(acts[0] ? acts[0].title : 'the main activity')}.<br>` +
+      `• <strong>Pictorial</strong>: move to the pictures and dots in the Pupil Book${lesson.pb_refs.length ? ` (Activity ${escapeHtml(lesson.pb_refs.join(', '))})` : ''}.<br>` +
+      `• <strong>Abstract</strong>: finish with numerals only — on the board or in jotters — before the Closure.`;
+  }
+  return `<strong>Teaching tip for Lesson ${escapeHtml(lesson.lesson_number)}:</strong><br>Keep to the <strong>60-minute plan</strong>: Mental Maths (10 min) → Reinforcement (10 min) → ` +
+    `${acts.map(a => `${escapeHtml(a.title)}${a.duration_mins ? ` (${a.duration_mins} min)` : ''}`).join(' → ')} → Closure (10 min). ` +
+    `Model each "Say" line in ${lang}, and use English number names only where the activity asks for them.`;
 }
 
 // Setup Event Listeners
@@ -1083,11 +1481,20 @@ function setupEventListeners() {
     matches.slice(0, 10).forEach(m => {
       const item = document.createElement('div');
       item.className = 'search-result-item';
+      if (m.subject === 'numeracy') {
+        const hit = (m.activities || []).find(a => (a.content + ' ' + a.title).toLowerCase().includes(q));
+        item.innerHTML = `
+        <strong style="color: var(--accent-gold); font-size: 13px;">Lesson ${escapeHtml(m.lesson_number)} (Unit ${escapeHtml(m.unit_code)})</strong>
+        <div style="font-size: 12px; color: var(--text-primary);">${escapeHtml(m.lesson_type)}</div>
+        <div style="font-size: 11px; color: var(--text-muted);">${hit ? 'In: ' + escapeHtml(hit.title) : escapeHtml(m.theme || '')}</div>
+      `;
+      } else {
       item.innerHTML = `
         <strong style="color: var(--accent-gold); font-size: 13px;">Lesson ${m.lesson_number} (Week ${m.week}, Day ${m.day_number})</strong>
         <div style="font-size: 12px; color: var(--text-primary);">${escapeHtml(m.lesson_type)} · Theme: ${escapeHtml(m.theme || 'Community')}</div>
         <div style="font-size: 11px; color: var(--text-muted);">${m.target_letter ? `Letter: ${m.target_letter}` : ''} ${m.vocabulary && m.vocabulary.length ? `· Vocab: ${m.vocabulary.join(', ')}` : ''}</div>
       `;
+      }
       item.addEventListener('click', () => {
         elements.searchOverlay.classList.add('hidden');
         state.currentWeek = m.week;
@@ -1131,30 +1538,37 @@ function setupEventListeners() {
   // Share to Telegram / Clipboard
   elements.shareBtn.addEventListener('click', () => {
     const l = state.activeLesson;
+    if (l.subject === 'numeracy') {
+      const acts = l.activities.filter(a => a.numeracy === 'activity')
+        .map(a => `• ${a.title}${a.duration_mins ? ` (${a.duration_mins} min)` : ''}`).join('\n');
+      const text = `🔢 *Gambia FLP - ${currentLanguageLabel()} Grade 1 Numeracy (Term 1)*\n\n📌 *Lesson ${l.lesson_number}: ${l.lesson_type}*\n🧩 *Unit ${l.unit_code}*: ${l.theme}\n⏱️ *Duration*: ${l.duration_mins || 60} Minutes (Mental Maths 10 · Reinforcement 10 · Activities · Closure 10)\n\n📋 *Activities*\n${acts}\n${l.pb_refs.length ? `📘 *Pupil Book*: Activity ${l.pb_refs.join(', ')}\n` : ''}\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?subject=numeracy&grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}`;
+      shareLessonText(text);
+      return;
+    }
     const sessionTag = l.sessionCount > 1 ? ` · Session ${l.session}` : '';
     const sessionParam = l.sessionCount > 1 ? `&session=${String(l.session || 'a').toLowerCase()}` : '';
     const shareText = `📚 *Gambia FLP - ${currentLanguageLabel()} ${currentGradeLabel()} (Term 1)*\n\n📌 *Lesson ${l.lesson_number}${sessionTag} (Week ${l.week}, Day ${l.day_number} - ${l.day_name})*\n🏷️ *Type*: ${l.lesson_type}\n🌱 *Theme*: ${l.theme || 'Community'}\n🔤 *Target Letter*: ${l.target_letter || 'Alphabet'}\n🗣️ *Key Vocab*: ${(l.vocabulary || []).join(', ')}\n⏱️ *Duration*: ${l.duration_mins || 30} Minutes\n\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}${sessionParam}`;
 
-    // sendData only reaches the bot when the Mini App was opened from a
-    // reply-keyboard button (no query_id); from the inline buttons the bot
-    // uses it is a silent no-op, so the clipboard is the reliable route.
-    const tg = window.Telegram && window.Telegram.WebApp;
-    const canSend = tg && tg.sendData && tg.initDataUnsafe && !tg.initDataUnsafe.query_id && tg.initData;
-    if (canSend) {
-      tg.sendData(shareText);
-      return;
-    }
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(shareText).then(
-        () => showToast('📋 Lesson summary copied - paste it into your Telegram chat.'),
-        () => showToast('⚠️ Could not copy. Use Print instead.')
-      );
-    }
+    shareLessonText(shareText);
   });
 
   // Print Card
   elements.printBtn.addEventListener('click', () => {
     window.print();
+  });
+  // A closed <details> prints without its content, so open the numeracy
+  // activity pools for printing and restore them afterwards.
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll('details.num-pool-item:not([open])').forEach(d => {
+      d.dataset.printOpened = '1';
+      d.open = true;
+    });
+  });
+  window.addEventListener('afterprint', () => {
+    document.querySelectorAll('details.num-pool-item[data-print-opened]').forEach(d => {
+      d.open = false;
+      delete d.dataset.printOpened;
+    });
   });
 
   setupInstallPrompt();
