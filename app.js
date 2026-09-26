@@ -439,7 +439,7 @@ function syncSelects() {
   const hint = document.getElementById('subject-hint');
   if (hint) {
     hint.textContent = isNumeracy()
-      ? 'Grade 1 · 7 national languages'
+      ? 'Grade 1 · 7 languages'
       : 'New: Grade 1 Numeracy →';
     hint.classList.toggle('subject-hint-new', !isNumeracy());
   }
