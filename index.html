@@ -23,7 +23,7 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=4.0">
+  <link rel="stylesheet" href="styles.css?v=4.1">
   <link rel="manifest" href="manifest.json?v=4.0">
 </head>
 <body>
@@ -47,6 +47,15 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         </button>
       </div>
+    </div>
+
+    <!-- Subject switch: the literacy guides and Grade 1 Numeracy -->
+    <div class="subject-switch-row">
+      <div class="subject-switch" role="group" aria-label="Choose subject">
+        <button type="button" class="subject-btn active" data-subject="literacy" aria-pressed="true">📖 Literacy</button>
+        <button type="button" class="subject-btn" data-subject="numeracy" aria-pressed="false">🔢 Numeracy</button>
+      </div>
+      <button type="button" class="subject-hint subject-hint-new" id="subject-hint">New: Grade 1 Numeracy →</button>
     </div>
 
     <!-- Language & Level Pill Selector -->
@@ -333,10 +342,10 @@
   <div class="toast-notification hidden" id="toast-notification"></div>
 
   <!-- Application Script with Cache Buster -->
-  <script src="app.js?v=4.0"></script>
+  <script src="app.js?v=4.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js?v=4.0').then(function(reg) {
+      navigator.serviceWorker.register('sw.js?v=4.1').then(function(reg) {
         reg.update();
       }).catch(function(err) {
         console.warn('SW registration:', err);

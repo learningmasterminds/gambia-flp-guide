@@ -16,6 +16,7 @@ if (window.Telegram && window.Telegram.WebApp) {
 // State Management
 const state = {
   currentSubject: 'literacy', // 'literacy' | 'numeracy' (numeracy: Grade 1, national languages only)
+  lastLiteracyGrade: null,    // the literacy grade to return to from Numeracy
   currentGrade: 'ecd3',
   currentLanguage: 'wolof',
   currentWeek: 1,
@@ -292,12 +293,12 @@ function currentLanguageLabel() {
   return entry ? entry.label : '';
 }
 
-// Current grade label
+// Current grade label, naming the subject ("Grade 1 Literacy", "Grade 1 Numeracy")
 function currentGradeLabel() {
   const meta = state.curriculumData && state.curriculumData.metadata;
-  if (meta && meta.grade) return meta.grade;
   const entry = GRADES[state.currentGrade];
-  return entry ? entry.code : 'ECD 3';
+  const base = (meta && meta.grade) || (entry ? entry.code : 'ECD 3');
+  return isNumeracy() || /numeracy/i.test(base) ? base : `${base} Literacy`;
 }
 
 // A Grade 1 national-language lesson day is two 30-minute sessions (A and B),
@@ -408,6 +409,7 @@ async function switchCurriculum(langKey, gradeKey, subject = state.currentSubjec
 
   state.currentSubject = subject;
   state.currentGrade = gradeKey;
+  if (subject === 'literacy') state.lastLiteracyGrade = gradeKey;
   state.currentLanguage = langKey;
   state.curriculumData = data;
   state.currentWeek = 1;
@@ -420,7 +422,7 @@ async function switchCurriculum(langKey, gradeKey, subject = state.currentSubjec
   });
   loadLesson(1, 1);
   if (notice) showToast(notice, 4500);
-  else showToast(`🗣️ Switched to ${currentLanguageLabel()} ${currentGradeLabel()}`);
+  else showToast(`${isNumeracy() ? '🔢' : '📖'} Switched to ${currentLanguageLabel()} ${currentGradeLabel()}`);
 }
 
 // Keep select inputs in step with state
@@ -429,6 +431,18 @@ function syncSelects() {
   if (lSel && lSel.value !== state.currentLanguage) lSel.value = state.currentLanguage;
   const gSel = document.getElementById('grade-select');
   if (gSel && gSel.value !== gradeValue()) gSel.value = gradeValue();
+  document.querySelectorAll('.subject-btn').forEach(b => {
+    const on = b.dataset.subject === state.currentSubject;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const hint = document.getElementById('subject-hint');
+  if (hint) {
+    hint.textContent = isNumeracy()
+      ? 'Grade 1 · 7 national languages'
+      : 'New: Grade 1 Numeracy →';
+    hint.classList.toggle('subject-hint-new', !isNumeracy());
+  }
   // English has no numeracy guide
   if (lSel) {
     Array.from(lSel.options).forEach(o => {
@@ -545,6 +559,7 @@ async function loadCurriculum() {
     showToast('Could not load lesson data. Check your connection and reload.', 6000);
     return;
   }
+  if (!isNumeracy()) state.lastLiteracyGrade = state.currentGrade;
   applyLanguageChrome();
   initApp();
 }
@@ -1417,6 +1432,25 @@ function setupEventListeners() {
   if (gradeSelect) {
     gradeSelect.addEventListener('change', (e) => {
       switchGrade(e.target.value);
+    });
+  }
+
+  // Literacy | Numeracy switch in the header
+  document.querySelectorAll('.subject-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.subject === state.currentSubject) return;
+      if (btn.dataset.subject === 'numeracy') {
+        switchGrade('grade1-numeracy');
+      } else {
+        // back to the literacy grade the teacher came from (Grade 1 by default)
+        switchGrade(state.lastLiteracyGrade || 'grade1');
+      }
+    });
+  });
+  const subjectHint = document.getElementById('subject-hint');
+  if (subjectHint) {
+    subjectHint.addEventListener('click', () => {
+      if (!isNumeracy()) switchGrade('grade1-numeracy');
     });
   }
 
