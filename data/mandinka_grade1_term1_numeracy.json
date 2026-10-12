@@ -2630,8 +2630,8 @@
         "Large (A5 size) numerali cards 1 - 10 Mentali Maths (2 or 3 activities) 10 Mins"
       ],
       "materials": [],
-      "mental_minutes": null,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N1",
@@ -2727,8 +2727,8 @@
         "Empty containers in the classroom corner shop/market Mentali Maths (2 or 3 activities) 10 Mins"
       ],
       "materials": [],
-      "mental_minutes": null,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N3",
@@ -2834,8 +2834,8 @@
         "Empty containers in the classroom corner shop/market Mentali Maths (2 or 3 activities) 10 Mins"
       ],
       "materials": [],
-      "mental_minutes": null,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N5",
@@ -2916,8 +2916,8 @@
         "Counters for pupils Mentali Maths (2 or 3 activities) 10 Mins"
       ],
       "materials": [],
-      "mental_minutes": null,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N7",
@@ -2989,8 +2989,8 @@
         "Counters for pupils Mentali Maths (2 or 3 activities) 10 Mins"
       ],
       "materials": [],
-      "mental_minutes": null,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1W1N9",
@@ -6146,6 +6146,7 @@
     "Lesson 1.2.2 has no Closure block",
     "Lesson 1.2.3 has no Closure block",
     "Lesson 1.11.5 has no Closure block",
-    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')"
+    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')",
+    "2026-10-12: Unit 1 revised on request: Mental Maths and Reinforcement removed; activities 25 + 25 min, Closure 10 min"
   ]
 }

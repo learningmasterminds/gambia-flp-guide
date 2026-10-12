@@ -2679,8 +2679,8 @@
         "Drying line with pegs",
         "Large (A5 size) numeral cards 1 - 10"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N1",
@@ -2688,7 +2688,7 @@
           "unit": 1,
           "title": "Counting Numbers: 1-10 in Wolof",
           "title_nl": "Woññi lim yi: 1–10 ci Wolof",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2725,7 +2725,7 @@
           "unit": 1,
           "title": "Counting Numbers to 10 in Wollof",
           "title_nl": "Woññi lim yi be 10 ci English",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2779,8 +2779,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N3",
@@ -2788,7 +2788,7 @@
           "unit": 1,
           "title": "Play “Clap that number”",
           "title_nl": "Poyum “taccu lim yi”",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2821,7 +2821,7 @@
           "unit": 1,
           "title": "Play “How many?”",
           "title_nl": "poyum “ñaata?”",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2887,8 +2887,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N5",
@@ -2896,7 +2896,7 @@
           "unit": 1,
           "title": "Play “Stand in Groups of 2, 3, 4 or 5s”",
           "title_nl": "poyum taxaw ci ay mbooti 2, 3, 4, walla 5",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2919,7 +2919,7 @@
           "unit": 1,
           "title": "Play “Finding 2s, 3s, 4s … 10s",
           "title_nl": "Poyum “Di ut ay 2, 3, 4…10”",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2970,8 +2970,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N7",
@@ -2979,7 +2979,7 @@
           "unit": 1,
           "title": "Play “Show me ___” numbers 1 to 5 with counters",
           "title_nl": "Poyum “won ma___” limi 1 be 5 ci ay woññeekaay",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -3008,7 +3008,7 @@
           "unit": 1,
           "title": "Play “What number is this?” with numerals 1 to 5",
           "title_nl": "Poyum “Bii ban lim la?” ci limi 1 be 5",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -3048,8 +3048,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1W1N9",
@@ -3057,7 +3057,7 @@
           "unit": 1,
           "title": "Which of two numbers is more?",
           "title_nl": "Ban ci ñaari lim yi moo óppa?",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -3082,7 +3082,7 @@
           "unit": 1,
           "title": "Play “Make a group with more/less than this number”",
           "title_nl": "Poyum ‘defar mbooti lim bu óppa walla bu manke’",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -6324,6 +6324,7 @@
     "Lesson 1.6.4 has no Closure block",
     "'Mandinka' appears 1x in the Wolof lessons",
     "'Soninke' appears 10x in the Wolof lessons",
-    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')"
+    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')",
+    "2026-10-12: Unit 1 revised on request: Mental Maths and Reinforcement removed; activities 25 + 25 min, Closure 10 min"
   ]
 }

@@ -2675,8 +2675,8 @@
         "Drying line with pegs",
         "Large (A5 size) numeral cards 1 - 10"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N1",
@@ -2779,8 +2779,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N3",
@@ -2887,8 +2887,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N5",
@@ -2919,7 +2919,7 @@
           "unit": 1,
           "title": "Play “Finding 2s, 3s, 4s … 10s",
           "title_nl": "A ƥaaƭ tikoorik ke defna yo nu “2s, 3s, 4s, 10s”",
-          "minutes": 15,
+          "minutes": 25,
           "steps": [
             {
               "type": "do",
@@ -2975,8 +2975,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N7",
@@ -3050,8 +3050,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1W1N9",
@@ -3110,7 +3110,11 @@
           "pb_refs": []
         }
       ],
-      "closure": null
+      "closure": {
+        "minutes": 10,
+        "assessment": "Display 3 pairs of counters on the table, one of each pair should be 1 or 2 more than the other. Have learners come to the table to determine which is more and explain.",
+        "homework": "Ask learners to count tea-cups and spoons in their home to find which is more."
+      }
     },
     {
       "id": "1.2.1",
@@ -6369,10 +6373,10 @@
     "G1T1U10N2 printed before the box of lesson 1.10.2",
     "'LESSON 1.10.2' is lesson 1.10.3",
     "End-of-unit AFL task page after lesson 1.10.5 is not included",
-    "Lesson 1.1.5 has no Closure block",
     "Lesson 1.6.5 has no Closure block",
     "Lesson 1.9.1 has no Closure block",
     "Lesson 1.11.1 has no Closure block",
-    "'Manjaku' appears 1x in the Seereer lessons"
+    "'Manjaku' appears 1x in the Seereer lessons",
+    "2026-10-12: Unit 1 revised on request: Mental Maths and Reinforcement removed; activities 25 + 25 min, Closure 10 min"
   ]
 }

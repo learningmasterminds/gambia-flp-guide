@@ -2639,8 +2639,8 @@
         "Drying line with pegs",
         "Large (A5 size) numeral cards 1 - 10"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N1",
@@ -2737,8 +2737,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N3",
@@ -2845,8 +2845,8 @@
         "Objects in the classroom",
         "Empty containers in the classroom corner shop/market"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N5",
@@ -2928,8 +2928,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1U1N7",
@@ -3002,8 +3002,8 @@
         "Small number and numeral cards 1 - 10",
         "Counters for pupils"
       ],
-      "mental_minutes": 10,
-      "reinforcement_minutes": 10,
+      "mental_minutes": 0,
+      "reinforcement_minutes": 0,
       "activities": [
         {
           "code": "G1T1W1N9",
@@ -6262,6 +6262,7 @@
     "Lesson 1.2.3 has no Closure block",
     "'Mandinka' appears 1x in the Pulaar lessons",
     "'Soninke' appears 6x in the Pulaar lessons",
-    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')"
+    "Front matter (Introduction) is the literacy guide's text ('Early Grade Reading Programme')",
+    "2026-10-12: Unit 1 revised on request: Mental Maths and Reinforcement removed; activities 25 + 25 min, Closure 10 min"
   ]
 }

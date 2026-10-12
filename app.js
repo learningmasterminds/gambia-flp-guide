@@ -239,10 +239,11 @@ function adaptNumeracy(data) {
       pool: list || [],
       content: (list || []).map(a => `${a.title} ${a.title_nl} ${stepsText(a.steps)}`).join(' ')
     });
-    const acts = [
-      pool('mental', 'Mental Maths', u.mental, l.mental_minutes),
-      pool('reinforcement', 'Reinforcement', u.reinforcement, l.reinforcement_minutes)
-    ];
+    // A slot set to 0 minutes was removed on request (Unit 1, Oct 2026);
+    // null/undefined means the guide printed no time, so it shows as 10.
+    const acts = [];
+    if (l.mental_minutes !== 0) acts.push(pool('mental', 'Mental Maths', u.mental, l.mental_minutes));
+    if (l.reinforcement_minutes !== 0) acts.push(pool('reinforcement', 'Reinforcement', u.reinforcement, l.reinforcement_minutes));
     (l.activities || []).forEach(a => acts.push({
       numeracy: 'activity', title: a.title || a.code, duration_mins: a.minutes, code: a.code,
       title_nl: a.title_nl, steps: a.steps, pb_refs: a.pb_refs || [],
@@ -779,8 +780,9 @@ function renderNumeracyLesson(lesson) {
   elements.heroLetter.textContent = lesson.unit_code;
   elements.heroVocab.textContent = lesson.pb_refs.length ? `Activity ${lesson.pb_refs.join(' · ')}` : '—';
   const nAct = lesson.activities.filter(a => a.numeracy === 'activity').length;
-  elements.heroRoutine.textContent = ['Mental Maths', 'Reinforcement',
-    `${nAct} ${nAct === 1 ? 'activity' : 'activities'}`].concat(lesson.has_closure ? ['Closure'] : []).join(' → ');
+  elements.heroRoutine.textContent = lesson.activities.filter(a => a.numeracy === 'pool')
+    .map(a => a.poolKind === 'mental' ? 'Mental Maths' : 'Reinforcement')
+    .concat([`${nAct} ${nAct === 1 ? 'activity' : 'activities'}`]).concat(lesson.has_closure ? ['Closure'] : []).join(' → ');
 
   // Objectives, then the unit's curriculum outcomes
   elements.outcomesList.innerHTML = '';
@@ -1420,7 +1422,8 @@ function numeracyCoachResponse(query, lesson) {
       `• <strong>Pictorial</strong>: move to the pictures and dots in the Pupil Book${lesson.pb_refs.length ? ` (Activity ${escapeHtml(lesson.pb_refs.join(', '))})` : ''}.<br>` +
       `• <strong>Abstract</strong>: finish with numerals only — on the board or in jotters — before the Closure.`;
   }
-  return `<strong>Teaching tip for Lesson ${escapeHtml(lesson.lesson_number)}:</strong><br>Keep to the <strong>60-minute plan</strong>: Mental Maths (10 min) → Reinforcement (10 min) → ` +
+  return `<strong>Teaching tip for Lesson ${escapeHtml(lesson.lesson_number)}:</strong><br>Keep to the <strong>60-minute plan</strong>: ` +
+    pools.map(p => `${p.poolKind === 'mental' ? 'Mental Maths' : 'Reinforcement'} (${p.duration_mins} min) → `).join('') +
     `${acts.map(a => `${escapeHtml(a.title)}${a.duration_mins ? ` (${a.duration_mins} min)` : ''}`).join(' → ')} → Closure (10 min). ` +
     `Model each "Say" line in ${lang}, and use English number names only where the activity asks for them.`;
 }
@@ -1575,7 +1578,7 @@ function setupEventListeners() {
     if (l.subject === 'numeracy') {
       const acts = l.activities.filter(a => a.numeracy === 'activity')
         .map(a => `• ${a.title}${a.duration_mins ? ` (${a.duration_mins} min)` : ''}`).join('\n');
-      const text = `🔢 *Gambia FLP - ${currentLanguageLabel()} Grade 1 Numeracy (Term 1)*\n\n📌 *Lesson ${l.lesson_number}: ${l.lesson_type}*\n🧩 *Unit ${l.unit_code}*: ${l.theme}\n⏱️ *Duration*: ${l.duration_mins || 60} Minutes (Mental Maths 10 · Reinforcement 10 · Activities · Closure 10)\n\n📋 *Activities*\n${acts}\n${l.pb_refs.length ? `📘 *Pupil Book*: Activity ${l.pb_refs.join(', ')}\n` : ''}\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?subject=numeracy&grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}`;
+      const text = `🔢 *Gambia FLP - ${currentLanguageLabel()} Grade 1 Numeracy (Term 1)*\n\n📌 *Lesson ${l.lesson_number}: ${l.lesson_type}*\n🧩 *Unit ${l.unit_code}*: ${l.theme}\n⏱️ *Duration*: ${l.duration_mins || 60} Minutes (${l.activities.filter(a => a.numeracy === 'pool').map(a => `${a.poolKind === 'mental' ? 'Mental Maths' : 'Reinforcement'} ${a.duration_mins} · `).join('')}Activities · Closure 10)\n\n📋 *Activities*\n${acts}\n${l.pb_refs.length ? `📘 *Pupil Book*: Activity ${l.pb_refs.join(', ')}\n` : ''}\n📖 *Open Full Interactive Guide*: https://t.me/gambiaflp_bot\n🌐 https://learningmasterminds.github.io/gambia-flp-guide/?subject=numeracy&grade=${state.currentGrade}&lang=${state.currentLanguage}&week=${l.week}&day=${l.day_number}`;
       shareLessonText(text);
       return;
     }
